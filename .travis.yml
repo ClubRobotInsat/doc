@@ -1,0 +1,28 @@
+language: rust
+rust:
+        - stable
+matrix:
+        fast_finish: true
+cache : cargo
+script : ""
+after_success: ""
+env : RUSTFLAGS="$RUSTFLAGS -D warnings"
+before_deploy:
+        - cargo install mdbook
+        - mdbook build
+        - cp assets build/ -R
+        - echo "<meta http-equiv=refresh content=0;url=1/index.html>" > book/index.html
+        - echo $GITHUB_TOKEN
+deploy:
+        provider: pages
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN  
+        keep-history: false  
+        local-dir: book
+        target-branch: gh-pages
+        repo: ClubRobotInsat/doc-elec
+        project-name: Documentation Librobot
+        on:
+                branch: master
+notifications:
+          email: false
