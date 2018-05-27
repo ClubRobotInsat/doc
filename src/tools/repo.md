@@ -51,7 +51,7 @@ Explication :
 
 - `eabihf` : `hf` veut dire "hard float", c'est à dire que le compilateur va emettre des instructions spécials pour les calculs sur les nombres flottants au lieu de les calculer avec des entiers. En effet, le microcontrolleur `stm32f446` embarque un Floating Point Unit (FPU) qui permet de faire des calculs flottants rapidement.
 
-Si tout a marché alors tout a été installé correctement !
+Si la compilation a marché alors tout a été installé correctement !
 
 # Arborescence du code et fichiers remarquables
 
