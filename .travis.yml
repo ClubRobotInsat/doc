@@ -4,11 +4,10 @@ rust:
 matrix:
         fast_finish: true
 cache : cargo
-script : ""
+script : cargo install mdbook
 after_success: ""
 env : RUSTFLAGS="$RUSTFLAGS -D warnings"
 before_deploy:
-        - cargo install mdbook
         - mdbook build
         - cp assets build/ -R
         - echo $GITHUB_TOKEN
