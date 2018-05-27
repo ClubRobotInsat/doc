@@ -2,8 +2,8 @@ language: rust
 rust:
         - stable
 matrix:
-        fast_finish: true
-        allow_failure: stable
+        allow_failure: 
+                - rust : stable
 cache : cargo
 script : cargo install mdbook
 after_success: ""
