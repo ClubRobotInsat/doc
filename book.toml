@@ -1,0 +1,5 @@
+[book]
+authors = ["Paul Florence"]
+multilingual = false
+src = "src"
+title = "Documentation Club Robot Insa Toulouse"
