@@ -5,7 +5,8 @@ matrix:
         allow_failure: 
                 - rust : stable
 cache : cargo
-script : cargo install mdbook
+script : 
+        - ./install.sh
 after_success: ""
 env : RUSTFLAGS="$RUSTFLAGS -D warnings"
 before_deploy:
