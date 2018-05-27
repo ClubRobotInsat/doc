@@ -1,7 +1,6 @@
 #/bin/bash
 bi=$(which mdbook)
-if [ -z $bi ]
+if [ -z $(which mdbook) ]
 then
   cargo install mdbook
-else
 fi
