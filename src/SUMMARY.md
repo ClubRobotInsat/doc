@@ -2,6 +2,10 @@
 
 - [Introduction](./intro.md)
 - [Informatique](./info.md)
+	- [Mise en place](./informatique/mise_en_place.md)
+		- [Répertoire de travail](./informatique/mise_en_place/repertoire_de_travail.md)
+		- [Compilation](./informatique/mise_en_place/compilation.md)
+		- [IDE](./informatique/mise_en_place/ide.md)
 - [Electronique Logicielle](./elec-soft.md)
 	- [Mise en place](./tools.md)
 		- [IDE](./tools/ide.md)
