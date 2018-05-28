@@ -1,4 +1,4 @@
-![](asset/logo.png)
+![](assets/logo.png)
 
 [![Travis](https://api.travis-ci.org/ClubRobotInsat/librobot.svg?branch=master)](https://travis-ci.org/ClubRobotInsat/doc)
 # [La documentation du club robot](https://clubrobotinsat.github.io/doc/)
