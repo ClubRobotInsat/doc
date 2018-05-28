@@ -1,3 +1,6 @@
+![](assets/logo.png "test")
+
+
 # Introduction
 
 Ce site internet contiens la documentation du Club Robot de l'INSA Toulouse pour la partie électronique du robot.
