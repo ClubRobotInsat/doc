@@ -11,7 +11,7 @@ after_success: ""
 env : RUSTFLAGS="$RUSTFLAGS -D warnings"
 before_deploy:
         - mdbook build
-        - cp assets build/assets -R
+        - cp assets book/assets -R
 deploy:
         provider: pages
         skip-cleanup: true
