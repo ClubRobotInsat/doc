@@ -4,7 +4,7 @@
 </p>
 -->
 
-<p align="center"><a href="https://clubrobotinsat.github.io/doc/">
+<p align="center"><a href="https://clubrobotinsat.github.io/doc/" target="_blank">
   <img src="assets/documentation.png" alt="La documentation du Club Robot" width="700">
 </a></p>
 
