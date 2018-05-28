@@ -4,10 +4,10 @@
 </p>
 -->
 
-<p align="center"><a href="https://clubrobotinsat.github.io/doc/" target="_blank">
+<p align="center"><a href="https://clubrobotinsat.github.io/doc/">
   <img src="assets/documentation.png" alt="La documentation du Club Robot" width="700">
 </a></p>
-
+<a href="https://clubrobotinsat.github.io/doc/" target="blank">test</a>
 
 [![Travis](https://api.travis-ci.org/ClubRobotInsat/librobot.svg?branch=master)](https://travis-ci.org/ClubRobotInsat/doc)
 # [La documentation du club robot](https://clubrobotinsat.github.io/doc/)
