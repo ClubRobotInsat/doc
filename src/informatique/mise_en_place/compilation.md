@@ -86,3 +86,20 @@ scripts/install.sh petri
 ## Problèmes de compilation connus
 
 - Problème de *clock skew* ? Il suffit de lancer `find -exec touch \{\} \;` dans le dossier `info`. Attention, cela peut être un petit peu long.
+
+## Test de l'environnement de travail
+
+A présent que ton ordinateur est totalement configuré, il est temps de compiler le code !
+
+L'interface de CLion peut paraître compliquée de prime abord, c'est pourquoi il ne faut pas hésiter à demander de l'aide à un membre du Club.
+
+Une des fonctionnalités les plus utilisées est celle de la compilation intégrée. Pour cela, en haut à droite de la fenêtre, choisis la target `BuildAll`. Comme tu peux le voir, de nombreuses applications peuvent être compilées, et on veut actuellement s'assurer que tout compile chez toi. Ensuite, appuie sur le bouton à gauche de la liste déroulante pour compiler. Attention, ça va prendre un peu de temps.
+
+<p align="center">
+<img src="assets/ide/BuildAll.png" alt="CLion et sa fonctionnalité BuildAll">
+</p>
+
+Si il n'y a pas de messages d'erreur, ***BRAVO*** tu viens d'installer avec succès tout l'environnement de travail !
+
+Sinon, je te conseille de te rapprocher d'un membre du pôle informatique.
+
