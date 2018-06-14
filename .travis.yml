@@ -4,7 +4,9 @@ rust:
 matrix:
         allow_failure: 
                 - rust : stable
-cache : cargo
+cache:
+    directories:
+      - $HOME/.cargo/bin/
 script : 
         - ./install.sh
 after_success: ""
