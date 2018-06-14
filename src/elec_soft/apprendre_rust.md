@@ -33,6 +33,6 @@ Il y enfin quelques posts de blogs bien pratiques, ainsi que de la documentation
 
 Tu as besoin d'aide ?
 Le meilleur moyen de résoudre ton problème est d'aller sur le chan **#rust-beginners** sur le [serveur IRC](irc.mozilla.org) de Mozilla.
-Si tu n'as pas de client IRC, tu peut aussi passer par une [interface web](https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners).
+Si tu n'as pas de client IRC, tu peux aussi passer par une [interface web](https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust-beginners).
 
-Pour des questions plus complexes, tu peut aussi poster sur reddit ou demander aux gens du club ! :wink:
+Pour des questions plus complexes, tu peux aussi poster sur [reddit](https://www.reddit.com/) ou demander aux gens du club ! :wink:

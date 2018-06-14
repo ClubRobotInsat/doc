@@ -2,6 +2,8 @@
 
 Nous allons maintenant ouvrir le projet du club robot avec CLion et vérifier que tout fonctionne.
 
+Pour commencer, si tu n'as jamais entendu parler de `git` ou que tu ne te sens pas très à l'aide avec, tu peux revenir un peu en arrière et lire [ceci](outils_communs/git.html).
+
 # Récuperer le code de la librairie
 
 Pour récuperer le code, je te suggère de commencer par te créer un dossier qui contiendra tous les répertoires du club robot (si ce n'est pas déjà fait).
