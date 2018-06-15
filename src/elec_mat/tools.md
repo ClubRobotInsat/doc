@@ -28,7 +28,34 @@ Tu peux vérifier que l'installation a bien fonctionné en lançant kicad. Norma
 
 ### OSX
 
-** ALEX : TODO **
+Avant tout, il faut installer un gestionnaire de paquets, car par défaut OSX n'en a pas vraiment : l'App Store et télécharger des .app n'est pas la solution ici.
+L'outil en question est Homebrew et fonctionne à peu près comme aptitude sur Linux.
+Pour l'installer, il suffit d'executer cette ligne dans un terminal : 
+```bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+Cette ligne télécharge et éxécute l'installeur pour Brew. Laisse-toi guider, il décrit ce qu'il fait et de demande régulièrement confirmation.
+
+Une fois l'install terminée, il faut installer une extension de Brew appellée 'cask'. Elle permet d'installer proprement des applicaitons en passant par le téléchargement et la vérification d'un .app. 
+
+```bash
+brew install cask
+```
+
+Tout est prêt ! Il ne reste plus qu'à installer la dernière version de Kicad (nightly pour avoir la 5.X). Attention le téléchargement est lourd (3GB environ).
+
+```bash
+brew cask install kicad-nightly
+```
+
+kicad est désormais correctement installé sur ton ordinateur et peut s'utiliser comme n'importe quelle autre application.
+Il est recommandé d'installer ses apps avec Homebrew autant que possible. Pour savoir si une app est disponible sur leurs dépôts, utilise 
+```bash
+brew search [nom à rechercher]
+```
+Si brew trouve des résultats, un simple brew install [nom trouvé] se chargera de l'installation.
+
+
 
 ### Windows
 
