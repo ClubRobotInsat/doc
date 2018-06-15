@@ -53,7 +53,7 @@ Il est recommandé d'installer ses apps avec Homebrew autant que possible. Pour 
 ```bash
 brew search [nom à rechercher]
 ```
-Si brew trouve des résultats, un simple brew install [nom trouvé] se chargera de l'installation.
+Si brew trouve des résultats, un simple  `brew install [nom trouvé]`  se chargera de l'installation.
 
 
 
