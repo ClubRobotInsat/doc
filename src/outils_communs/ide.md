@@ -33,7 +33,7 @@ Une fois le téléchargement terminé, il ne reste plus qu'à configurer ton ord
 	```
 3. Il faut maintenant ajouter le script de lancement de Clion à ta [variable d'environnement](https://fr.wikipedia.org/wiki/Variable_d%27environnement) `$PATH`:
 	```bash
-	echo "export PATH=/opt/clion/bin:$PATH" > ~/.bashrc
+	echo "export PATH=/opt/clion/bin:$PATH" >> ~/.bashrc
 	```
 	Le `PATH` est une variable d'environnement qui contient une suite de chemins séparés par des deux points `:`.
 	La ligne ci-dessus concatène lors de l'ouverture d'un terminal **bash** à la variable `PATH` le chemin de lancement de CLion.
