@@ -38,7 +38,7 @@ Il y a quelques étapes de configuration à faire avant de compiler :
 1. Il faut rajouter la cible `thumbv7m-none-eabihf` avec rustup
 	```bash
 	cd elec
-	rustup target add thumbv7m-none-eabihf
+	rustup target add thumbv7em-none-eabihf
 	```
 
 2. Il faut vérifier que le projet compile bien :
@@ -47,7 +47,7 @@ Il y a quelques étapes de configuration à faire avant de compiler :
 	```
 Explication :
 
-- `thumbv7m` : jeu d'instruction ARMv7, il s'agit du jeu d'instruction du Cortex M4
+- `thumbv7em` : jeu d'instruction ARMv7, il s'agit du jeu d'instruction du Cortex M4
 
 - `none` : pas de système d'exploitation sur la carte électronique
 
