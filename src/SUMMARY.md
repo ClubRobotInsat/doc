@@ -9,6 +9,8 @@
 		- [IDE](info/mise_en_place/ide.md)
 		- [Répertoire de travail](info/mise_en_place/repertoire_de_travail.md)
 		- [Compilation](info/mise_en_place/compilation.md)
+	- [Prise en main des outils](info/outils/index.md)
+		- [CMake](info/outils/cmake.md)
 - [Electronique Logicielle](elec_soft/index.md)
 	- [Mise en place](elec_soft/mise_en_place/index.md)
 		- [IDE](elec_soft/mise_en_place/ide.md)
@@ -34,4 +36,3 @@
 		- [PullUp & PullDown](elec_mat/circuits/pull.md)
 	- [Conseils & Astuces pour réussir sa carte](elec_mat/tips&tricks.md)
 - [Mécanique](meca/index.md)
-
