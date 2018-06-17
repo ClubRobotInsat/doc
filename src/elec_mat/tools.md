@@ -28,9 +28,12 @@ Tu peux vérifier que l'installation a bien fonctionné en lançant kicad. Norma
 
 ### OSX
 
-Avant tout, il faut installer un gestionnaire de paquets, car par défaut OSX n'en a pas vraiment : l'App Store et télécharger des .app n'est pas la solution ici.
+Avant tout, il faut installer un gestionnaire de paquets, car par défaut OSX n'en a pas vraiment : l'App Store et télécharger des .app n'est pas la solution ici (Kicad 5 n'est pas facilement dispo en téléchargement direct).
 L'outil en question est Homebrew et fonctionne à peu près comme aptitude sur Linux.
-Pour l'installer, il suffit d'executer cette ligne dans un terminal : 
+N'hésite pas à faire un tour sur leur site pour en savoir plus, je ne parlerai ici que du nécéssaire pour installer Kicad. Homebrew reste un outil très puissant pour installer sans soucis et mettre à jour des logiciels, mais je te recommande vivement de l'utiliser pour mieux contrôler ton Mac. 
+
+Pour l'installer, il suffit d'executer cette ligne dans un terminal :
+ 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
