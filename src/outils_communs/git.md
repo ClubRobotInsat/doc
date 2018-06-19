@@ -31,13 +31,19 @@ git version 2.11.0
 
 ## Apprendre à utiliser cet outil
 
-`git` est un logiciel extrêmement pratique une fois qu'on l'a pris en main, alors voici ton premier travail à la maison : [apprendre à utiliser `git` en ligne en 15 minutes](https://try.github.io/levels/1/challenges/1).
+### Apprendre en ligne
+
+`git` est un logiciel extrêmement pratique une fois qu'on l'a pris en main, alors voici ton premier travail à la maison : [apprendre à utiliser `git` en ligne en 15 minutes](https://try.github.io/levels/1/challenges/1) ou encore [apprendre visuellement git](https://learngitbranching.js.org/). Ces tutoriels sont en anglais, mais il existe néanmoins un [tutoriel OpenClassrooms](https://openclassrooms.com/courses/gerez-vos-codes-source-avec-git) en français.
 
 Vu qu'il sait faire de très nombreuses choses, ce n'est bien sûr pas la peine d'apprendre toutes ses commandes par coeur. Voici des *Cheat Sheets* qui vont te faire gagner du temps :
 
 * [Cheat sheet de GitHub (en)](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
 * [Chear sheet de GitHub (fr)](https://services.github.com/on-demand/downloads/fr/github-git-cheat-sheet.pdf)
 * [Cheat sheet de Tow)er](https://www.git-tower.com/blog/git-cheat-sheet/)
+
+### B.A.-BA des commandes
+
+log, status, pull, push -> ***TODO***
 
 ## Création d'un compte [GitHub](https://github.com)
 

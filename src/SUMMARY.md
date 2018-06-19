@@ -11,6 +11,7 @@
 		- [Compilation](info/mise_en_place/compilation.md)
 	- [Prise en main des outils](info/outils/index.md)
 		- [CMake](info/outils/cmake.md)
+		- [PetriLab](info/outils/petrilab.md)
 - [Electronique Logicielle](elec_soft/index.md)
 	- [Mise en place](elec_soft/mise_en_place/index.md)
 		- [IDE](elec_soft/mise_en_place/ide.md)
