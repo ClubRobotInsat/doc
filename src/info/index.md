@@ -1,4 +1,3 @@
+![](assets/logo.png "test")
+
 # Informatique
-
-![](assets/com/raspy.svg "rasberry pi")
-
