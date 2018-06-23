@@ -1,3 +1,3 @@
-![](assets/logo.png "test")
+![](../../assets/com/raspy.svg "test")
 
 # Informatique
