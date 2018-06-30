@@ -14,6 +14,7 @@
 		- [PetriLab](info/outils/petrilab.md)
 	- [Explications du code](info/explications/index.md)
 		- [Architecture de la racine](info/explications/racine.md)
+		- [Vue globale du projet](info/explications/architecture.md)
 - [Electronique Logicielle](elec_soft/index.md)
 	- [Mise en place](elec_soft/mise_en_place/index.md)
 		- [IDE](elec_soft/mise_en_place/ide.md)
