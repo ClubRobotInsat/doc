@@ -7,7 +7,7 @@ matrix:
 cache:
     directories:
       - $HOME/.cargo/bin/
-script : 
+script :
         - ./install.sh
 after_success: ""
 env : RUSTFLAGS="$RUSTFLAGS -D warnings"
@@ -15,6 +15,7 @@ before_deploy:
         - npm install -g stylus nib
         - mdbook build
         - cp assets book/assets -R
+        - touch .nojekyll
 deploy:
         provider: pages
         skip-cleanup: true
