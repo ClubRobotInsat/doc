@@ -33,7 +33,7 @@ Une fois le téléchargement terminé, il ne reste plus qu'à configurer ton ord
 	```
 3. Il faut maintenant ajouter le script de lancement de Clion à ta [variable d'environnement](https://fr.wikipedia.org/wiki/Variable_d%27environnement) `$PATH`:
 	```bash
-	echo "export PATH=/opt/clion/bin:$PATH" > ~/.bashrc
+	echo "export PATH=/opt/clion/bin:$PATH" >> ~/.bashrc
 	```
 	Le `PATH` est une variable d'environnement qui contient une suite de chemins séparés par des deux points `:`.
 	La ligne ci-dessus concatène lors de l'ouverture d'un terminal **bash** à la variable `PATH` le chemin de lancement de CLion.
@@ -49,19 +49,3 @@ Une fois le téléchargement terminé, il ne reste plus qu'à configurer ton ord
 ***Pour les utilisateurs d'un Ubuntu standard :*** Lorsque CLion est en cours d'exécution, son icône est affiché dans la barre des tâches à gauche. Pour le lancer plus rapidement, il te suffit de faire un click droit sur l'icône -> 'Lock to Launcher'
 
 Si jamais l'IDE se lance, tu viens d'installer avec succès CLion ! Sinon je t'encourage à venir montrer le message d'erreur aux gens du club.
-
-## Test de l'environnement de travail
-
-A présent que ton ordinateur est totalement configuré, il est temps de compiler le code !
-
-L'interface de CLion peut paraître compliquée de prime abord, c'est pourquoi il ne faut pas hésiter à demander de l'aide à un membre du Club.
-
-Une des fonctionnalités les plus utilisées est celle de la compilation intégrée. Pour cela, en haut à droite de la fenêtre, choisis la target `BuildAll`. Comme tu peux le voir, de nombreuses applications peuvent être compilées, et on veut actuellement s'assurer que tout compile chez toi. Ensuite, appuie sur le bouton à gauche de la liste déroulante pour compiler. Attention, ça va prendre un peu de temps.
-
-<p align="center">
-<img src="assets/ide/BuildAll.png" alt="CLion et sa fonctionnalité BuildAll">
-</p>
-
-Si il n'y a pas de messages d'erreur, ***BRAVO*** tu viens d'installer avec succès tout l'environnement de travail !
-
-Sinon, je te conseille de te rapprocher d'un membre du pôle informatique.
