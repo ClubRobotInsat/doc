@@ -27,21 +27,21 @@ Ces commandes sont nécessaires car on utilise la version 5 de kicad qui est enc
 Tu peux vérifier que l'installation a bien fonctionné en lançant kicad. Normalement KiCad est livré avec des librairies de composants. Si elles ne sont pas installées chez toi, rapproche-toi d'un membre du club !
 
 ### OSX
+Il existe deux méthodes pour installer Kicad sur un Mac. La classique en allant sur http://kicad-pcb.org/download/osx/, puis en telechargeant la dernière version stable, ou avec Homebrew.
 
-Avant tout, il faut installer un gestionnaire de paquets, car par défaut OSX n'en a pas vraiment : l'App Store et télécharger des .app n'est pas la solution ici (Kicad 5 n'est pas facilement dispo en téléchargement direct).
-L'outil en question est Homebrew et fonctionne à peu près comme aptitude sur Linux.
+Homebrew et fonctionne à peu près comme aptitude sur Linux. C'est un très bon outil qui permet d'installer facilement beaucoup d'applications disponibles sur Linux mais pas nativement sur mac (comme wget par exemple). Je profite juste de l'installation de Kicad pour présenter cet outil très utile.
 N'hésite pas à faire un tour sur leur site pour en savoir plus, je ne parlerai ici que du nécéssaire pour installer Kicad. 
 
 https://brew.sh/index_fr
 
-Pour l'installer, il suffit d'executer cette ligne dans un terminal :
+Pour installer homebrew, il suffit d'executer cette ligne dans un terminal :
  
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-Cette ligne télécharge et éxécute l'installeur pour Brew. Laisse-toi guider, il décrit ce qu'il fait et de demande régulièrement confirmation.
+Cette ligne télécharge et éxécute l'installeur pour Brew. Laisse-toi guider, il décrit ce qu'il fait au fur et a mesure de l'installation.
 
-Une fois l'install terminée, il faut installer une extension de Brew appellée 'cask'. Elle permet d'installer proprement des applicaitons en passant par le téléchargement et la vérification d'un .app. 
+Une fois l'install terminée, il faut installer une extension de Brew appellée 'cask'. Elle permet d'installer proprement des applicaitons en passant par le téléchargement et la vérification du .app. 
 
 ```bash
 brew install cask
