@@ -47,10 +47,10 @@ Une fois l'install terminée, il faut installer une extension de Brew appellée 
 brew install cask
 ```
 
-Tout est prêt ! Il ne reste plus qu'à installer la dernière version de Kicad (nightly pour avoir la 5.X). Attention le téléchargement est lourd (3GB environ).
+Tout est prêt ! Il ne reste plus qu'à installer la dernière version de Kicad. Attention le téléchargement est lourd (3GB environ).
 
 ```bash
-brew cask install kicad-nightly
+brew cask install kicad
 ```
 
 kicad est désormais correctement installé sur ton ordinateur et peut s'utiliser comme n'importe quelle autre application.
@@ -58,7 +58,7 @@ Il est recommandé d'installer ses apps avec Homebrew autant que possible. Pour 
 ```bash
 brew search [nom à rechercher]
 ```
-Si brew trouve des résultats, un simple  `brew install [nom trouvé]`  se chargera de l'installation.
+Si brew trouve des résultats, un simple  `brew install [nom trouvé]` se chargera de l'installation.
 
 
 
