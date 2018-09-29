@@ -2,6 +2,7 @@
 
 - [Introduction](intro.md)
 - [Outils Communs](outils_communs/index.md)
+	- [Dual Boot](outils_communs/dual_boot.md)
 	- [Git](outils_communs/git.md)
 	- [CLion](outils_communs/ide.md)
 - [Informatique](info/index.md)
