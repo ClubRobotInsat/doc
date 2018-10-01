@@ -45,6 +45,20 @@ Si tu n'as aucune idée de quel système choisir, je te conseille [Ubuntu 18](ht
 
 Pour l'installer, il te suffit de [télécharger l'ISO](https://www.ubuntu.com/download/desktop/thank-you?country=US&version=18.04.1&architecture=amd64) et la mettre sur une clef USB.
 
+__! Attention !__
+Sauvegarde toutes les données sur ta clé USB avant de continuer ! Ta clef sera effacée par la suite (mais tu pourras la réinitialiser après avoir installé Linux, puis remettre tes données dessus ensuite).
+
+Par "mettre sur une clef USB", on entend "flasher une image disque", mais c'est un terme barbare. Ici il ne te sera expliqué que comment faire.
+Le moyen le plus simple est d'utiliser [Etcher](https://etcher.io/). C'est un logiciel open source et compatible sur Windows, Mac et Linux. Sa grande qualité est d'être __tres__ simple à utiliser.
+
+Une fois installé et lancé, il n'y a littéralement que quatre clics à faire : 
+  - "Select Image" t'invite a choisir l'ISO que tu as déjà téléchargé.
+  - "Select Drive" te demande de choisir le disque (clef USB dans notre cas) à flasher. C'est a dire qu'il sera __formatté__ (/!\ toutes les données dessus seront perdues /!\) puis que l'ISO y sera correctement installé.
+  - "Flash!" lance l'opération et raconte ce qu'il fait à ta clef au fur et à mesure.
+  
+Si tout c'est bien passé, ta "Live-USB" est prête à l'emploi. La suite dépend de ton ordinateur et de la distribution que tu veux installer. 
+  
+
 ### Manjaro Linux
 
 Pour les utilisateurs un peu plus confirmés, je peux aussi conseiller [Manjaro](https://manjaro.org/get-manjaro/), qui se base sur Arch Linux. La configuration de ce système est totalement personnalisable et il existe de nombreuses variantes graphiques, en fonction de si tu préfères des systèmes avec un bureau ou la gestion de fenêtres comme [Manjaro i3](https://forum.manjaro.org/t/manjaro-i3-17-1-11-17-1-12/51238).
