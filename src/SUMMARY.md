@@ -32,7 +32,7 @@
 	- [Mise en place](elec_mat/tools.md)
 	- [Guide d'utilisation de Kicad](elec_mat/kicad.md)
 	- [Concepts importants en electronique](elec_mat/concepts/index.md)
-		- [Fonctionnement d'une LED](elec_mat/concepts/led.md)
+		- [Fonctionnement des diodes et des LEDS](elec_mat/concepts/led.md)
 		- [PullUp & PullDown](elec_mat/concepts/pull.md)
 		- [Les GPIO](elec_mat/concepts/gpio.md)
 	- [Faire tirer sa carte](elec_mat/production.md)
