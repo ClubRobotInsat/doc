@@ -1,2 +1,5 @@
 /book/
 /build/
+
+#rejet de fichiers méta spécifiques à OSX
+*.DS_Store
