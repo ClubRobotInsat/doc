@@ -1,4 +1,6 @@
 # La LED 
+TODO : ajouter les figures
+
 La diode est le composant le plus simple parmi ceux qui désobéissent complètement à la loi d'Ohm (composant non linéaire).
 Une LED est une diode qui émet de la lumière et qui consomme plus d'énergie (pour rester simple).
 
