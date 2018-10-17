@@ -45,6 +45,7 @@
 		- [Bus CAN](elec_mat/circuits/can.md)
 		- [Capteur Laser](elec_mat/circuits/laser.md)
 	- [Conseils & Astuces pour réussir sa carte](elec_mat/tips&tricks.md)
+	- [Annexe : liste des cartes du Club](elec_mat/ref_cartes.md)
 	- [Annexe : liste des composants utilisés](elec_mat/ref_composants.md)
 - [Mécanique](meca/index.md)
 - [Communication (test)](com/index.md)
