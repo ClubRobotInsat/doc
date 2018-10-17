@@ -42,7 +42,6 @@
 		- [Moteurs & Pont H](elec_mat/circuits/motor.md)
 		- [ServoMoteurs](elec_mat/circuits/servos.md)
 		- [Moteurs Brushless](elec_mat/circuits/brushless.md)
-		- [Bus CAN](elec_mat/circuits/can.md)
 		- [Capteur Laser](elec_mat/circuits/laser.md)
 	- [Conseils & Astuces pour réussir sa carte](elec_mat/tips&tricks.md)
 	- [Références](elec_mat/references/index.md)
