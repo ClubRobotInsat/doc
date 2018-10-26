@@ -15,8 +15,7 @@ HE14-n | 281698-n | Connecteur carte à fil, n pins | |
 Nom commun | Référence | Fonction | Notes |
 -----------|-----------|----------|-------|
 Régulateur logique | PTH08080W | Passer de Vbat à 5v | |
-Buck réglable | LM2576 | Diminuer Vbat (on l'utilise pour les Herkulex) | |
+Buck réglable | LM2576 | Diminuer Vbat | Utilisé pour avoir les 7.4V des herkulex |
 
-## 
 
 
