@@ -8,6 +8,7 @@ N'hésitez pas à la mettre à jour !
 Nom commun | Référence | Fonction
 -----------|-----------|---------
 Pinheader Nucléo | SSW 119 01 TD | Fixer de manière réversible la nucléo à la carte shield
+HE14-n | 281698-n | Connecteur carte à fil, n pins
 
 ## Puissance
 
