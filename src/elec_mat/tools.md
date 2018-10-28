@@ -12,7 +12,7 @@ Pour les autres distributions Linux demande directement aux gens du club !
 
 ### Ubuntu
 
-Il suffit de rentrer les trois commandes suivantes pour obtenir la dernière version de kicad (kicad 5) :
+Il suffit de rentrer les trois commandes suivantes pour obtenir la dernière version de Kicad (Kicad 5) :
 
 ** A Verifier **
 
@@ -22,9 +22,9 @@ sudo apt update
 sudo apt install kicad
 ```
 
-Ces commandes sont nécessaires car on utilise la version 5 de kicad qui est encore en beta.
+Ces commandes sont nécessaires car on utilise la version 5 de Kicad qui est encore en beta.
 
-Tu peux vérifier que l'installation a bien fonctionné en lançant kicad. Normalement KiCad est livré avec des librairies de composants. Si elles ne sont pas installées chez toi, rapproche-toi d'un membre du club !
+Tu peux vérifier que l'installation a bien fonctionné en lançant Kicad. Normalement KiCad est livré avec des librairies de composants. Si elles ne sont pas installées chez toi, rapproche-toi d'un membre du club !
 
 ### OSX
 Il existe deux méthodes pour installer Kicad sur un Mac. La classique en allant sur http://kicad-pcb.org/download/osx/, puis en telechargeant la dernière version stable, ou avec Homebrew.
@@ -53,7 +53,7 @@ Tout est prêt ! Il ne reste plus qu'à installer la dernière version de Kicad.
 brew cask install kicad
 ```
 
-kicad est désormais correctement installé sur ton ordinateur et peut s'utiliser comme n'importe quelle autre application.
+Kicad est désormais correctement installé sur ton ordinateur et peut s'utiliser comme n'importe quelle autre application.
 Il est recommandé d'installer ses apps avec Homebrew autant que possible. Pour savoir si une app est disponible sur leurs dépôts, utilise 
 ```bash
 brew search [nom à rechercher]
@@ -68,9 +68,22 @@ Il suffit de récupérer et lancer l'installeur le plus récent parmis tout ceux
 
 # Installation de la librairie et des projets du Club Robot
 
-Pour obtenir les composants du club afin de pouvoir ouvrir correctement les cartes que nous avons réalisée par le passé, il suffit de cloner le repo [kicad](https://github.com/ClubRobotInsat/kicad) du club. Si tu n'as pas `git` sur ton ordinateur je te renvoie à la section [correspondante](git.html).
+Pour obtenir les composants du club afin de pouvoir ouvrir correctement les cartes que nous avons réalisée par le passé, il suffit de cloner le repo [Kicad](https://github.com/ClubRobotInsat/kicad) du club. Si tu n'as pas `git` sur ton ordinateur je te renvoie à la section [correspondante](git.html).
 
-Il faut ensuite rajouter ces librairies avec l'interface de kicad.
+```bash
+git clone https://github.com/ClubRobotInsat/kicad
+```
+
+Il faut maintenant ouvrir un terminal et configurer `git` pour qu'il s'interface bien avec Kicad. Pour cela tu dois ouvrir un terminal et lancer le script `setup_git.sh` :
+
+```bash
+# On se place dans le dossier où tu as clone le repos
+cd kicad
+# On lance le script
+./setup_git.sh
+```
+
+Il faut ensuite rajouter ces librairies avec l'interface de Kicad.
 
 ## Ajout de la librairie de symboles
 
