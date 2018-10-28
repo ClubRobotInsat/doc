@@ -21,3 +21,5 @@ Si jamais tu trouves des fautes d'orthographes, des erreurs, des remarques ou to
 Enfin, la phrase la plus importante en informatique à garder en tête durant toute ta formation :
 
 > Le mieux est l'ennemi du bien, surtout au club robot.
+
+*Un illustre anonyme*
