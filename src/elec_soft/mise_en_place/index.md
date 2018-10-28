@@ -2,8 +2,9 @@
 
 Dans cette section, nous allons installer pas à pas tous les outils pour pouvoir développer du code pour le robot.
 
-Il s'agit d'installer :
+Avant d'attaquer cette partie tu as installé avec succès :
 
-* un IDE si ce n'est pas déjà fait dans la partie commune elec-info [IDE](ide.html).
-* les outils nécessaires pour compiler, flasher et débugguer la carte
-* les outils nécessaires pour travailler collaborativement
+* [git](git.html)
+* [CLion](ide.html)
+
+Nous allons donc commencer par installer un compilateur Rust, ainsi que des outils pour pouvoir flasher, déboguer et tester le code.
