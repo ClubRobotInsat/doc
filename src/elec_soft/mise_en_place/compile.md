@@ -14,7 +14,7 @@ Pour cela, il te suffit d'exécuter dans un terminal (sur Ubuntu):
 
 ```bash
 sudo apt update
-sudo apt install git gdb-arm-none-eabi gcc-arm-none-eabiopenocd
+sudo apt install git gdb-arm-none-eabi gcc-arm-none-eabi openocd
 ```
 
 La première commande mets à jour les paquets disponibles, la deuxième les installe.
