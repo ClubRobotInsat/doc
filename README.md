@@ -8,7 +8,7 @@
   <img src="assets/documentation.png" alt="La documentation du Club Robot" width="700">
 </a></p>
 
-[![Travis](https://api.travis-ci.org/ClubRobotInsat/librobot.svg?branch=master)](https://travis-ci.org/ClubRobotInsat/doc)
+[![Travis](https://img.shields.io/travis/ClubRobotInsat/librobot.svg)](https://travis-ci.org/ClubRobotInsat/doc)
 # [La documentation du club robot](https://clubrobotinsat.github.io/doc/)
 
 # Contribution
