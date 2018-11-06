@@ -1,4 +1,4 @@
-![](assets/logo.png "test")
+![](assets/logo.png "Logo du Club Robot")
 
 # Introduction
 
@@ -23,3 +23,5 @@ Enfin, la phrase la plus importante en informatique à garder en tête durant to
 > Le mieux est l'ennemi du bien, surtout au club robot.
 
 *Un illustre anonyme*
+
+![](assets/tester_doute.jpeg "Tester c'est douter")
