@@ -23,7 +23,7 @@ Un nouveau dossier `librobot` a du apparaître.
 De même, il faut cloner un répertoire sur github pour avoir le code de la carte électronique :
 
 ```bash
-git clone https://git.florencepaul.com/gbipblack-pill
+git clone https://git.florencepaul.com/gbip/black-pill
 ```
 
 Il y a quelques étapes de configuration à faire avant de compiler :
