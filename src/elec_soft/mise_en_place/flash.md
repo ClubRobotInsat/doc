@@ -7,3 +7,4 @@ sudo openocd -f stlink-v2-1.cfg -f stm32.cfg
 ```
 
 Une fois openocd en tâche de fond, il suffit de lancer dans un terminal le script `debug.sh` dans le dossier du projet.
+

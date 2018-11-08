@@ -23,7 +23,7 @@
 		- [Compilation](elec_soft/mise_en_place/compile.md)
 		- [Répertoire de travail](elec_soft/mise_en_place/repo.md)
 		- [IDE](elec_soft/mise_en_place/ide.md)
-		- [Flashage](elect_soft/mise_en_place/flash.md)
+		- [Flashage](elec_soft/mise_en_place/flash.md)
 	- [Apprendre Rust](elec_soft/apprendre_rust.md)
 - [Electronique matérielle](elec_mat/index.md)
 	- [Mise en place](elec_mat/tools.md)
