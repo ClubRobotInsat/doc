@@ -52,7 +52,4 @@
 	- [Externe](com/ext/index.md)
 		- [Site](com/ext/site.md)
 		- [Page Facebook](com/ext/fb.md)
-	- [Check-liste "communication" de l'année](com/ext/plan.md)
-	- [Contacts INSA](com/insa.md)
-	- [Contacts sponsors](com/sponsors.md)
 	- [Ressources & images](com/res/md)
