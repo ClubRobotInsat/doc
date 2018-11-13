@@ -4,10 +4,13 @@ Voici une liste **non exhaustive** des composants qu'utilise le club.
 N'hésitez pas à la mettre à jour ! 
 
 
-## RLC
+## Composants usuels
 
 Nom commun | Référence | Fonction | Notes | Quantité |
 -----------|-----------|----------|-------|----------|
+Led 3 mm |
+Led 5 mm | 
+
 Potentiomètre |
 
 
@@ -35,6 +38,7 @@ Buck réglable | LM2576 | Diminuer Vbat | Utilisé pour avoir les 7.4V des herku
 Gros interrupteur | MR02 |
 Petit interrupteur | 
 Fusible automobile |
+Fusible tube |
 
 
 
@@ -42,7 +46,11 @@ Fusible automobile |
 
 Nom commun | Référence | Fonction | Notes | Quantité |
 -----------|-----------|----------|-------|----------|
-Transcriever CAN | MCP2551 | | | |
+Transcriever CAN | MCP2551 | 
+Recepteur IR | HR12020104 |
+Magnétomètre | HMC 5883L
+Accéléromètre 3 axes | MPU-6050 |
+Module XBee | 4214A-XBee |
 
 ## Capteurs 
 
@@ -50,6 +58,8 @@ Nom commun | Référence | Fonction | Notes | Quantité |
 -----------|-----------|----------|-------|----------|
 Webcam | COMedia 3088
 Detecteur IR | SHARP |
+Gros bouton poussoir |
+Petit bouton poussoir | 
 
 
 ## Obsolète (à ce jour)
