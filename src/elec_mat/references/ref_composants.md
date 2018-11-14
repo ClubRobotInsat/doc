@@ -10,7 +10,6 @@ Nom commun | Référence | Fonction | Notes | Quantité |
 -----------|-----------|----------|-------|----------|
 Led 3 mm |
 Led 5 mm | 
-
 Potentiomètre |
 
 
@@ -76,74 +75,74 @@ Entretoises |
 
 Nom | Valeur | Package 0805 | Package 1206|
 --------|-----------|:--------:|:-------:|
-Résistance | 0 R|  ![X](images/icons/green_tick.png)  | | 
-Résistance | 47 R| ![X](images/icons/green_tick.png) | | 
-Résistance | 50 R| |![X](images/icons/green_tick.png)| 
-Résistance | 100 R| |![X](images/icons/green_tick.png)| 
-Résistance | 150 R| |![X](images/icons/green_tick.png)| 
-Résistance | 169 R| ![X](images/icons/green_tick.png) | | 
-Résistance | 220 R| ![X](images/icons/green_tick.png) | | 
-Résistance | 240 R| |![X](images/icons/green_tick.png)| 
-Résistance | 300 R| |![X](images/icons/green_tick.png)| 
-Résistance | 330 R| |![X](images/icons/green_tick.png)| 
-Résistance | 348 R| ![X](images/icons/green_tick.png) | | 
-Résistance | 470 R| |![X](images/icons/green_tick.png)| 
-Résistance | 499 R| |![X](images/icons/green_tick.png)| 
-Résistance | 620 R| |![X](images/icons/green_tick.png)| 
-Résistance | 1 kR| ![X](images/icons/green_tick.png) |![X](images/icons/green_tick.png)| 
-Résistance | 1,2 kR| ![X](images/icons/green_tick.png) | | 
-Résistance | 1,5 kR| ![X](images/icons/green_tick.png) |![X](images/icons/green_tick.png)| 
-Résistance | 2,2 kR| ![X](images/icons/green_tick.png) | | 
-Résistance | 2,26 kR|    |![X](images/icons/green_tick.png)| 
-Résistance | 2,8 kR|    |![X](images/icons/green_tick.png)| 
-Résistance | 3,3 kR| ![X](images/icons/green_tick.png) | | 
-Résistance | 4,3 kR|    |![X](images/icons/green_tick.png)| 
-Résistance | 4,7 kR| ![X](images/icons/green_tick.png) |![X](images/icons/green_tick.png)| 
-Résistance | 6,8 kR| ![X](images/icons/green_tick.png) |![X](images/icons/green_tick.png)| 
-Résistance | 8,2 kR| ![X](images/icons/green_tick.png) | | 
-Résistance | 10 kR| ![X](images/icons/green_tick.png) | | 
-Résistance | 11,5 kR|    |![X](images/icons/green_tick.png)| 
-Résistance | 12 kR| ![X](images/icons/green_tick.png) | | 
-Résistance | 15 kR| ![X](images/icons/green_tick.png) |![X](images/icons/green_tick.png)| 
-Résistance | 20 kR| ![X](images/icons/green_tick.png) |![X](images/icons/green_tick.png)| 
-Résistance | 22 kR| ![X](images/icons/green_tick.png) |![X](images/icons/green_tick.png)| 
-Résistance | 33 kR|   |![X](images/icons/green_tick.png)| 
-Résistance | 39 kR|   |![X](images/icons/green_tick.png)| 
-Résistance | 43 kR|   |![X](images/icons/green_tick.png)| 
-Résistance | 47 kR| ![X](images/icons/green_tick.png) |![X](images/icons/green_tick.png)| 
-Résistance | 68 kR|   |![X](images/icons/green_tick.png)| 
-Résistance | 75 kR| ![X](images/icons/green_tick.png) | | 
-Résistance | 100 kR| ![X](images/icons/green_tick.png) |![X](images/icons/green_tick.png)| 
-Résistance | 180 kR| ![X](images/icons/green_tick.png) | | 
-Résistance | 200 kR| ![X](images/icons/green_tick.png) | | 
-Résistance | 250 kR| ![X](images/icons/green_tick.png) | | 
-Résistance | 470 kR| ![X](images/icons/green_tick.png) | | 
-Résistance | 1 MR| ![X](images/icons/green_tick.png) |![X](images/icons/green_tick.png)| 
-Résistance | 2,2 MR|  |![X](images/icons/green_tick.png)| 
+Résistance | 0 R|  ![X](../../images/icons/green_tick.png)  | | 
+Résistance | 47 R| ![X](../../images/icons/green_tick.png) | | 
+Résistance | 50 R| |![X](../../images/icons/green_tick.png)| 
+Résistance | 100 R| |![X](../../images/icons/green_tick.png)| 
+Résistance | 150 R| |![X](../../images/icons/green_tick.png)| 
+Résistance | 169 R| ![X](../../images/icons/green_tick.png) | | 
+Résistance | 220 R| ![X](../../images/icons/green_tick.png) | | 
+Résistance | 240 R| |![X](../../images/icons/green_tick.png)| 
+Résistance | 300 R| |![X](../../images/icons/green_tick.png)| 
+Résistance | 330 R| |![X](../../images/icons/green_tick.png)| 
+Résistance | 348 R| ![X](../../images/icons/green_tick.png) | | 
+Résistance | 470 R| |![X](../../images/icons/green_tick.png)| 
+Résistance | 499 R| |![X](../../images/icons/green_tick.png)| 
+Résistance | 620 R| |![X](../../images/icons/green_tick.png)| 
+Résistance | 1 kR| ![X](../../images/icons/green_tick.png) |![X](../../images/icons/green_tick.png)| 
+Résistance | 1,2 kR| ![X](../../images/icons/green_tick.png) | | 
+Résistance | 1,5 kR| ![X](../../images/icons/green_tick.png) |![X](../../images/icons/green_tick.png)| 
+Résistance | 2,2 kR| ![X](../../images/icons/green_tick.png) | | 
+Résistance | 2,26 kR|    |![X](../../images/icons/green_tick.png)| 
+Résistance | 2,8 kR|    |![X](../../images/icons/green_tick.png)| 
+Résistance | 3,3 kR| ![X](../../images/icons/green_tick.png) | | 
+Résistance | 4,3 kR|    |![X](../../images/icons/green_tick.png)| 
+Résistance | 4,7 kR| ![X](../../images/icons/green_tick.png) |![X](../../images/icons/green_tick.png)| 
+Résistance | 6,8 kR| ![X](../../images/icons/green_tick.png) |![X](../../images/icons/green_tick.png)| 
+Résistance | 8,2 kR| ![X](../../images/icons/green_tick.png) | | 
+Résistance | 10 kR| ![X](../../images/icons/green_tick.png) | | 
+Résistance | 11,5 kR|    |![X](../../images/icons/green_tick.png)| 
+Résistance | 12 kR| ![X](../../images/icons/green_tick.png) | | 
+Résistance | 15 kR| ![X](../../images/icons/green_tick.png) |![X](../../images/icons/green_tick.png)| 
+Résistance | 20 kR| ![X](../../images/icons/green_tick.png) |![X](../../images/icons/green_tick.png)| 
+Résistance | 22 kR| ![X](../../images/icons/green_tick.png) |![X](../../images/icons/green_tick.png)| 
+Résistance | 33 kR|   |![X](../../images/icons/green_tick.png)| 
+Résistance | 39 kR|   |![X](../../images/icons/green_tick.png)| 
+Résistance | 43 kR|   |![X](../../images/icons/green_tick.png)| 
+Résistance | 47 kR| ![X](../../images/icons/green_tick.png) |![X](../../images/icons/green_tick.png)| 
+Résistance | 68 kR|   |![X](../../images/icons/green_tick.png)| 
+Résistance | 75 kR| ![X](../../images/icons/green_tick.png) | | 
+Résistance | 100 kR| ![X](../../images/icons/green_tick.png) |![X](../../images/icons/green_tick.png)| 
+Résistance | 180 kR| ![X](../../images/icons/green_tick.png) | | 
+Résistance | 200 kR| ![X](../../images/icons/green_tick.png) | | 
+Résistance | 250 kR| ![X](../../images/icons/green_tick.png) | | 
+Résistance | 470 kR| ![X](../../images/icons/green_tick.png) | | 
+Résistance | 1 MR| ![X](../../images/icons/green_tick.png) |![X](../../images/icons/green_tick.png)| 
+Résistance | 2,2 MR|  |![X](../../images/icons/green_tick.png)| 
 
 
-## Condensateurs
+## Condensateurs
 
 Valeur | Package 0805 | Package 1206 |
 ------|:--------:|:-------:|
-22 pf |  |![X](images/icons/green_tick.png)| 
-560 pf |  |![X](images/icons/green_tick.png)| 
-1 nf |![X](images/icons/green_tick.png)| | 
-1,2 nf |  |![X](images/icons/green_tick.png)| 
-2,2 nf |![X](images/icons/green_tick.png)| | 
-4,7 nf |![X](images/icons/green_tick.png)| | 
-10 nf |![X](images/icons/green_tick.png)| | 
-12 nf |![X](images/icons/green_tick.png)| | 
-12 nf |![X](images/icons/green_tick.png)| | 
-90 nf |![X](images/icons/green_tick.png)| | 
-100 nf | |![X](images/icons/green_tick.png)| 
-220 nf | |![X](images/icons/green_tick.png)| 
-470 nf | |![X](images/icons/green_tick.png)| 
-920 nf | |![X](images/icons/green_tick.png)| 
-1 µf |![X](images/icons/green_tick.png)|![X](images/icons/green_tick.png)| 
-10 µf | |![X](images/icons/green_tick.png)| 
+22 pf |  |![X](../../images/icons/green_tick.png)| 
+560 pf |  |![X](../../images/icons/green_tick.png)| 
+1 nf |![X](../../images/icons/green_tick.png)| | 
+1,2 nf |  |![X](../../images/icons/green_tick.png)| 
+2,2 nf |![X](../../images/icons/green_tick.png)| | 
+4,7 nf |![X](../../images/icons/green_tick.png)| | 
+10 nf |![X](../../images/icons/green_tick.png)| | 
+12 nf |![X](../../images/icons/green_tick.png)| | 
+12 nf |![X](../../images/icons/green_tick.png)| | 
+90 nf |![X](../../images/icons/green_tick.png)| | 
+100 nf | |![X](../../images/icons/green_tick.png)| 
+220 nf | |![X](../../images/icons/green_tick.png)| 
+470 nf | |![X](../../images/icons/green_tick.png)| 
+920 nf | |![X](../../images/icons/green_tick.png)| 
+1 µf |![X](../../images/icons/green_tick.png)|![X](../../images/icons/green_tick.png)| 
+10 µf | |![X](../../images/icons/green_tick.png)| 
 
-## Autres
+## Autres
 
 Nom | Package | Quantité | Autres |
 -----|:-------:|:------:|:-------|
