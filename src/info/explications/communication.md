@@ -2,8 +2,6 @@
 
 En robotique, il est crucial de pouvoir communiquer entre l'ordinateur décisionnaire et avec l'ensemble des capteurs / moteurs qui animent le robot.
 
-
-
 ## Histoire de la communication dans le Club
 
 Historiquement, le robot du Club était composé d'une multitude de cartes décentralisées et chacune avait une fonction spéficique (s'occuper de tous les servos moteurs par exemple). Ces cartes étaient reliées par un [bus CAN](https://fr.wikipedia.org/wiki/Bus_de_donn%C3%A9es_CAN) avec l'ordinateur et de nombreuses trames transitaient de manière asynchrone.
@@ -41,28 +39,35 @@ La tableau suivant regroupe les IDs des modules 'génériquement', mais il n'est
 
 ---
 
-## Format de la trame générale
+## Format d'une trame général
 
-Les trames de communication commencent toujours par un header sur 7 octets, ce qui permets de distinguer leur début. Dans le cas du club, elles commencent par le pattern `0xAC DC AB` pour spécifier leur début, puis **TODO**
+Lorsque la partie informatique communique avec la carte appropriée à propos d'un module, les informations partagées sont encapsulées suivant plusieurs blocs :
 
-La taille de ces trames est variable car elles ne feront bien évidemment la même taille si elles ne gèrent que l'évitement ou si 6 modules sont présents.
+* Chaque module sait parser _(ie lire et écrire)_ un flux d'octets arrangés selon sa norme. La taille de la trame qui est partagée est dépendante du module, et la spécification des trames de chaque module peut se trouver [à la fin de ce fichier](https://github.com/ClubRobotInsat/librobot/blob/master/c_src/SharedWithRust.h). Elle est également spécifiée plus loin dans ce fichier.
+* Pour savoir à quel module est addressé la trame, on rajoute son **`ID`** devant la trame.
+* Enfin, la trame est envoyée sur le support physique :
+  * dans le cas d'une liaison UDP, la taille de la trame se retrouve grâce aux informations du protocole de transport, donc il suffit d'envoyer un message contenant les données `{ID, trame}`
+  * pour toutes les autres communications série, on encapsule `{ID, trame}` dans un header qui contient :
+    * 4 octets qui permettent de distinguer le début d'une trame intéressante ; c'est nécessaire car on est dans une communication asynchrone. Dans le cas du club, elles commencent par le pattern `0xAC DC AB BA` pour spécifier leur début
+    * 1 octet pour contenir la taille du message intéressant, c'est à dire la taille de `{ID, trame}`
 
-Ainsi, les deux premiers octets ont pour but d'indiquer quels modules sont connectés selon le format suivant :
+## Création d'une liaison de communication
 
-```
-valeur binaire .... bbbb bbbb bbbb bbbb
-ID du module ...... 0123 4567 89AB CDEF
-```
+La classe [`Communicator`](https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Communication/Communicator.h) s'occupe se gérer la communication élec-info. Il suffit de faire appel à la méthode `connect` avec les bons arguments et la bonne liaison série est instanciée puis est capable de lire et écrire des trames.
 
-Ainsi, si la trame commence par `0x5002 === 0b0101 0000 0000 0010`, alors les modules d'ID 1, 3 et 14 sont présents.
+Cet objet est capable de parler sur n'importe quel médium de communication, en faisait appel à un [`Protocol`](https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Communication/Protocol.h). La première méthode appelable est `send_frame`, qui envoie une trame ; la seconde doit être lancée dans un thread spécifique et permets de recevoir des données pour les traiter avec un handler à fournir : `recv_frame(const atomic_bool& b, function<void(GlobalFrame)>)`. Le premier argument permets d'interrompre la fonction, qui est bloquée dans un `while(b)`.
 
-Ensuite, chaque octet suivant correspond à la taille (en octets) occupée par chaque module, et enfin les états de chaque modules sont dispoés les uns à la suite des autres. Il faut donc se référer aux spécifications de chaque module pour savoir comment lire leurs informations.
+Voici les protocoles  possibles avec leurs arguments :
+* **Liaisons séries**
+  * `protocol_null` : ` `, toutes les trames sont perdues
+  * `protocol_tcpip` : `string address, uint16_t port` connexion TCP client vers le serveur `address:port`
+  * `protocol_local` : ` `, les trames sont envoyées en TCP vers un le serveur `localhost:4321`
+  * `protocol_pipes` : `string rx, string tx`, lecture et écriture sur des pipes nommées ; par défaut : `rx: "/tmp/read.pipe"`, `tx: "/tmp/write.pipe"`
+  * `protocol_udp` : `string address, uint16_t local_port, uint16_t remote_port`, liaison UDP depuis le port local vers le serveur UDP `address:remote_port`. Ce protocole peut être utilisé dans les deux sens de communication, contrairement à l'implémentation actuelle de `protocol_tcpip`.
+* **Communications sur plusieurs liaisons séries**
+  * `protocol_ethernet` : `initializer_list<UDPConnection>`, permets de centraliser `N` connections UDP en un unique appel à un thread de réception bloquant. Ce protocole gère aussi l'association `id_module <-> UDP communication thread`.
 
-Pour savoir exactement comment sont générées les trames par le `ModuleManager`, je t'invite à [lire le code source](https://github.com/ClubRobotInsat/info/tree/master/src/robot/Commun/Modules/ModuleManager.cpp).
-
-Cette classe permets de regrouper tous les modules du robot. Elle a un double rôle :
-* **conteneur** : On peut y ajouter et accéder à n'importe quel module facilement. Tous les mauvais usages lèvent des exceptions, ce qui élimine tout comportement unsafe ou indéterminé.
-* **Interface avec la communication** : C'est cette classe qui s'occupe de générer la trame générale expliquée ci-dessus.
+![UML de la communication](../../images/info/communication.png)
 
 ---
 
