@@ -101,5 +101,6 @@ Il faut ensuite rajouter ces librairies avec l'interface de Kicad.
 5. Navigue jusqu'à arriver au répertoire `libkicad/robot.pretty` et clique sur Ok.
 6. Normalement tu devrais obtenir le résultat suivant :
 	![La librairie de footprints aprés ajout de celle du club](assets/kicad/footprint_added.png "")
-7. Si c'est le cas **BRAVO** tu peux maintenant ouvrir et modifier toutes les cartes du club robot et créer les tiennes !
+7. Répète les opérations 1 à 6 pour ajouter à KiCAD n'importe quelle source externe de composants. Nous utilisons aussi ponctuellement les librairies offertes par DigiKey (distributeur de composants élec en ligne). Clone leur [répertoire](https://github.com/digikey/digikey-kicad-library) et importe leurs libs de symboles (dans digikey-symbols) avec un *ctrl-a*, puis importe leurs footprints. 
+8. Si tout s'est bien passé **BRAVO** tu peux maintenant ouvrir et modifier toutes les cartes du club robot et créer les tiennes !
 
