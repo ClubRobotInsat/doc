@@ -9,7 +9,7 @@ La réalisation d'une carte suit le ![workflow](../../assets/kicad/kicad_flowcha
 Quand tu souhaites visualiser ou modifier une carte, ouvre (double clic) son fichier projet (.pro) ou ouvre directement son schematic avec kicad. Il se peut que des symboles soient 'cassés' : ils sont remplacés par les points d'interrogation. Dans ce cas, édite les : clic droit -> properties -> edit properties et choisit 'change' sous le champ 'Library Symbol'. Remplace alors le symbole par sa version à jour. Si tu ne le trouve nulle part, vérifie si tu as bien importé les librairies du club, et celles offertes par DigiKey.
 
 ## Création d'une carte
-Lorsque tu dois créer une carte, place la dans le répertoire projects, et nomme-la "\{fonction\}\_\{année\}\_\{microcontrôleur\}". Le fichier projet, schematic et pcb doivent conserver ce nom.
+Lorsque tu dois créer une carte, place la dans le répertoire projects, et nomme-la "\{fonction\}\_\{année\}\_\{microcontrôleur\}". Le fichier projet, schematic et pcb doivent conserver ce nom. Tous les noms doivent être en minuscules, mots_séparés_par_des_underscores (convention snake_case).
 
 ## Dessin du schematic
 
