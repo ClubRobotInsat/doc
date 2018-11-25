@@ -12,7 +12,7 @@ Pour les autres distributions Linux demande directement aux gens du club !
 
 ### Ubuntu
 
-Il suffit de rentrer les trois commandes suivantes pour obtenir la dernière version de kicad (kicad 5) :
+Il suffit de rentrer les trois commandes suivantes pour obtenir la dernière version de Kicad (Kicad 5) :
 
 ** A Verifier **
 
@@ -22,43 +22,43 @@ sudo apt update
 sudo apt install kicad
 ```
 
-Ces commandes sont nécessaires car on utilise la version 5 de kicad qui est encore en beta.
+Ces commandes sont nécessaires car on utilise la version 5 de Kicad qui est encore en beta.
 
-Tu peux vérifier que l'installation a bien fonctionné en lançant kicad. Normalement KiCad est livré avec des librairies de composants. Si elles ne sont pas installées chez toi, rapproche-toi d'un membre du club !
+Tu peux vérifier que l'installation a bien fonctionné en lançant Kicad. Normalement KiCad est livré avec des librairies de composants. Si elles ne sont pas installées chez toi, rapproche-toi d'un membre du club !
 
 ### OSX
+Il existe deux méthodes pour installer Kicad sur un Mac. La classique en allant sur http://kicad-pcb.org/download/osx/, puis en telechargeant la dernière version stable, ou avec Homebrew.
 
-Avant tout, il faut installer un gestionnaire de paquets, car par défaut OSX n'en a pas vraiment : l'App Store et télécharger des .app n'est pas la solution ici (Kicad 5 n'est pas facilement dispo en téléchargement direct).
-L'outil en question est Homebrew et fonctionne à peu près comme aptitude sur Linux.
+Homebrew et fonctionne à peu près comme aptitude sur Linux. C'est un très bon outil qui permet d'installer facilement beaucoup d'applications disponibles sur Linux mais pas nativement sur mac (comme wget par exemple). Je profite juste de l'installation de Kicad pour présenter cet outil très utile.
 N'hésite pas à faire un tour sur leur site pour en savoir plus, je ne parlerai ici que du nécéssaire pour installer Kicad. 
 
 https://brew.sh/index_fr
 
-Pour l'installer, il suffit d'executer cette ligne dans un terminal :
+Pour installer homebrew, il suffit d'executer cette ligne dans un terminal :
  
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-Cette ligne télécharge et éxécute l'installeur pour Brew. Laisse-toi guider, il décrit ce qu'il fait et de demande régulièrement confirmation.
+Cette ligne télécharge et éxécute l'installeur pour Brew. Laisse-toi guider, il décrit ce qu'il fait au fur et a mesure de l'installation.
 
-Une fois l'install terminée, il faut installer une extension de Brew appellée 'cask'. Elle permet d'installer proprement des applicaitons en passant par le téléchargement et la vérification d'un .app. 
+Une fois l'install terminée, il faut installer une extension de Brew appellée 'cask'. Elle permet d'installer proprement des applicaitons en passant par le téléchargement et la vérification du .app. 
 
 ```bash
 brew install cask
 ```
 
-Tout est prêt ! Il ne reste plus qu'à installer la dernière version de Kicad (nightly pour avoir la 5.X). Attention le téléchargement est lourd (3GB environ).
+Tout est prêt ! Il ne reste plus qu'à installer la dernière version de Kicad. Attention le téléchargement est lourd (3GB environ).
 
 ```bash
-brew cask install kicad-nightly
+brew cask install kicad
 ```
 
-kicad est désormais correctement installé sur ton ordinateur et peut s'utiliser comme n'importe quelle autre application.
+Kicad est désormais correctement installé sur ton ordinateur et peut s'utiliser comme n'importe quelle autre application.
 Il est recommandé d'installer ses apps avec Homebrew autant que possible. Pour savoir si une app est disponible sur leurs dépôts, utilise 
 ```bash
 brew search [nom à rechercher]
 ```
-Si brew trouve des résultats, un simple  `brew install [nom trouvé]`  se chargera de l'installation.
+Si brew trouve des résultats, un simple  `brew install [nom trouvé]` se chargera de l'installation.
 
 
 
@@ -68,9 +68,22 @@ Il suffit de récupérer et lancer l'installeur le plus récent parmis tout ceux
 
 # Installation de la librairie et des projets du Club Robot
 
-Pour obtenir les composants du club afin de pouvoir ouvrir correctement les cartes que nous avons réalisée par le passé, il suffit de cloner le repo [kicad](https://github.com/ClubRobotInsat/kicad) du club. Si tu n'as pas `git` sur ton ordinateur je te renvoie à la section [correspondante](git.html).
+Pour obtenir les composants du club afin de pouvoir ouvrir correctement les cartes que nous avons réalisée par le passé, il suffit de cloner le repo [Kicad](https://github.com/ClubRobotInsat/kicad) du club. Si tu n'as pas `git` sur ton ordinateur je te renvoie à la section [correspondante](git.html).
 
-Il faut ensuite rajouter ces librairies avec l'interface de kicad.
+```bash
+git clone https://github.com/ClubRobotInsat/kicad
+```
+
+Il faut maintenant ouvrir un terminal et configurer `git` pour qu'il s'interface bien avec Kicad. Pour cela tu dois ouvrir un terminal et lancer le script `setup_git.sh` :
+
+```bash
+# On se place dans le dossier où tu as clone le repos
+cd kicad
+# On lance le script
+./setup_git.sh
+```
+
+Il faut ensuite rajouter ces librairies avec l'interface de Kicad.
 
 ## Ajout de la librairie de symboles
 
@@ -88,5 +101,6 @@ Il faut ensuite rajouter ces librairies avec l'interface de kicad.
 5. Navigue jusqu'à arriver au répertoire `libkicad/robot.pretty` et clique sur Ok.
 6. Normalement tu devrais obtenir le résultat suivant :
 	![La librairie de footprints aprés ajout de celle du club](assets/kicad/footprint_added.png "")
-7. Si c'est le cas **BRAVO** tu peux maintenant ouvrir et modifier toutes les cartes du club robot et créer les tiennes !
+7. Répète les opérations 1 à 6 pour ajouter à KiCAD n'importe quelle source externe de composants. Nous utilisons aussi ponctuellement les librairies offertes par DigiKey (distributeur de composants élec en ligne). Clone leur [répertoire](https://github.com/digikey/digikey-kicad-library) et importe leurs libs de symboles (dans digikey-symbols) avec un *ctrl-a*, puis importe leurs footprints. 
+8. Si tout s'est bien passé **BRAVO** tu peux maintenant ouvrir et modifier toutes les cartes du club robot et créer les tiennes !
 

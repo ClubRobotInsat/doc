@@ -4,9 +4,9 @@ Nous allons maintenant ouvrir le projet du club robot avec CLion et vérifier qu
 
 Pour commencer, si tu n'as jamais entendu parler de `git` ou que tu ne te sens pas très à l'aide avec, tu peux revenir un peu en arrière et lire [ceci](outils_communs/git.html).
 
-# Récuperer le code de la librairie
+# Récupérer le code de la librairie
 
-Pour récuperer le code, je te suggère de commencer par te créer un dossier qui contiendra tous les répertoires du club robot (si ce n'est pas déjà fait).
+Pour récupérer le code, je te suggère de commencer par te créer un dossier qui contiendra tous les répertoires du club robot (si ce n'est pas déjà fait).
 Une fois placé dans ce dossier, tu peux exécuter la commande :
 
 ```bash
@@ -17,28 +17,21 @@ Cette commande va venir demander à `git` d'aller récupérer la dernière versi
 
 Un nouveau dossier `librobot` a du apparaître.
 
-C'est le moment de lancer CLion ! Une fois lancé, dans `File > Open` choisi le dossier de `librobot`.
 
-Si tout se passe bien, tu devrais pouvoir compiler, tester et formater le code. Pour cela, il faut choisir la configuration adéquate, en haut à droite de ton interface et appuyer sur le bouton run.
+# Récupérer le code de la carte électronique
 
-Si la compilation fonctionne, tu peux passer à la suite !
-
-***TODO : screenshot***
-
-# Récuperer le code de la carte electronique
-
-De même, il faut cloner un répertoire sur github pour avoir le code de la carte electronique :
+De même, il faut cloner un répertoire sur github pour avoir le code de la carte électronique :
 
 ```bash
-git clone https://github.com/ClubRobotInsat/elec
+git clone https://git.florencepaul.com/gbip/black-pill
 ```
 
 Il y a quelques étapes de configuration à faire avant de compiler :
 
-1. Il faut rajouter la cible `thumbv7m-none-eabihf` avec rustup
+1. Il faut rajouter la cible `thumbv7m-none-eabi` avec rustup
 	```bash
 	cd elec
-	rustup target add thumbv7em-none-eabihf
+	rustup target add thumbv7m-none-eabi
 	```
 
 2. Il faut vérifier que le projet compile bien :
@@ -47,11 +40,11 @@ Il y a quelques étapes de configuration à faire avant de compiler :
 	```
 Explication :
 
-- `thumbv7em` : jeu d'instruction ARMv7, il s'agit du jeu d'instruction du Cortex M4
+- `thumbv7m` : jeu d'instruction ARMv7, il s'agit du jeu d'instruction du Cortex M4
 
 - `none` : pas de système d'exploitation sur la carte électronique
 
-- `eabihf` : `hf` veut dire "hard float", c'est à dire que le compilateur va émettre des instructions spéciales pour les calculs sur les nombres flottants au lieu de les calculer avec des entiers. En effet, le microcontrolleur `stm32f446` embarque un Floating Point Unit (FPU) qui permet de faire des calculs flottants rapidement.
+- `eabi` : on aurait pu avoir l'option `hf` qui signifie "hard float", c'est à dire que le compilateur va émettre des instructions spéciales pour les calculs sur les nombres flottants au lieu de les calculer avec des entiers. En effet, certains microcontrôleurs embarquent un Floating Point Unit (FPU) qui permet de faire des calculs flottants rapidement. Cependant sur la black-pill il y a un `stm32f103` qui n'a pas de FPU on ne met donc pas cette option.
 
 Si la compilation a marché alors tout a été installé correctement !
 

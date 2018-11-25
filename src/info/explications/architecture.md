@@ -14,7 +14,7 @@ Il y a actuellement 678 fichiers source pour presque 200.000 lignes de code ; je
 
 Bien sûr, tous ces fichiers sont structurés et ce petit schéma peut te donner une idée des merveilles que tu peux trouver dans le dossier `src/` :
 
-![Arborescence du projet de manière graphique](assets/info/arborescence.png)
+![Arborescence du projet de manière graphique](../../images/info/arborescence.png)
 
 Bien entendu, ce fichier est à mettre à jour en fonction des nouvelles fonctionnalités apportées, et si tu veux y participer il faut utiliser le logiciel [dia](https://wiki.gnome.org/Apps/Dia/).
 ```

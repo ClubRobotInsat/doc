@@ -39,7 +39,7 @@ Vu qu'il sait faire de très nombreuses choses, ce n'est bien sûr pas la peine 
 
 * [Cheat sheet de GitHub (en)](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
 * [Chear sheet de GitHub (fr)](https://services.github.com/on-demand/downloads/fr/github-git-cheat-sheet.pdf)
-* [Cheat sheet de Tow)er](https://www.git-tower.com/blog/git-cheat-sheet/)
+* [Cheat sheet de Tower](https://www.git-tower.com/blog/git-cheat-sheet/)
 
 ### B.A.-BA des commandes
 

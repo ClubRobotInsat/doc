@@ -1,4 +1,4 @@
-![](assets/logo.png "test")
+![](assets/logo.png "Logo du Club Robot")
 
 # Introduction
 
@@ -21,3 +21,7 @@ Si jamais tu trouves des fautes d'orthographes, des erreurs, des remarques ou to
 Enfin, la phrase la plus importante en informatique à garder en tête durant toute ta formation :
 
 > Le mieux est l'ennemi du bien, surtout au club robot.
+
+*Un illustre anonyme*
+
+![](assets/tester_doute.jpeg "Tester c'est douter")

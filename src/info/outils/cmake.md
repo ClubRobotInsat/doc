@@ -131,7 +131,8 @@ Pour une meilleure lisibilité, les configurations sont réparties dans chaque d
 ### Commandes les plus utilisées
 
 * **conditions** :
-  ```if(COLOR)
+  ```
+	 if(COLOR)
         set(CMAKE_COLOR_MAKEFILE ON)
      else()
         set(CMAKE_COLOR_MAKEFILE OFF)

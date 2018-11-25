@@ -25,3 +25,5 @@ scripts/install.sh petri
 Le script d'installation va te demander un mot de passe ; à ce moment, demande à un membre du Club pour finaliser ton installation.
 
 ## Prise en main du logiciel
+
+***TODO***

@@ -1,6 +1,6 @@
-# Electronique Logicielle
+# Électronique Logicielle
 
-L'electronique logicielle (ou *elec soft* pour les intimes) consiste à concevoir le fonctionnement logiciel d'un microcontroleur et de ses périphériques.
+L’électronique logicielle (ou *elec soft* pour les intimes) consiste à concevoir le fonctionnement logiciel d'un microcontrôleur et de ses périphériques.
 
 Le code a plusieurs rôles :
 
@@ -9,4 +9,5 @@ Le code a plusieurs rôles :
 * gestion de l'acquisition des capteurs
 * gestion des actionneurs
 
-Les prochains parties visent à te faire installer tous les outils pour dévelloper en toute sérrenité sur microcontrolleur et à te familiariser avec la structure du projet.
+Les prochains parties visent à te faire installer tous les outils pour développer en toute sérénité sur microcontrôleur et à te familiariser avec la structure du projet.
+
