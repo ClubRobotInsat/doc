@@ -30,6 +30,7 @@
 		- [Servos](elec_soft/modules/servos.md)
 - [Electronique matérielle](elec_mat/index.md)
 	- [Mise en place](elec_mat/tools.md)
+		- [Organisation](elec_mat/folders.md)
 	- [Guide d'utilisation de Kicad](elec_mat/kicad.md)
 	- [Concepts importants en electronique](elec_mat/concepts/index.md)
 		- [Fonctionnement des diodes et des LEDS](elec_mat/concepts/led.md)
