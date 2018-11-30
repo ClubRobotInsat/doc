@@ -3,7 +3,7 @@
 ## Intro
 On parlera ici de l'utilisation de KiCAD spécifique au club. Pour l'utilisation générale, consulte la doc inclue dans KiCAD, dans le menu aide/help. Elle est claire, et très bien complétée sur internet par une série de vidéos produites par [DigiKey](https://www.youtube.com/watch?v=vaCVh2SAZY4&index=9&list=PLEBQazB0HUyR24ckSZ5u05TZHV9khgA1O&t=0s). 
 
-La réalisation d'une carte suit le ![workflow](../../assets/kicad/kicad_flowchart.png) indiqué dans la doc de kicad. 
+La réalisation d'une carte suit le ![workflow](assets/kicad/kicad_flowchart.png) indiqué dans la doc de kicad. 
 
 ## Ouverture d'une carte
 Quand tu souhaites visualiser ou modifier une carte, ouvre (double clic) son fichier projet (.pro) ou ouvre directement son schematic avec kicad. Il se peut que des symboles soient 'cassés' : ils sont remplacés par les points d'interrogation. Dans ce cas, édite les : clic droit -> properties -> edit properties et choisit 'change' sous le champ 'Library Symbol'. Remplace alors le symbole par sa version à jour. Si tu ne le trouve nulle part, vérifie si tu as bien importé les librairies du club, et celles offertes par DigiKey.
