@@ -31,6 +31,7 @@ Dans ce dossier, il y a pour chaque carte un dossier avec comme nom `<fonction>_
 * le projet kicad, un fichier `.pro`
 * le schematic de la carte, un fichier `.sch`
 * le routage de la carte, un fichier `.pcb`
+NB : la liste des cartes est accessible dans les references de ce chapitre.
 
 ### Dossier `kicad`
 
