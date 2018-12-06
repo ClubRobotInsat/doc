@@ -1,6 +1,6 @@
 # Création d'un robot
 
-Dans la [partie précédente](info/explications/communication.md), tu as vu comment sont gérées la communication et la représentation électronique des différents modules.
+Dans la [partie précédente](communication.md), tu as vu comment sont gérées la communication et la représentation électronique des différents modules.
 
 À présent, il est temps de voir comment le code informatique gère l'abstraction d'un robot !
 

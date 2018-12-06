@@ -2,7 +2,7 @@
 
 ## Objectif
 
-La partie électronique doit être capable de recvoir des commandes de déplacement pour les exécuter, et également de mettre en oeuvre l'odométrie pour connaître en permanence le triplé `[X, Y, Thêta]`.
+La partie électronique doit être capable de recevoir des commandes de déplacement pour les exécuter, et également de mettre en oeuvre l'odométrie pour connaître en permanence le triplé `[X, Y, Thêta]`.
 
 ## Informations partagées entre info et élec
 
@@ -22,7 +22,14 @@ Les variables partagées peuvent se distinguer en deux grands groupes : les cons
 
 ### Commandes informatiques
 
-* Les `command`es peuvent être de différents types possibles. En C, elles sont définies dans une enum :
+|      Nom      | Type | Droits élec |  Droits info  | Commentaires                               |
+|:-------------:|:----:|:-----------:|:-------------:|--------------------------------------------|
+|     command   |  str |      R      |       W       | type de la commande                        |
+|    args_cmd   | u16/ u16 |  R      |       W       | paramètres de la commande                  |
+|    counter    |  u16 |      R      |       W       | numero de commande                         |
+|  moving_done  | bool |      W      |       R       | vrai si la commande en cours est terminée  |
+
+* `command` : Les commandes peuvent être de différents types possibles. En C, elles sont définies dans une enum :
 
 ```c
 typedef enum CmdType {
@@ -31,13 +38,21 @@ typedef enum CmdType {
 	TURN_RELATIVE,
 	TURN_ABSOLUTE,
 	DO_NOTHING,
+	EMERGENCY_STOP,
 	STOP,
 } command;
 ```
 
-* `moving_done: bool` permets d'anoncer à l'informatique que le mouvement demandé est finit. ***TODO: bool pour spécifier que tout est OK ?***
+* `args_cmd: u16 / u16` : arguments supplémentaires à la `command`.
 * `counter: u16` permets de compter le nombre les commandes envoyées par l'info. Ça permets d'éviter des ambiguités lors de la perte d'une trame *(stateless communication)* ; l'informatique incrémente cette valeur à chaque nouvelle commande, tandis que l'électronique doit stopper toute commande en cours `N` si elle reçoit une commande `M > N`.
-* `args_cmd: u16 / u16` : arguments supplémentaires à la `command`. ***TODO:*** *Leur usage doit être spécifié par type de commande.*
+
+***TODO:*** *Leur usage doit être spécifié par type de commande.*
+
+* `moving_done: bool` permet d'annoncer à l'informatique que le mouvement demandé est terminé.
+
+***TODO: bool pour spécifier que tout est OK ?***
+
+***TODO :*** *solution de remplacement pour set_variable et get_variable*
 
 ---
 

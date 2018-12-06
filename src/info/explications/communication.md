@@ -39,7 +39,7 @@ La tableau suivant regroupe les IDs des modules 'génériquement', mais il n'est
 
 ---
 
-## Format d'une trame général
+## Format général d'une trame
 
 Lorsque la partie informatique communique avec la carte appropriée à propos d'un module, les informations partagées sont encapsulées suivant plusieurs blocs :
 
