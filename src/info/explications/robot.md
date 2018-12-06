@@ -6,7 +6,7 @@ Dans la [partie précédente](info/explications/communication.md), tu as vu comm
 
 ## Le regroupement des constantes
 
-Le choix a été fait de définir toutes les constantes dans un même [fichier d'initialisation](https://github.com/ClubRobotInsat/info/src/robot.ini).
+Le choix a été fait de définir toutes les constantes dans un même [fichier d'initialisation](https://github.com/ClubRobotInsat/info/blob/develop/src/robot.ini).
 
 Ça permet notamment d'avoir un moyen de changer une constante (la durée d'un match, la composition modulaire des robots...) sans avoir à recompiler tout le projet, et donc de gagner du temps.
 
@@ -14,7 +14,7 @@ On utilise le [format INI](https://en.wikipedia.org/wiki/INI_file), comoposé de
 
 ## Accès aux constantes dans le code
 
-Toutes les constantes sont initialisées en C++ dans [ce fichier](https://github.com/ClubRobotInsat/info/src/commun/Constants.h). Une instance des constantes est définie globalement et il suffit de ce code pour récupérer des informations :
+Toutes les constantes sont initialisées en C++ dans [ce fichier](https://github.com/ClubRobotInsat/info/blob/develop/src/commun/Constants.h). Une instance des constantes est définie globalement et il suffit de ce code pour récupérer des informations :
 
 ```cpp
 #include <Constants.h>

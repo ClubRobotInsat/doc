@@ -22,9 +22,9 @@ Il est maintenant temps de rentrer dans les détails techniques de la communicat
 
 Le but est d'utiliser les bénéfices d'une communication entre deux 'cartes mères', et donc de partager le maximum d'informations entre l'informatique et l'électronique. Ainsi, les trames ne correspondent plus à un ordre sporadique addressé au hardware, mais elles regroupent l'ensemble de l'état du robot.
 
-L'ordinateur envoie l'état du robot tel qu'il souhaite l'être, et la carte électronique travaille pour atteindre l'état voulu. Cet état général est envoyé par l'info puis renvoyé par l'élec et ce en permanance, avec une fréquence de **FIXER LA FREQUENCE**.
+L'ordinateur envoie l'état du robot tel qu'il souhaite l'être, et la carte électronique travaille pour atteindre l'état voulu. Cet état général est envoyé par l'info puis renvoyé par l'élec et ce en permanence, avec une fréquence de **FIXER LA FREQUENCE**.
 
-Le format de l'état se veut modulaire, afin de pouvoir être utilisé quel que soit le robot. Concrêtement, la carte électronique est considérée comme un ensemble de modules indépendants (déplacement, évitement, moteurs, servos, capteurs...) qui possèdent chacun un ID, avec un **maximum de 16** modules connectés.
+Le format de l'état se veut modulaire, afin de pouvoir être utilisé quel que soit le robot. Concrètement, la carte électronique est considérée comme un ensemble de modules indépendants (déplacement, évitement, moteurs, servos, capteurs...) qui possèdent chacun un ID, avec un **maximum de 16** modules connectés.
 
 La tableau suivant regroupe les IDs des modules 'génériquement', mais il n'est bien sûr pas figé.
 
