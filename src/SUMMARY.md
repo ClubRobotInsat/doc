@@ -18,6 +18,7 @@
 		- [Vue globale du projet](info/explications/architecture.md)
 		- [Communication avec le hardware](info/explications/communication.md)
 		- [Création d'un robot](info/explications/robot.md)
+		- [Architecture du simulateur](info/explications/simu.md)
 - [Electronique Logicielle](elec_soft/index.md)
 	- [Mise en place](elec_soft/mise_en_place/index.md)
 		- [Compilation](elec_soft/mise_en_place/compile.md)
