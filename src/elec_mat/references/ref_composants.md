@@ -152,4 +152,5 @@ Led Rouges | 1206 | 50+ | 2V |
 Diode Rectif Schottk| 2512 | 10+ | 30v, 1A, ref SS13B|
 Diode Mesure courant | 1206 | 3 | 0.01R , ref LVK12RO10FER|
 Optocoupleur | 8SOIC | 5 | ref HCPL-06360-000E |
+Optocoupleur | | | ref H11D1 |
 Résistance 0.1R | 2512 | 20 | 2W, 5% |
