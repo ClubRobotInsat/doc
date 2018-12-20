@@ -23,7 +23,7 @@
 	- [Mise en place](elec_soft/mise_en_place/index.md)
 		- [Compilation](elec_soft/mise_en_place/compile.md)
 		- [Répertoire de travail](elec_soft/mise_en_place/repo.md)
-		- [Problèmes de compilation](elect_soft/mise_en_place/troubleshot)
+		- [Problèmes de compilation](elect_soft/mise_en_place/troubleshot.md)
 		- [IDE](elec_soft/mise_en_place/ide.md)
 		- [Flashage](elec_soft/mise_en_place/flash.md)
 	- [Apprendre Rust](elec_soft/apprendre_rust.md)
