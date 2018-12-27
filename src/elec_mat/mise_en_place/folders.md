@@ -13,11 +13,14 @@ hardware
 │   ├── digikey-footprints.pretty
 │   ├── digikey-symbols
 │   └── src
-└── kicad
-    ├── schematics 
+└── libkicad-robot
+    ├── @Robot_symbols 
+    ├── @Robot.3D
+    ├── @Robot.pretty
     ├── datasheets
-    ├── libkicad
-    ├── LibrairiesEagle
+    ├── projets communs
+    └── libeagle-robot
+
 ```
 
 On y retrouve 3 dossiers :
@@ -35,16 +38,15 @@ NB : la liste des cartes est accessible dans les references de ce chapitre.
 
 ### Dossier `kicad`
 
-On retrouve 3 dossiers importants dans celui-ci :
-* `schematics` : des blocs tout prêt à importer pour des fonctionnalités que l'on réutilise régulièrement
-* `datasheets` :  des datasheets de composants
-* `libkicad` : les composants du club robot
+On retrouve 6 dossiers importants dans celui-ci :
+* Trois dossiers `@Robot` : les librairies de composants propres au Club 
+* `datasheets` : les datasheets des composants du club et autres documents importants 
+* `projets communs` :  des cartes et des blocs élémentaires qui servent de base aux projets 
+* `libeagle-robot` : les anciennes librairies du Club
 
 ## Organisation des projets git
 
-La librairie du club robot est dans [son propre projet](https://github.com/ClubRobotInsat/kicad) git.
-
-Chaque carte à un projet git unique afin de découpler totalement les cartes du la librairie de symbole.
+Chaque carte a un projet git unique afin de découpler totalement les cartes du la librairie de symbole.
 
 On peut ainsi utiliser l'onglet **release** pour uploader les typons, le plan d'implantation et le *bill of materials* afin de pouvoir retrouver toutes ces informations un jour.
 
