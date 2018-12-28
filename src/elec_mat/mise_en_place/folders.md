@@ -36,7 +36,7 @@ Dans ce dossier, il y a pour chaque carte un dossier avec comme nom `<fonction>_
 * le routage de la carte, un fichier `.pcb`
 NB : la liste des cartes est accessible dans les references de ce chapitre.
 
-### Dossier `kicad`
+### Dossier `libkicad-robot`
 
 On retrouve 6 dossiers importants dans celui-ci :
 * Trois dossiers `@Robot` : les librairies de composants propres au Club 
