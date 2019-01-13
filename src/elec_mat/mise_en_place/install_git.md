@@ -25,9 +25,15 @@ cd kicad
 
 Il faut ensuite rajouter ces librairies avec l'interface de Kicad.
 
-## Ajout des la librairies de symboles
+## Ajout des la librairies de symboles et de footprints
 
-1. Une fois Kicad ouvert, commence par ouvrir l'éditeur de symbole, pour cela clique sur le petit composant (deuxième carré en partant de la gauche)
+0. Ouvre Kicad, puis ouvre `Preferences -> Configure Paths...`. On va indiquer où Kicad doit chercher nos librairies. Normalement, tu obtiens une fenêtre qui liste tous les *Paths* (chemins de fichiers, comme sur linux) gérés par Kicad. On va y ajouter le nôtre : clique sur `Add`, puis entre :
+
+|Name      | Value |
+|----------|-------|
+|KIROBOT   | `Ton dossier **hardware**`/libkicad-robot |
+
+1. Ouvre ensuite l'éditeur de symbole, pour cela clique sur le petit composant (deuxième carré en partant de la gauche)
 
 	![Cliques sur le bouton rouge pour ouvrir l'éditeur de symbole](assets/kicad/open_symbol_editor.png "")
 2. Ensuite, il faut rajouter la librairie contenant les *symboles* du club : `Preferences > Manage Symbol Libraries`.
