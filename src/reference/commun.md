@@ -13,18 +13,18 @@
 
 Pour la communication on utilise sur nos cartes un composants tout fait : le w5500.
 
-[Datasheet du w5500](/datasheets/w5500/w5500.pdf).
+[Datasheet du w5500](../datasheets/w5500/w5500.pdf).
 
 
 Ce composant est monté sur une minicarte toute faîte que l'on achète chez [makerfabs](https://www.makerfabs.com/Mini-Ethernet-Board-W5500.html). (si le lien meurs, cherchez "mini ethernet board w5500").
 
-![Image de la mini carte](/images/components/w5500.jpg)
+![Image de la mini carte](../images/components/w5500.jpg)
 
-[Dimension de la carte](/datasheets/w5500/w5500_board_sizes.pdf)
+[Dimension de la carte](../datasheets/w5500/w5500_board_sizes.pdf)
 
-[Schematic de la carte](/datasheets/w5500/w5500_board_schem.pdf)
+[Schematic de la carte](../datasheets/w5500/w5500_board_schem.pdf)
 
-![PCB de la carte](/datasheets/w5500/w5500_board_pcb.png)
+![PCB de la carte](../datasheets/w5500/w5500_board_pcb.png)
 
 Coté logiciel, il existe une librairie sur [crates.io](https://crates.io/crates/w5500).
 
@@ -38,10 +38,10 @@ Il viens en plusieurs déclinaisons (ce sont les lettres qui viennent derrière 
 * Taille de la flash
 * Nombre de timers
 
-[Manuel de référence de la famille des cortex M1](/datasheets/stm32f103/f103_ref_manual.pdf)
+[Manuel de référence de la famille des cortex M1](../datasheets/stm32f103/f103_ref_manual.pdf)
 
 
-[Datasheet de la puce](/datasheets/stm32f103/cortex_m1_ref_manual.pdf)
+[Datasheet de la puce](../datasheets/stm32f103/cortex_m1_ref_manual.pdf)
 
 ----
 ## Black-Pill
@@ -49,9 +49,9 @@ Il viens en plusieurs déclinaisons (ce sont les lettres qui viennent derrière 
 Pour le prototypage on utilise un [stm32f103](#microcontroleur) monté sur un PCB déjà routé.
 La carte s'appelle [black-pill](https://robotdyn.com/stm32-arm-arduino-mini-system-dev-board-blue-pill-with-arduino-bootloader.html).
 
-[Pinout de la carte](/datasheets/black-pill/black-pill-pinout.pdf)
+[Pinout de la carte](../datasheets/black-pill/black-pill-pinout.pdf)
 
-[Schematic de la carte](/datasheets/black-pill/black-pill-schematic.pdf)
+[Schematic de la carte](../datasheets/black-pill/black-pill-schematic.pdf)
 
 [Plus d'informations sur la carte](https://wiki.stm32duino.com/index.php?title=Black_Pill)
 
@@ -116,7 +116,7 @@ Pour éviter cela, on peut choisir d'ajouter une résistance externe qui va diss
 
 	Si le *Drive Level* calculé est supérieure à celui donné par le fabriquant, il faut ajouter <a href="https://www.codecogs.com/eqnedit.php?latex=R_{Ext}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?R_{Ext}" title="R_{Ext}" /></a>. Sinon, on a trouvé un quartz qui convient bravo !
 
-Calcul de <a href="https://www.codecogs.com/eqnedit.php?latex=R_{Ext}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?R_{Ext}" title="R_{Ext}" /></a> : 
+Calcul de <a href="https://www.codecogs.com/eqnedit.php?latex=R_{Ext}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?R_{Ext}" title="R_{Ext}" /></a> :
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=R_{Ext}&space;=&space;\frac{1}{2\pi&space;FC_{L2}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?R_{Ext}&space;=&space;\frac{1}{2\pi&space;FC_{L2}}" title="R_{Ext} = \frac{1}{2\pi FC_{L2}}" /></a>
 
@@ -132,7 +132,7 @@ D'après les 2 datasheets, les valeurs dont on a besoin pour les calculs sont le
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=g_m&space;=&space;25\,mA/V\\&space;\indent&space;F&space;=&space;8\,&space;MHz\\&space;\indent&space;C_0&space;=&space;7\,&space;pF\\&space;\indent&space;ESR&space;=&space;80&space;\,\Omega&space;\\&space;\indent&space;C_L&space;=&space;20&space;pF\\" target="_blank"><img src="https://latex.codecogs.com/gif.latex?g_m&space;=&space;25\,mA/V\\&space;\indent&space;F&space;=&space;8\,&space;MHz\\&space;\indent&space;C_0&space;=&space;7\,&space;pF\\&space;\indent&space;ESR&space;=&space;80&space;\,\Omega&space;\\&space;\indent&space;C_L&space;=&space;20&space;pF\\" title="g_m = 25\,mA/V\\ \indent F = 8\, MHz\\ \indent C_0 = 7\, pF\\ \indent ESR = 80 \,\Omega \\ \indent C_L = 20 pF\\" /></a>
 
-On peut donc calculer notre marge de gain : 
+On peut donc calculer notre marge de gain :
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=g_{mcrit}&space;=&space;5.894.10^{-4}&space;\,A/V" target="_blank"><img src="https://latex.codecogs.com/gif.latex?g_{mcrit}&space;=&space;5.894.10^{-4}&space;\,A/V" title="g_{mcrit} = 5.894.10^{-4} \,A/V" /></a> donc <a href="https://www.codecogs.com/eqnedit.php?latex=Gain_{margin}&space;=&space;\frac{25}{0.5894}&space;=&space;42.4&space;>>&space;5" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Gain_{margin}&space;=&space;\frac{25}{0.5894}&space;=&space;42.4&space;>>&space;5" title="Gain_{margin} = \frac{25}{0.5894} = 42.4 >> 5" /></a>
 
@@ -148,4 +148,3 @@ On aurait alors une marge de gain de 5 : il faudrait donc choisir un autre quart
 
 
 Pour plus de précision, voir le [guide du choix d'un quartz fourni par ST](/datasheets/quartz/Oscillator_choice_guide).
-
