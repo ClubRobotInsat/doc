@@ -40,6 +40,7 @@ Une fois cloné, il faut lancer mdbook :
 ```bash
 cd doc
 mdbook serve
+# à remplacer par 'mdbook serve -o&' pour ouvir automatiquement la documentation dans ton navigateur par défaut
 ```
 
 Et voilà, tu peux te rendre sur [127.0.0.1:3000](http://127.0.0.1:3000) pour voir la documentation en local !
