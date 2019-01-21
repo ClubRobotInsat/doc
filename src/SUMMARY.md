@@ -17,6 +17,7 @@
 		- [Architecture de la racine](info/explications/racine.md)
 		- [Vue globale du projet](info/explications/architecture.md)
 		- [Communication avec le hardware](info/explications/communication.md)
+		- [Détection de l'adversaire : LIDAR](info/explications/lidar.md)
 		- [Création d'un robot](info/explications/robot.md)
 		- [Architecture du simulateur](info/explications/simu.md)
 - [Electronique Logicielle](elec_soft/index.md)

@@ -56,7 +56,7 @@ servos.add_servo(6, 50_deg, PhysicalRobot::Servos::BlockingMode::HOLD_ON_BLOCKIN
 PhysicalRobot::Robot robot(m, {"prog", "PIPES"});
 ```
 
-* Utilisation du fichier `src/robot.ini` dans lequel on peut définir en dehors du programme les variables d'initialisation pour n'importe quel robot (`primary`, `secondary`, `adversary`, `best_robot_of_the_world`...). Un robot initialisé à partir d'un `ModuleManager` se nomme `guest`, donc le nom est réservé :smile:
+* Utilisation du fichier `src/robot.ini` dans lequel on peut définir en-dehors du programme les variables d'initialisation pour n'importe quel robot (`primary`, `secondary`, `adversary`, `best_robot_of_the_world`...). Un robot initialisé à partir d'un `ModuleManager` se nomme `guest`, donc le nom est réservé :smile:
 
 ```ini
 [robot.primary]

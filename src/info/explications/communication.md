@@ -10,13 +10,13 @@ Cependant, le savoir de l'utilisation des technologies utilisées (des microcont
 * maîtriser l'ensemble de la chaîne entre le hard et le soft
 * réaliser une documentation et un code propre pour faciliter le maintien et la passation du savoir
 * avoir une solution rapide pour remplacer de l'électronique en cas de dysfonctionnement
-* augmenter les capacités des cartes électrniques
+* augmenter les capacités des cartes électroniques
 
-Ainsi, on a à présent une architecture centralisée. Toute l'électronique est regroupée en une seule carte industrielle [STM32 Nucleo](https://eu.mouser.com/new/stmicroelectronics/stm-nucleo-development-boards/). La communication avec le soft reste par une communication UART mais le format de communication a lui aussi évolué.
+Ainsi, on a à présent une architecture décentralisée sur plusieurs cartes industrielles [STM32 Nucleo](https://eu.mouser.com/new/stmicroelectronics/stm-nucleo-development-boards/). La communication avec le soft se fait par ethernet, ce qui augmente la facilité de maintenance, la fiabilité et la puissance de communication.
 
 ---
 
-Il est maintenant temps de rentrer dans les détails techniques de la communication centralisée
+Il est maintenant temps de rentrer dans les détails techniques de cette communication décentralisée.
 
 ## Trames de communication
 
@@ -24,7 +24,7 @@ Le but est d'utiliser les bénéfices d'une communication entre deux 'cartes mè
 
 L'ordinateur envoie l'état du robot tel qu'il souhaite l'être, et la carte électronique travaille pour atteindre l'état voulu. Cet état général est envoyé par l'info puis renvoyé par l'élec et ce en permanence, avec une fréquence de **FIXER LA FREQUENCE**.
 
-Le format de l'état se veut modulaire, afin de pouvoir être utilisé quel que soit le robot. Concrètement, la carte électronique est considérée comme un ensemble de modules indépendants (déplacement, évitement, moteurs, servos, capteurs...) qui possèdent chacun un ID, avec un **maximum de 16** modules connectés.
+Le format de l'état se veut modulaire en JSON, afin de pouvoir être utilisé quel que soit le robot. Concrètement, la carte électronique est considérée comme un ensemble de modules indépendants (déplacement, évitement, moteurs, servos, capteurs...) qui possèdent chacun un ID, avec un **maximum de 16** modules connectés.
 
 La tableau suivant regroupe les IDs des modules 'génériquement', mais il n'est bien sûr pas figé.
 
@@ -43,10 +43,10 @@ La tableau suivant regroupe les IDs des modules 'génériquement', mais il n'est
 
 Lorsque la partie informatique communique avec la carte appropriée à propos d'un module, les informations partagées sont encapsulées suivant plusieurs blocs :
 
-* Chaque module sait parser _(ie lire et écrire)_ un flux d'octets arrangés selon sa norme. La taille de la trame qui est partagée est dépendante du module, et la spécification des trames de chaque module peut se trouver [à la fin de ce fichier](https://github.com/ClubRobotInsat/librobot/blob/master/c_src/SharedWithRust.h). Elle est également spécifiée plus loin dans ce fichier.
-* Pour savoir à quel module est addressé la trame, on rajoute son **`ID`** devant la trame.
+* Chaque module sait parser _(ie lire et écrire)_ un flux d'octets qui correspond à un format texte JSON, qui est très simple à lire. La spécification de la structure de données échangées dépend de chaque module et peut se trouver [dans ce dossier](https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules). Elle est également spécifiée plus loin dans ce document.
+* Pour savoir à quel module est addressé la trame, on rajoute son **`ID`** devant la trame sur un `u8`.
 * Enfin, la trame est envoyée sur le support physique :
-  * dans le cas d'une liaison UDP, la taille de la trame se retrouve grâce aux informations du protocole de transport, donc il suffit d'envoyer un message contenant les données `{ID, trame}`
+  * dans le cas d'une liaison UDP, la taille de la trame se retrouve grâce aux informations du protocole de transport, donc il suffit d'envoyer un message contenant les données `{ID, trame}`. Les addresses IP utilisées sont les suivantes : `192.168.<ID robot>.<ID module>`, avec `<ID robot>` valant respectivement `0` et `1` pour les robots primaire et secondaire.
   * pour toutes les autres communications série, on encapsule `{ID, trame}` dans un header qui contient :
     * 4 octets qui permettent de distinguer le début d'une trame intéressante ; c'est nécessaire car on est dans une communication asynchrone. Dans le cas du club, elles commencent par le pattern `0xAC DC AB BA` pour spécifier leur début
     * 1 octet pour contenir la taille du message intéressant, c'est à dire la taille de `{ID, trame}`
@@ -75,10 +75,11 @@ Voici les protocoles  possibles avec leurs arguments :
 
 Chaque module a un rôle particulier (gérer les servos, se déplacer, détecter l'adversaire, capter des infos dans ce monde de sauvage, ...). Pour faciliter la maintenabilité du code, des parties sont mises en commun entre l'info et l'élec.
 
-Les deux parties utilisent un langage de programmation différent donc le seul moyen de partager des bouts de code est de passer par le langage [`C`](https://en.wikipedia.org/wiki/C_%28programming_language%29) (ne t'inquiète pas, tu n'auras pas à l'utiliser beaucoup dans ce Club).
+Les deux parties utilisent un langage de programmation différent donc les deux parties doivent utiliser le même protocole pour communiquer. La solution retenue est d'envoyer des messages en format JSON encapsulés dans de l'UDP via une liaison ethernet.
 
-`C++` sait directement utiliser les fonctions `C`, mais ce n'est pas le cas pour `Rust` ; il faut passer par une *[Foreign Function Interface](https://doc.rust-lang.org/book/first-edition/ffi.html)*, ou **FFI** pour les intimes.
-Il faut écrire les structures à l'identique en `C` et en `Rust` *(TODO : générer les structs Rust à partir des structs C)*, mais le code de lecture/écriture de trames n'est écrit qu'une seule fois en `C`. Ensuite, des interfaces plus haut niveau wrappent le `C` pour aboutir à du code safe et utilisable.
+Les formats de JSON sont appropriés pour le debug car les messages sont lisibles avec [wireshark](www.wireshark.org). De plus, ils sont bien plus maintenables car le code est bien plus simple (on utilise des librairies pour parser le JSON).
+
+LQ seule prérogative pour la partie en `Rust` est de déclarer des structures de données qui correspondent aux formats transités en JSON.
 
 ### Format du module `Servos2019`
 
@@ -92,21 +93,30 @@ La sûreté par rapport au partage des données se fait grâce à une [variable 
 Actuellement, cette classe gère 8 servos (la valeur est constante dans le code) et la trame associée est définie ainsi :
 
 ```
-<nb_servo: u8>
-<[<id: u8> <position: u16> <wanted_position: u16> <speed: u8> <blocking data, color: u8>] ...>
+<id>
+{
+  "id": <u8>,
+  "known_position": <u16>,
+  "control": "[Position|Speed]",
+  "data": <u16>,
+  "rotation": "[Clockwise|CounterClockwise]",
+  "blocked": <bool>,
+  "mode": "[Unblocking|HoldOnBlock]",
+  "color": "[Block|Red|Green|Yellow|Blue|Magenta|Cyan|White]"
+}
 ```
+
+Les états de chaque servomoteur est envoyé individuellement par le module pour limiter l'impact d'une perte de paquet ainsi que pour faciliter la lecture des trames.
 
 ### Format du module `Motors2019`
 
 Cette classe fournit une interface pour travailler avec 8 moteurs asservis, 8 moteurs non-asservis et 8 brushless, dont les fonctions associées sont spécifiques. Voici la trame qui spéficie les informations de tout ce beau monde :
 
 ```
-<nb_controlled: u8>
-<nb_uncontrolled: u8>
-<nb_brushless: u8>
-<[<id: u8> <wanted_angle: u8> <wanted_nb_turns: u8> <finished, new_command: u8>] ...>
-<[<id: u8> <on_off: u8>] ...>
-<[<id: u8> <on_off: u8>] ...>
+<id>
+{
+  ## TODO
+}
 ```
 
 ### Format du module `IO2019`
@@ -114,10 +124,13 @@ Cette classe fournit une interface pour travailler avec 8 moteurs asservis, 8 mo
 Cette classe est un vestige d'une ancienne façade avec plein de boutons *(pour choisir la couleur, le type de connexion...)*. Elle ne sert actuellement qu'à détecter si la tirette est enclenchée ou non et ne relaye donc qu'un Booléen par l'intermédiaire de cette structure de trame :
 
 ```
-<tirette: uint8_t>
+<id>
+{
+  "tirette": <bool>
+}
 ```
 
-### Format du module `Moving2019`
+### Format du module `Navigation2019`
 
 ***TODO***
 
@@ -138,7 +151,7 @@ Pour cela, tu peux aller voir [du côté du communicateur](https://github.com/Cl
 Afin d'être aussi général que possible, le communicateur peut prendre en paramètre n'importe quel objet qui donne accès aux fonctions de parsing :
 
 * `void read_frame(const GlobalFrame&);`
-* `GlobalFrame write_frame() const;`
+* `std::vector<GlobalFrame> write_frame() const;`
 
 Si l'objet fourni ne possède pas ces deux définitions, la méthode `communicate_with_elecs` *(sencée être exécutée dans un thread pour recevoir et envoyer les trames)* devient inaccessible ; si la méta-programmation ne te fait pas peur tu peux aller voir [comment vérifier l'existance des fonctions de parsing](https://github.com/ClubRobotInsat/info/tree/master/src/robot/Commun/Communication/ParsingClassChecker.hpp).
 
@@ -148,11 +161,7 @@ Si l'objet fourni ne possède pas ces deux définitions, la méthode `communicat
 
 Voici un récapitulatif des couches d'abstraction que l'on vient d'aborder dans ce document :
 
-* [Couche descriptive en `C`](https://github.com/ClubRobotInsat/info/tree/master/src/robot/Commun/Modules/SharedWithRust.h)
-    - la description de chaque module est entreposée dans des structs
-    - les fonctions de lecture/écriture des trames associées sont définies en `C`
-
-* Wrapping de ces structures brutes *[lien](https://github.com/ClubRobotInsat/info/tree/master/src/robot/Commun/Modules/)*
+* Wrapping de structures brutes en JSON pour connaître l'état de chaque module : *[lien](https://github.com/ClubRobotInsat/info/tree/master/src/robot/Commun/Modules/)*
     - du code `C++` et `Rust` (respectivement pour les infos et les élecs) englobe ces C-structs
     - nombreux avantages : rajout de sécurité, tests et interface fonctionnelle
 
