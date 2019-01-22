@@ -7,7 +7,7 @@ Dans cette section nous allons te guider pour l'installation de tous les outils 
 Nous allons tout d'abord installer les outils suivantes :
 
 * `gdb-arm-none-eabi` : `gdb` est un débuggeur, on installe ici la version pour l'architecture `arm` sans os (`none`). Tu trouveras plus d'informations sur gdb par [ici](https://fr.wikipedia.org/wiki/GNU_Debugger). Pour les notions d'architecture, tu peux toujours lire la page sur l'[architecture matérielle](https://fr.wikipedia.org/wiki/Architecture_de_processeur) sur wikipédia.
-* `gcc-arm-none-eabi` : `gcc` est un compilateur pour le langage C. On a besoin du compilateur C car le code partagé entre l’électronique et l'informatique est écris en C. On installe la version pour l'architecture `arm` ici.
+* `gcc-arm-none-eabi` : `gcc` est un compilateur pour le langage C. On installe la version pour l'architecture `arm` ici.
 * `openocd` : cet outil permet de communiquer avec le microcontrôleur : c'est grâce à lui que l'on peut envoyer des exécutables dessus et les déboguer.
 
 Pour cela, il te suffit d'exécuter dans un terminal (sur Ubuntu):
