@@ -3,46 +3,53 @@
 ## Intro
 On parlera ici de l'utilisation de KiCAD spécifique au club. Pour l'utilisation générale, consulte la doc inclue dans KiCAD, dans le menu aide/help. Elle est claire, et très bien complétée sur internet par une série de vidéos produites par [DigiKey](https://www.youtube.com/watch?v=vaCVh2SAZY4&index=9&list=PLEBQazB0HUyR24ckSZ5u05TZHV9khgA1O&t=0s). 
 
-La réalisation d'une carte suit le ![workflow](assets/kicad/kicad_flowchart.png) indiqué dans la doc de kicad. 
+La réalisation d'une carte suit le ![workflow](/assets/kicad/kicad_flowchart.png) indiqué dans la doc de kicad. 
 
 ## Ouverture d'une carte
-Quand tu souhaites visualiser ou modifier une carte, ouvre (double clic) son fichier projet (.pro) ou ouvre directement son schematic avec kicad. Il se peut que des symboles soient 'cassés' : ils sont remplacés par les points d'interrogation. Dans ce cas, édite les : clic droit -> properties -> edit properties et choisit 'change' sous le champ 'Library Symbol'. Remplace alors le symbole par sa version à jour. Si tu ne le trouve nulle part, vérifie si tu as bien importé les librairies du club, et celles offertes par DigiKey.
+Quand tu souhaites visualiser ou modifier une carte, ouvre (double clic) son fichier projet (.pro) ou ouvre directement son schematic avec kicad. Il se peut que des symboles soient 'cassés' : ils sont remplacés par les points d'interrogation. Dans ce cas, édite les : clic droit -> properties -> edit properties et choisis 'change' sous le champ 'Library Symbol'. Remplace alors le symbole par sa version à jour. Si tu ne le trouve nulle part, vérifie si tu as bien importé les librairies du club, et celles offertes par DigiKey.
 
 ## Création d'une carte
-Lorsque tu dois créer une carte, place la dans le répertoire projects, et nomme-la "\{fonction\}\_\{année\}\_\{microcontrôleur\}". Le fichier projet, schematic et pcb doivent conserver ce nom. Tous les noms doivent être en minuscules, mots_séparés_par_des_underscores (convention snake_case).
+Pour créer une carte, il faut suivre *méticuleusement* le protocole suivant pour être certain de ne pas imprimer de carte inutilisable, ou juste trop difficile à imprimer.
 
-## Dessin du schematic
+**1) Pose toi la question de quel template utiliser.**
 
-### Préparation
-Plusieurs conventions sont à respecter. Dans un premier temps, il faut remplir l'encadré en bas à droite avec l'insertion de texte : 
-- Indiquer "club robot", l'année en cours et ton nom dans la zone tout en haut.
-- Remplir les champs en gras Titre et Revision (version), plus la date de création. La date sera actualisée à chaque grosse mise à jour.
-Chaque fichier et chaque carte doit être tracable en cas de besoin.
+Pour le moment le club n'en a qu'un seul pour une carte classique avec une blackpill et un USR-US1 (le connecteur ethernet) dessus. Copie donc le template `libkicad-robot/templates/carte_generique_2019_stm32f103` dans ton dossier `boards`. et renomme le dossier et les fichiers en suivant cette convention : 
 
-### Organisation
-La règle d'or lors du dessin d'un schematic est la **lisibilité** ! Comme il ne représente rien en réalité, il faut qu'il soir le plus lisible possible, et le plus facile à modifier !
-Deux outils sont indispensables à maitriser (pas de vraie difficulté) : 
+```
+boards
+├── {fonction}_{année}_{microcontrôleur}
+│   ├── {fonction}_{année}_{microcontrôleur}.pro
+│   ├── {fonction}_{année}_{microcontrôleur}.sch
+│   └── {fonction}_{année}_{microcontrôleur}.kicad_pcb
+```
+Dans la mesure du possible, tous les noms *sont_en_minuscules_séparés_par_des_underscores* (convention snake_case).
 
-#### "Place graphic lines or polygons"
-Il te permet d'encadrer chaque partie de ton circuit. On cherche en général à l'organiser (donc diviser) en fonctions élémentaires. Par exemple, tous les connecteurs de puissance seront à un endroit, toutes les led dans un autre, le microcontroleur sera au centre etc... Chaqun de ces bloc-fonction doit être encadré et nommé avec l'outil "Place text".
+**2) Préparaion du schematic**
 
-#### "Place net label"
-Il est l'heure de te présenter ton nouvel outil favori. Petit retour théorique : le potentiel électrique (tension par rapport à la masse, ou 'altitude electrique') est le même le long d'un fil. C'est toujours valable si deux fils sont connectés ! Ils forment alors un **noeud** (de fils), ou **net** en anglais. On comprend alors que le potentiel electrique est le même partout sur un noeud donné ! L'équivalent **noeud <=> potentiel** nous permet de nommer une connexion entre plusieurs parties du circuit : c'est le **net label**. L'opportunité est fantasique : tu n'as plus besoin de connecter des composants avec des fils (ce sera brouillon rapidement), mais tu peux placer un **net label** (appelé label par abus de language) sur chaque pin à connecter, et ce peu importe leur nombre ! Cet outil nous permet de rendre invisible les fils entre les différents blocs : le schematic devient beaucoup plus clair ! 
+Dans un premier temps, il faut remplir l'encadré en bas à droite avec l'insertion de texte, c'est à dire remplir les champs en gras (nom, prénom, date, titre de la carte). La date sera actualisée à chaque grosse mise à jour.
+Chaque fichier et chaque carte doit être tracable en cas de besoin. Ceux qui reprendront ta carte quand tu auras quitté le club doivent avoir quelqu'un à qui poser les questions !
 
+**3) Préparation du routage**
 
-## Routage du PCB
+Ouvre maintenant le pcb de ta nouvelle carte et **VERIFIE LES DESIGN RULES**. Il va falloir bien suivre, la suite est très importante et te fera gagner *beaucoup* de temps. \n Un peu de contexte : plus une piste est large, plus elle peut conduire du courant sans chauffer. Une piste qui chauffe, ca veut dire des soudures qui fondent ou des composants qui grillent. Mais plus une piste est large, plus le routage sera difficile. Le nouveau jeu est donc de dimensionner chaque piste en fonction de son utilisation : pistes fines pour du signal, pistes larges pour la puissance.
 
-### Type de carte
-Pour commencer, il faut savoir ce que tu es en train de faire. Si tu est en train de créer une carte pas très compliquée, ce sera une *'simple face'*, sinon nous travaillerons en *'double face'*. La différence est qu'en double face tu pourras placer beaucoup plus de pistes qu'en simple face. Les faces sur lesquelles nous travailleront sont judicieusement nommées Top et Bottom, donc recto et verso. 
-
-Deux rappels avant de commencer à dessiner : 
-- Deux pistes sur une même face ne peuvent pas se croiser
-- Les composants traversants ne sont jamais du même côté que les pistes auxquelles ils sont connectés, sinon ils seront impossibles à souder !
-
-### Placement des composants
-Avant de connecter les composants, il faut les placer (*duh*). Il n'y a pas de règle générale pour t'aider. Ca se fait très empiriquement. On commence au moins par placer les connecteurs sur les bords de la carte. Dans la mesure du possible, il vaut mieux n'utiliser que deux arrêtes opposées. Tout sera plus simple pendant le câblage.
-
-### Préparation des **Design Rules**
-Il va falloir bien suivre, la suite est très importante et te fera gagner *beaucoup* de temps. Un peu de contexte : plus une piste est large, plus elle peut conduire du courant sans chauffer. Une piste qui chauffe, ca veut dire des soudures qui fondent ou des composants qui grillent. Mais plus une piste est large, plus le routage sera difficile. Le nouveau jeu est donc de dimensionner chaque piste en fonction de son utilisation : pistes fines pour du signal, pistes larges pour la puissance.
 Pour cela, la solution idéale serait justement de pouvoir indiquer à KiCAD quelles connexions seront utilisées pour de la logique, et quelles connexions feront passer des gros courants. Ca tombe bien ! *Setup -> Design rules...* à été inventé pour ca. C'est un processus en deux étapes. 
-D'abord on remplit le tableau 'Net classes'. On indique à KiCAD la liste des différents types de connexion. En reprenant l'exemple ci-dessus, on peut y ajouter une classe 'logique' et une classe 'puissance'. Pour le moment, deux classes ne se distingueront que par la caractéritique **'Track width'**, c'est à dire la largeur de la piste. Pour la logique (<300mA), rentrer **0.25mm**. Pour la puissance, on prendra en général **1mm**, mais c'est au cas par cas. Une piste qui alimente une STM32 (<1A) est plus fine qu'une qui alimente un moteur (plusieurs A). 
+
+
+* D'abord on remplit le tableau 'Net classes'. On indique à KiCAD la liste des différents types de connexion.
+La plupart du temps nous n'aurons que des pistes logiques. Tant qu'il n'y a pas de puissance, change la classe `default`en y entrant 0.381 dans `Clearance` et 0.381 dans `Track Width`. 
+
+* Ouvre ensuite l'onglet `Global Design Rules` et remplis le tableau (en bas à droite) : 
+
+|         | Width |
+|---------|-------|
+| Track 1 | 0.254 |
+| Track 2 | 0.381 |
+| Track 3 | 0.762 |
+
+Ce sont les trois épaisseurs *standard* qu'utilise le club. Quand tu choisiras ton épaisseur de piste (en haut à gauche de l'interface de pcbnew), tu devras utiliser la 3 quand c'est possible, puis la 2 si nécéssaire, puis la 1 **sur une distance très courte** dans le pire des cas.
+
+Pour finir, il faut remplir compléter le texte à l'envers (nom, prénom, date, titre de la carte). Il sert à rendre ta carte encore mieux tracable, et à aider à l'imprimer à l'endroit.
+
+
+En principe, tout est prêt pour que tu commences à ajuster le schematic puis à dessiner le PCB toi-même. Le chapitre suivant donne des indications et explique le fonctionnement de certains outils usuels.
