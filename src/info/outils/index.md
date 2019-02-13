@@ -1,6 +1,6 @@
 # Outils informatiques
 
-Si ce n'est pas déjà fait, je te conseille dans un premier temps d'installer `git` et `CLion` en allant  dans la section des [outils communs](outils_communs/index.html).
+Si ce n'est pas déjà fait, je te conseille dans un premier temps d'installer `git` et `CLion` en allant  dans la section des [outils communs](/outils_communs/index.html).
 
 Le code informatique a une certaine taille (700 fichiers pour 200.000 lignes de code) et l'ensemble des fichiers sont répartis dans une arborescence relativement dense.
 

@@ -20,7 +20,7 @@ Toutes les constantes sont initialisées en C++ dans [ce fichier](https://github
 #include <Constants.h>
 
 int main() {
-  Duration match = GLOBAL_CONSTANTS.get_match_duration();
+  Duration match = GLOBAL_CONSTANTS().get_match_duration();
 }
 ```
 

@@ -15,7 +15,7 @@ Le logiciel offre de nombreuses fonctionnalités, et cette page a pour but de t'
 
 Ce logiciel n'est pas en open-source et son installation n'est accessible qu'aux membres du Club Robot actuellement. De plus, il faut que tu aies Ubuntu 14.04, 17.04 ou 18.04.
 
-Pour ce faire, après avoir [cloner le dépôt info](info/mise_en_place/repertoire_de_travail.html#clonage-du-dépôt), je t'invite à écrire cette ligne de commande :
+Pour ce faire, après avoir [cloner le dépôt info](/info/mise_en_place/repertoire_de_travail.html#clonage-du-dépôt), je t'invite à écrire cette ligne de commande :
 
 ```bash
 cd <dossier info>

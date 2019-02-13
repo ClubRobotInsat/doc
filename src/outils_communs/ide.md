@@ -12,7 +12,7 @@ Cet IDE est normalement payant, mais une version d'éducation (licence valide 1 
 
 Pour commencer, il faut :
 
-1. Se rendre sur la page de [CLion](https://www.jetbrains.com/clion/download/) et télécharger la dernière version.
+1. Se rendre sur la page de [CLion](https://www.jetbrains.com/clion/download/) et télécharger la dernière version, ou [télécharger la **Toolbox App**](https://www.jetbrains.com/toolbox/app/?fromMenu) si tu veux utiliser des IDEs pour d'autres langages
 2. Pendant le téléchargement, aller sur la page de [jetbrains.com](https://www.jetbrains.com/shop/eform/students) pour demander une licence éducation. L'adresse mail à fournir est celle de l'INSA (*\<nom>@etud.insa-toulouse.fr*) pour que JetBrains accepte de délivrer la licence.
 3. Va voir ta boîte mail, un message contenant un lien de confirmation est arrivé : confirme ton adresse mail
 4. Tu reçois enfin un autre mail avec les infos de la licence, qu'il faudra saisir dans CLion

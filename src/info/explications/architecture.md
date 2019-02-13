@@ -24,11 +24,13 @@ sudo apt-get install dia
 Comme tu peux t'en apercevoir, il y a trois parties principales :
 * [```commun```](https://github.com/ClubRobotInsat/info/tree/develop/src/commun/) - Tu peux y retrouver plein d'outils qui facilitent la programmation (manipulation d'unités physiques, constantes, manipulation de la communication, ...). Ce dossier est hyper important, mais je te conseille dans un premier temps d'utiliser les outils pour travailler sur le reste avant de te plonger dans ces librairies (certaines notions sont un peu compliquées et tout ce code n'est pas forcément directement lié à la robotique).
 * [```simulateur/```](https://github.com/ClubRobotInsat/info/tree/develop/src/simulateur/) - Ce dossier regroupe l'ensemble des fichiers nécessaires pour mettre au point un simulateur graphique qui nous permet de tester la stratégie du robot avant de l'avoir en vrai, mécaniquement parlant. Si tu veux en savoir plus sur l'architecture du simulateur, elle est détaillée [ici](simu.md).
-* [```robot/```](https://github.com/ClubRobotInsat/info/tree/develop/src/robot/) - Il y a toute la stratégie, les interfaces de manipulation des actionneurs, ... Si tu te demandes pourquoi il y a un dossier [```Principal/```](https://github.com/ClubRobotInsat/info/tree/develop/src/robot/Principal), c'est parce qu'historiquement le petit et le gros robot étaient définis informatiquement dans le dossier [```robot/```](https://github.com/ClubRobotInsat/info/tree/develop/src/robot/), et leur stratégie était bien sûr différents. Il ne reste actuellement que les vestiges du gros robot, car en 2016 on a essayé une autre technologie ([Lego Mindstorms](https://www.lego.com/fr-fr/mindstorms/)) pour le petit robot.
+* [```robot/```](https://github.com/ClubRobotInsat/info/tree/develop/src/robot/) - Il y a toute la stratégie, les interfaces de manipulation des actionneurs, ... C'est dans ce dossier que la majorité du code est écrit, et c'est bien sûr la partie la plus ancrée avec les autres pôles.
 
 ## Présentation des abstraction informatiques autour du robot
 
 En informatique, il y a de nombreuses couches d'abstraction qui séparent les cartes électroniques de l'IA du match. Je te propose un petit aperçu de ces couches, des explications supplémentaires et spécifiques à chaque couche te seront apportées en suivant.
+
+***CE TABLEAU DOIT ÊTRE MIS À JOUR***
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
