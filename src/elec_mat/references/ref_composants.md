@@ -11,7 +11,7 @@ N'hésitez pas à la mettre à jour !
 Nom commun | Référence | Notes |
 -----------|-----------|-------|
 Pinsocket  | [Liste](http://suddendocs.samtec.com/catalog_english/ssw_th.pdf) | Fixer de manière réversible la nucléo à la carte shield |
-Pinsocket sécable | 2212S-20SG-85 | Pinsocket de n'importe quelle longueur.
+Pinsocket sécable | BL1.36Z | Pinsocket de n'importe quelle longueur.
 
 ### Connexion carte à fil
 #### HE14 
