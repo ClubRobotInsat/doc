@@ -39,6 +39,7 @@
 	- [Conseils et outils usuels](elec_mat/tips&tricks.md)
 	- [Tirer une carte](elec_mat/production.md)
 	- [Références](elec_mat/references/index.md)
+		- [Utilisation du module ethernet](elec_mat/references/ethernet.md)
 		- [Annexe : liste des cartes du Club](elec_mat/references/ref_cartes.md)
 		- [Annexe : liste des composants usuels](elec_mat/references/ref_composants.md)
 - [Documents de référence](reference/index.md)
