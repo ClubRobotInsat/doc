@@ -67,7 +67,7 @@ Voici les protocoles  possibles avec leurs arguments :
 * **Communications sur plusieurs liaisons séries**
   * `protocol_ethernet` : `initializer_list<UDPConnection>`, permets de centraliser `N` connections UDP en un unique appel à un thread de réception bloquant. Ce protocole gère aussi l'association `id_module <-> UDP communication thread`.
 
-![UML de la communication](../../images/info/communication.png)
+![UML de la communication](/images/info/communication.png "Diagramme UML de la communication")
 
 ---
 
@@ -81,9 +81,9 @@ Les formats de JSON sont appropriés pour le debug car les messages sont lisible
 
 LQ seule prérogative pour la partie en `Rust` est de déclarer des structures de données qui correspondent aux formats transités en JSON.
 
-### Format du module `Servos2019`
+### Format du module [`Servos`](https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/Servos.h)
 
-[Cette classe](https://github.com/ClubRobotInsat/info/tree/master/src/robot/Commun/Modules/Servos2019.h) permets de gérer un ensemble de [servos-moteurs](https://www.robotshop.com/media/files/pdf/manual-drs-0101.pdf) en connaissant l'ensemble des informations qui leur sont propres et dont l'état est partagé avec les élecs.
+[Cette classe](https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/Servos.h) permets de gérer un ensemble de [servos-moteurs](https://www.robotshop.com/media/files/pdf/manual-drs-0101.pdf) en connaissant l'ensemble des informations qui leur sont propres et dont l'état est partagé avec les élecs.
 
 Pour avoir une idée technique de son API, je te conseille d'aller voir directement le code source.
 L'interface permets de rajouter des servos (ID > 0) puis de contrôler chaque partie avec des fonctions thread-safe.
@@ -108,9 +108,9 @@ Actuellement, cette classe gère 8 servos (la valeur est constante dans le code)
 
 Les états de chaque servomoteur est envoyé individuellement par le module pour limiter l'impact d'une perte de paquet ainsi que pour faciliter la lecture des trames.
 
-### Format du module `Motors2019`
+### Format du module [`Motors`](https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/Motors.h)
 
-Cette classe fournit une interface pour travailler avec 8 moteurs asservis, 8 moteurs non-asservis et 8 brushless, dont les fonctions associées sont spécifiques. Voici la trame qui spéficie les informations de tout ce beau monde :
+[Cette classe](https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/Motors.h) fournit une interface pour travailler avec 8 moteurs asservis, 8 moteurs non-asservis et 8 brushless, dont les fonctions associées sont spécifiques. Voici la trame qui spéficie les informations de tout ce beau monde :
 
 ```
 <id>
@@ -119,9 +119,9 @@ Cette classe fournit une interface pour travailler avec 8 moteurs asservis, 8 mo
 }
 ```
 
-### Format du module `IO2019`
+### Format du module [`IO`](https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/IO.h)
 
-Cette classe est un vestige d'une ancienne façade avec plein de boutons *(pour choisir la couleur, le type de connexion...)*. Elle ne sert actuellement qu'à détecter si la tirette est enclenchée ou non et ne relaye donc qu'un Booléen par l'intermédiaire de cette structure de trame :
+[Cette classe](https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/IO.h) est un vestige d'une ancienne façade avec plein de boutons *(pour choisir la couleur, le type de connexion...)*. Elle ne sert actuellement qu'à détecter si la tirette est enclenchée ou non et ne relaye donc qu'un Booléen par l'intermédiaire de cette structure de trame :
 
 ```
 <id>
@@ -130,11 +130,7 @@ Cette classe est un vestige d'une ancienne façade avec plein de boutons *(pour 
 }
 ```
 
-### Format du module `Navigation2019`
-
-***TODO***
-
-### Format du module `Avoidance2019`
+### Format du module [`Navigation`](https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/Navigation.h)
 
 ***TODO***
 
@@ -153,7 +149,7 @@ Afin d'être aussi général que possible, le communicateur peut prendre en para
 * `void read_frame(const GlobalFrame&);`
 * `std::vector<GlobalFrame> write_frame() const;`
 
-Si l'objet fourni ne possède pas ces deux définitions, la méthode `communicate_with_elecs` *(sencée être exécutée dans un thread pour recevoir et envoyer les trames)* devient inaccessible ; si la méta-programmation ne te fait pas peur tu peux aller voir [comment vérifier l'existance des fonctions de parsing](https://github.com/ClubRobotInsat/info/tree/master/src/robot/Commun/Communication/ParsingClassChecker.hpp).
+Si l'objet fourni ne possède pas ces deux définitions, la méthode `communicate_with_elecs` *(sencée être exécutée dans un thread pour recevoir et envoyer les trames)* devient inaccessible ; si la méta-programmation ne te fait pas peur tu peux aller voir [comment vérifier l'existance des fonctions de parsing](https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Communication/ParsingClassChecker.hpp).
 
 ---
 
@@ -161,13 +157,13 @@ Si l'objet fourni ne possède pas ces deux définitions, la méthode `communicat
 
 Voici un récapitulatif des couches d'abstraction que l'on vient d'aborder dans ce document :
 
-* Wrapping de structures brutes en JSON pour connaître l'état de chaque module : *[lien](https://github.com/ClubRobotInsat/info/tree/master/src/robot/Commun/Modules/)*
+* Wrapping de structures brutes en JSON pour connaître l'état de chaque module : *[lien](https://github.com/ClubRobotInsat/info/tree/develop/src/robot/Modules/)*
     - du code `C++` et `Rust` (respectivement pour les infos et les élecs) englobe ces C-structs
     - nombreux avantages : rajout de sécurité, tests et interface fonctionnelle
 
-* le [`ModuleManager`](https://github.com/ClubRobotInsat/info/tree/master/src/robot/Commun/Modules/ModuleManager.h) regroupe tous ces modules
+* le [`ModuleManager`](https://github.com/ClubRobotInsat/info/tree/develop/src/robot/Modules/ModuleManager.h) regroupe tous ces modules
     - manipulation facilitée
     - tout l'état du robot est centralisé
     - parsing des trames globales
 
-* [communication avec les élecs](https://github.com/ClubRobotInsat/info/tree/master/src/robot/Commun/Communication/ElecCommunicator.h) depuis les fonctions de parsing du `ModuleManager`
+* [communication avec les élecs](https://github.com/ClubRobotInsat/info/tree/master/src/robot/Communication/Communicator.h) depuis les fonctions de parsing du `ModuleManager`

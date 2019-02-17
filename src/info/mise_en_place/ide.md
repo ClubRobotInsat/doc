@@ -1,6 +1,6 @@
 # IDE
 
-Normalement, tu as déjà suivi les instructions de la section [Outils Communs - IDE](outils_communs/ide.html), tu as donc l'IDE CLion déjà fonctionnel.
+Normalement, tu as déjà suivi les instructions de la section [Outils Communs - IDE](/outils_communs/ide.html), tu as donc l'IDE CLion déjà fonctionnel.
 
 Si ce n'est pas le cas, reviens un peu en arrière et installe CLion !
 

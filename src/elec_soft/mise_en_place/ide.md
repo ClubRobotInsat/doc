@@ -1,6 +1,6 @@
 # IDE
 
-Normalement tu as suivi les instructions de la section [Outils Communs - IDE](outils_communs/ide.html), tu as donc une installation de CLion fonctionnelle.
+Normalement tu as suivi les instructions de la section [Outils Communs - IDE](/outils_communs/ide.html), tu as donc une installation de CLion fonctionnelle.
 
 Si ce n'est pas le cas, reviens un petit peu en arrière et installe CLion !
 
@@ -13,6 +13,8 @@ Il faut commencer par ouvrir les options de CLion `File>Settings` ou encore `ctr
 Dans le menu `Plugins` tu cliques sur `Install Jetbrains Plugins` et tu cherches `Rust` dans la fenêtre qui s'est ouverte. Pour lancer l'installation, il suffit de cliquer sur `Install`.
 
 Normalement il devrait être possible de compiler, sinon tu peut aller voir dans `Settings > Languages & Frameworks > Rust` si tout a été bien detecté et cliqué sur `download stdlib with rustup` si cela t'es proposé.
+
+![Installation du plugin pour Rust](/images/ide/plugin_install.png "Plugin pour Rust")
 
 ## Vérification de l'installation
 

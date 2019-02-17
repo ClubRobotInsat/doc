@@ -1,4 +1,4 @@
-![](assets/logo.png "Logo du Club Robot")
+![](images/com/logo.png "Logo du Club Robot")
 
 # Introduction
 
@@ -24,4 +24,4 @@ Enfin, la phrase la plus importante en informatique à garder en tête durant to
 
 *Un illustre anonyme*
 
-![](assets/tester_doute.jpeg "Tester c'est douter")
+![Tester c'est douter](images/com/tester_doute.jpeg "Tester c'est douter")
