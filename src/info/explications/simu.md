@@ -14,7 +14,7 @@ Il y a 5 composantes principales :
 * Le [```core/```](https://github.com/ClubRobotInsat/info/tree/develop/src/simulateur/core/) permets enfin de tout coordonner pour avoir un simulateur fonctionnel.
 
 
-## Coeur
+## Coeur
 
 Le simulateur est entièrement controllé par la classe [```Simulateur```]("https://github.com/ClubRobotInsat/info/blob/develop/src/simulateur/core/Simulateur.h").
 Cette classe est instanciée directement dans le `main` et contrôle les différents modules. Elle contient des méthodes pour initialiser le simulateur, 
