@@ -17,7 +17,9 @@ Pinsocket sécable | BL1.36Z | Pinsocket de n'importe quelle longueur.
 #### HE14 
 Nom commun | Référence | Notes |
 -----------|-----------|-------|
-HE14-f5 | 189-9479 ([RS](https://fr.rs-online.com)) | |
+Connecteur Phoenix 2 | [1725656](https://fr.farnell.com/phoenix-contact/1725656/bornier-sur-ci-2v-2-54mm/dp/3041359) | Très fiables, 2 terminaux 
+Connecteur Phoenix 3 | [1725669](https://fr.farnell.com/phoenix-contact/1725656/bornier-sur-ci-2v-2-54mm/dp/3041359) | Très fiables, 3 terminaux
+Connecteur Phoenix 5 | [2776439](https://fr.farnell.com/phoenix-contact/1725656/bornier-sur-ci-2v-2-54mm/dp/3041359) | Très fiables, 5 terminaux
 HE14-f3 | 189-9441 ([RS](https://fr.rs-online.com)) | |
 HE14-f2 | 189-9435 ([RS](https://fr.rs-online.com)) | |
 HE14-m5 | 230-5082 ([RS](https://fr.rs-online.com)) | |
