@@ -12,7 +12,7 @@ Il faut commencer par ouvrir les options de CLion `File>Settings` ou encore `ctr
 
 Dans le menu `Plugins` tu cliques sur `Install Jetbrains Plugins` et tu cherches `Rust` dans la fenêtre qui s'est ouverte. Pour lancer l'installation, il suffit de cliquer sur `Install`.
 
-Normalement il devrait être possible de compiler, sinon tu peut aller voir dans `Settings > Languages & Frameworks > Rust` si tout a été bien detecté et cliqué sur `download stdlib with rustup` si cela t'es proposé.
+Normalement il devrait être possible de compiler, sinon tu peut aller voir dans `Settings > Languages & Frameworks > Rust` si tout a été bien détecté et cliqué sur `download stdlib with rustup` si cela t'es proposé.
 
 ![Installation du plugin pour Rust](/images/ide/plugin_install.png "Plugin pour Rust")
 
@@ -29,3 +29,13 @@ C'est le moment de lancer CLion ! Une fois lancé, dans `File > Open` choisi le 
 Si tout se passe bien, tu devrais pouvoir compiler, tester et formater le code. Pour cela, il faut choisir la configuration adéquate, en haut à droite de ton interface et appuyer sur le bouton `run`.
 
 Si la compilation fonctionne, tu peux passer à la suite c'est tout bon tu as tout installé avec succès !
+
+## Compilation à la mano
+
+Tu peux aussi compiler à la main (pratique parfois).
+
+Pour cela, une fois à la racine du projet, exécute :
+
+```
+cargo build --release --features = "primary" 
+```

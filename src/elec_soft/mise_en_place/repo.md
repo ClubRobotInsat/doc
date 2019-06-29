@@ -1,8 +1,10 @@
 # Répertoire de travail
 
-Nous allons maintenant ouvrir le projet du club robot avec CLion et vérifier que tout fonctionne.
+Maintenant ouvrons le projet du club robot avec CLion et vérifions que tout fonctionne.
 
 Pour commencer, si tu n'as jamais entendu parler de `git` ou que tu ne te sens pas très à l'aide avec, tu peux revenir un peu en arrière et lire [ceci](outils_communs/git.html).
+
+On va compiler le code de la carte servomoteurs.
 
 # Récupérer le code de la librairie
 
@@ -23,20 +25,20 @@ Un nouveau dossier `librobot` a du apparaître.
 De même, il faut cloner un répertoire sur github pour avoir le code de la carte électronique :
 
 ```bash
-git clone https://git.florencepaul.com/gbip/black-pill
+git clone https://github.com/ClubRobotINSAT/firmware-servos
 ```
 
 Il y a quelques étapes de configuration à faire avant de compiler :
 
 1. Il faut rajouter la cible `thumbv7m-none-eabi` avec rustup
 	```bash
-	cd elec
+	cd firmware-servos
 	rustup target add thumbv7m-none-eabi
 	```
 
 2. Il faut vérifier que le projet compile bien :
 	```bash
-	cargo build
+	cargo build --release
 	```
 Explication :
 
@@ -50,10 +52,4 @@ Si la compilation a marché alors tout a été installé correctement !
 
 # Arborescence du code et fichiers remarquables
 
-Il y a quelques fichiers remarquables dans le dossier `librobot` :
-* `.travis.yml` :  ce fichier décrit les étapes que doit faire le serveur d'intégration continue pour tester les commits et déployer la documentation.
-* `Cargo.toml` : ce fichier décrit les dépendances du projet.
-* `README.md` : il s'agit du README qui s'affiche sur [github](https://github.com/ClubRobotInsat/librobot) quand on regarde le projet.
-* `.idea/` : le dossier contenant les fichiers de configuration de l'IDE.
-* `.git/` : le dossier contenant les fichiers de configuration de git.
-* `.gitignore` : un fichier qui décrit tout ce que `git` doit ignorer.
+Pour comprendre les différents fichiers présents dans le dossier du projet, tu peux revenir en arrière et lire [Organisation du code](../organisation/index.html).

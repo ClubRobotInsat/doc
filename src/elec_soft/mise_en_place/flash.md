@@ -1,12 +1,17 @@
 # Pour flasher une carte
 
-Il faut d'abord lancer dans un terminal (en tâche de fond) openocd :
+Commences par câbles un ST-LINK sur la carte. Sur l'image c'est une blue-pill, mais l'ordre des pins et le câblage est le même !
 
-```bash
-sudo openocd -f stlink-v2-1.cfg -f stm32.cfg
+![test](../../images/elec_soft/F103C8T6_w_ST-Link.jpg)
+Une fois câblé, lances OpenOCD à la racine du projet :
+
+```
+sudo opencod -f black_pill.cfg
 ```
 
-Une fois openocd en tâche de fond, il suffit de lancer dans un terminal le script `debug.sh` dans le dossier du projet.
+Si le ST-LINK a été bien câblé, alors OpenOCD devrait rester ouvert en tache de fond.
+
+Une fois openocd en tâche de fond, il suffit de lancer dans un terminal le script `debug.sh` qui se trouve dans le dossier du projet pour flasher la carte.
 
 ## Precautions pour le deboggage
 

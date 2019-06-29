@@ -1,11 +1,12 @@
 # Apprendre Rust
 
-Pour apprendre Rust, en parallèle avec la formation il faut lire [The Rust Book](https://doc.rust-lang.org/book/second-edition/) (deuxième édition). Il s'agit du meilleur moyen d'apprendre le langage, mais ce n'est pas le seul.
+Pour apprendre Rust, en parallèle avec la formation le mieux reste de lire [The Rust Book](https://doc.rust-lang.org/book/second-edition/) (deuxième édition). Il s'agit du meilleur moyen d'apprendre le langage, mais ce n'est pas le seul.
 
-Voici une liste de ressources non exhaustive qui te servira un jour :
+Voici une liste de ressources non exhaustive qui te servira peut être un jour :
 
-* [The Rust Book v1](https://doc.rust-lang.org/book/) : A lire si le chapitre que tu cherches n'est pas dans la v2. Le livre n'est pas obsolète, mais il est moins bien que la v2.
+* [The Embedded Rust Book](https://rust-embedded.github.io/book/) : Un bouquin expliquant comment fonctionne l'embarqué et la programmation sur microcontrôleur en Rust. **Très bonne lecture** :)
 * [Rust by example](http://rustbyexample.com/) : Une collection d'exemples permettant de comprendre les concepts du langage, très bonne lecture en complément de *The Rust Book*.
+* [The Rust Book v1](https://doc.rust-lang.org/book/) : A lire si le chapitre que tu cherches n'est pas dans la v2. Le livre n'est pas obsolète, mais il est moins bien que la v2.
 * [The Cookboook](https://rust-lang-nursery.github.io/rust-cookbook/) : Un livre de *recettes* pour des opérations classiques.
 * [La documentation de la librairie standard](https://doc.rust-lang.org/std/) : La référence de toutes les fonctions/structures/traits/méthodes de la librairie standard.
 
