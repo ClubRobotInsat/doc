@@ -40,6 +40,7 @@
 		- [Utilisation du module ethernet](elec_mat/references/ethernet.md)
 		- [Annexe : liste des cartes du Club](elec_mat/references/ref_cartes.md)
 		- [Annexe : liste des composants usuels](elec_mat/references/ref_composants.md)
+	- [Cablage Robot](elec_mat/cablage.md)
 - [Documents de référence](reference/index.md)
 	- [Communs](reference/commun.md)
 	- [Carte déplacement](reference/deplacement.md)
