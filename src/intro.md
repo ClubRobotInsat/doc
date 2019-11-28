@@ -1,4 +1,4 @@
-![](images/com/logo.png "Logo du Club Robot")
+![](images/com/logo18.png "Logo du Club Robot")
 
 # Introduction
 
