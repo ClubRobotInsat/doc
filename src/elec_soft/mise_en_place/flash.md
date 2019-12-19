@@ -6,7 +6,7 @@ Commences par câbles un ST-LINK sur la carte. Sur l'image c'est une blue-pill, 
 Une fois câblé, lances OpenOCD à la racine du projet :
 
 ```
-sudo opencod -f black_pill.cfg
+sudo openocd -f black_pill.cfg
 ```
 
 Si le ST-LINK a été bien câblé, alors OpenOCD devrait rester ouvert en tache de fond.

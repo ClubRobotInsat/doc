@@ -16,7 +16,7 @@ Sur Ubuntu, cela se fait en exécutant les commandes suivantes dans un terminal 
 
 ```bash
 sudo apt update
-sudo apt install git gdb-arm-none-eabi gcc-arm-none-eabi openocd
+sudo apt install git gdb-multiarch gdb-arm-none-eabi gcc-arm-none-eabi openocd
 ```
 
 La première commande mets à jour les paquets disponibles, la deuxième les installe.
