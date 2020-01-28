@@ -79,3 +79,8 @@ L'outil `cargo-clone` permet de récupérer le code source de n'importe quelle l
 ```bash
 cargo install cargo-clone
 ```
+
+# Erreurs courantes
+Quelques erreurs arrivent régulièrement et sont dû à une mauvaise configuration du compilateur. En particulier l'erreur : ```error: linking with `cc` failed: exit code: 1``` peut être résolue ainsi :
+On installe gdb-multilib : ```sudo apt install gcc-multilib```.
+Si l'erreur n'est pas résolue, on vérifie que l'on a choisi le bon compilateur : ```sudo update-alternatives --config gcc``` et choisir gcc-8.
