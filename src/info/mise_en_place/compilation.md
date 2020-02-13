@@ -54,6 +54,11 @@ sudo apt-get install gcc-8 g++-8
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 ```
 
+#### Cross-compilation
+
+Pour pouvoir compiler du code qui sera compris par la raspberry (et pas que par ton ordinateur), tu vas avoir besoin d'autres versions de gcc. Pour les installer, tape simplement :
+```sudo apt install g++-8-arm-linux-gnueabihf gcc-8-arm-linux-gnueabihf```
+
 ## Autres installations
 ### Lib Wiimote
 
