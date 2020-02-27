@@ -88,9 +88,9 @@ Si l'erreur n'est pas résolue, on vérifie que l'on a choisi le bon compilateur
 ```bash 
 expected struct heapless::string::String, found a different struct heapless::string::String
 ``` 
-La version de librobot utilisée n'est pas la bonne, il faut choisir la branch "dev-new-pid" :
+La version de librobot utilisée n'est pas la bonne, il faut choisir la branch "master" (et non "dev-new-pid") :
 ```bash
 nano Cargo.toml
-librobot = {git="https://github.com/ClubRobotInsat/librobot", default-features=false, branch="dev-new-pid"}
+librobot = {git="https://github.com/ClubRobotInsat/librobot", default-features=false}
 ```
 
