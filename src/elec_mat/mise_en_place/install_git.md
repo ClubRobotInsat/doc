@@ -44,7 +44,7 @@ Il faut ensuite rajouter ces librairies avec l'interface de Kicad.
 3. Tu peux fermer l'éditeur de symbole et passer sur l'éditeur de *footprint*, c'est le quatrième bouton en partant de la gauche.
 	![Cliques sur le bouton rouge pour ouvrir l'éditeur de footprint](assets/kicad/open_footprint_editor.png)
 4. Ouvre le gestionnaire de librairie `Preferences > Manage footprint libraries` et cliques sur `Browse Libraries` dans la fenêtre qui s'ouvre.
-5. Navigue jusqu'à arriver au répertoire `hardware/libkicad-robot/@Robot_symbols` et clique sur Ok.
+5. Navigue jusqu'à arriver au répertoire `hardware/libkicad-robot/@Robot.pretty` et clique sur Ok.
 6. Normalement tu devrais obtenir le résultat suivant :
 	![La librairie de footprints aprés ajout de celle du club](assets/kicad/footprint_added.png "")
 7. Répète les opérations 1 à 6 pour ajouter à KiCAD n'importe quelle source externe de composants. Nous utilisons aussi ponctuellement les librairies offertes par DigiKey (distributeur de composants élec en ligne). Importe leurs libs dans `hardware/digikey-kicad-library` (*ctrl-a* te sera utile pour les symbols).
