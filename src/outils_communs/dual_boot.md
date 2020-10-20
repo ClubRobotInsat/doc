@@ -89,7 +89,7 @@ La première chose à faire est de mettre à jour ton système.
 ### Installation basique
 Installons les paquets de base nécéssaire pour faire fonctionner les différents outils du club. Ouvre un terminal, et entres :
 ```bash
-sudo apt install git curl wget ntfs-3g python3 gcc gbd vim nano cmake
+sudo apt install git curl wget ntfs-3g python3 gcc gdb vim nano cmake
 ```
 Les paquets installés sont les suivants :
 * git	--> un gestinnaire de version et de code
