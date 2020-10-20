@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>CMake - Documentation Club Robot Insa Toulouse</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../../favicon.png">
+        
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../../outils_communs/index.html"><strong aria-hidden="true">2.</strong> Outils Communs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../outils_communs/dual_boot.html"><strong aria-hidden="true">2.1.</strong> Dual Boot</a></li><li class="chapter-item expanded "><a href="../../outils_communs/git.html"><strong aria-hidden="true">2.2.</strong> Git</a></li><li class="chapter-item expanded "><a href="../../outils_communs/ide.html"><strong aria-hidden="true">2.3.</strong> CLion</a></li></ol></li><li class="chapter-item expanded "><a href="../../info/index.html"><strong aria-hidden="true">3.</strong> Informatique</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../info/mise_en_place/index.html"><strong aria-hidden="true">3.1.</strong> Mise en place</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../info/mise_en_place/ide.html"><strong aria-hidden="true">3.1.1.</strong> IDE</a></li><li class="chapter-item expanded "><a href="../../info/mise_en_place/repertoire_de_travail.html"><strong aria-hidden="true">3.1.2.</strong> Répertoire de travail</a></li><li class="chapter-item expanded "><a href="../../info/mise_en_place/compilation.html"><strong aria-hidden="true">3.1.3.</strong> Compilation</a></li></ol></li><li class="chapter-item expanded "><a href="../../info/outils/index.html"><strong aria-hidden="true">3.2.</strong> Prise en main des outils</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../info/outils/cmake.html" class="active"><strong aria-hidden="true">3.2.1.</strong> CMake</a></li><li class="chapter-item expanded "><a href="../../info/outils/petrilab.html"><strong aria-hidden="true">3.2.2.</strong> PetriLab</a></li></ol></li><li class="chapter-item expanded "><a href="../../info/explications/index.html"><strong aria-hidden="true">3.3.</strong> Explications du code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../info/explications/racine.html"><strong aria-hidden="true">3.3.1.</strong> Architecture de la racine</a></li><li class="chapter-item expanded "><a href="../../info/explications/architecture.html"><strong aria-hidden="true">3.3.2.</strong> Vue globale du projet</a></li><li class="chapter-item expanded "><a href="../../info/explications/communication.html"><strong aria-hidden="true">3.3.3.</strong> Communication avec le hardware</a></li><li class="chapter-item expanded "><a href="../../info/explications/lidar.html"><strong aria-hidden="true">3.3.4.</strong> Détection de l'adversaire : LIDAR</a></li><li class="chapter-item expanded "><a href="../../info/explications/robot.html"><strong aria-hidden="true">3.3.5.</strong> Création d'un robot</a></li><li class="chapter-item expanded "><a href="../../info/explications/simu.html"><strong aria-hidden="true">3.3.6.</strong> Architecture du simulateur</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../elec_soft/index.html"><strong aria-hidden="true">4.</strong> Electronique Logicielle</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elec_soft/organisation/index.html"><strong aria-hidden="true">4.1.</strong> Organisation du code</a></li><li class="chapter-item expanded "><a href="../../elec_soft/mise_en_place/index.html"><strong aria-hidden="true">4.2.</strong> Mise en place</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elec_soft/mise_en_place/compile.html"><strong aria-hidden="true">4.2.1.</strong> Compilation</a></li><li class="chapter-item expanded "><a href="../../elec_soft/mise_en_place/repo.html"><strong aria-hidden="true">4.2.2.</strong> Répertoire de travail</a></li><li class="chapter-item expanded "><a href="../../elec_soft/mise_en_place/ide.html"><strong aria-hidden="true">4.2.3.</strong> IDE</a></li><li class="chapter-item expanded "><a href="../../elec_soft/mise_en_place/flash.html"><strong aria-hidden="true">4.2.4.</strong> Flashage</a></li></ol></li><li class="chapter-item expanded "><a href="../../elec_soft/apprendre_rust.html"><strong aria-hidden="true">4.3.</strong> Apprendre Rust</a></li><li class="chapter-item expanded "><a href="../../elec_soft/modules/index.html"><strong aria-hidden="true">4.4.</strong> Communication des modules avec l'info</a></li></ol></li><li class="chapter-item expanded "><a href="../../elec_mat/index.html"><strong aria-hidden="true">5.</strong> Electronique matérielle</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elec_mat/mise_en_place/tools.html"><strong aria-hidden="true">5.1.</strong> Mise en place</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elec_mat/mise_en_place/folders.html"><strong aria-hidden="true">5.1.1.</strong> Organisation</a></li><li class="chapter-item expanded "><a href="../../elec_mat/mise_en_place/install_git.html"><strong aria-hidden="true">5.1.2.</strong> Installation</a></li></ol></li><li class="chapter-item expanded "><a href="../../elec_mat/kicad.html"><strong aria-hidden="true">5.2.</strong> Préparer ta carte</a></li><li class="chapter-item expanded "><a href="../../elec_mat/tips&tricks.html"><strong aria-hidden="true">5.3.</strong> Conseils et outils usuels</a></li><li class="chapter-item expanded "><a href="../../elec_mat/production.html"><strong aria-hidden="true">5.4.</strong> Tirer une carte</a></li><li class="chapter-item expanded "><a href="../../elec_mat/references/index.html"><strong aria-hidden="true">5.5.</strong> Références</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elec_mat/references/ethernet.html"><strong aria-hidden="true">5.5.1.</strong> Utilisation du module ethernet</a></li><li class="chapter-item expanded "><a href="../../elec_mat/references/ref_cartes.html"><strong aria-hidden="true">5.5.2.</strong> Annexe : liste des cartes du Club</a></li><li class="chapter-item expanded "><a href="../../elec_mat/references/ref_composants.html"><strong aria-hidden="true">5.5.3.</strong> Annexe : liste des composants usuels</a></li></ol></li><li class="chapter-item expanded "><a href="../../elec_mat/cablage.html"><strong aria-hidden="true">5.6.</strong> Cablage Robot</a></li></ol></li><li class="chapter-item expanded "><a href="../../reference/index.html"><strong aria-hidden="true">6.</strong> Documents de référence</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../reference/commun.html"><strong aria-hidden="true">6.1.</strong> Communs</a></li><li class="chapter-item expanded "><a href="../../reference/deplacement.html"><strong aria-hidden="true">6.2.</strong> Carte déplacement</a></li><li class="chapter-item expanded "><a href="../../reference/servomoteur.html"><strong aria-hidden="true">6.3.</strong> Carte servomoteur</a></li><li class="chapter-item expanded "><a href="../../reference/evitement.html"><strong aria-hidden="true">6.4.</strong> Carte évitement</a></li><li class="chapter-item expanded "><a href="../../reference/couleur.html"><strong aria-hidden="true">6.5.</strong> Carte capteur couleur</a></li><li class="chapter-item expanded "><a href="../../reference/pompe.html"><strong aria-hidden="true">6.6.</strong> Carte pompe à vide</a></li></ol></li><li class="chapter-item expanded "><a href="../../com/index.html"><strong aria-hidden="true">7.</strong> Communication (test)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../com/int/index.html"><strong aria-hidden="true">7.1.</strong> Interne (entre nous)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../com/int/gitter.html"><strong aria-hidden="true">7.1.1.</strong> Gitter</a></li><li class="chapter-item expanded "><a href="../../com/int/fb.html"><strong aria-hidden="true">7.1.2.</strong> Messenger/Facebook</a></li></ol></li><li class="chapter-item expanded "><a href="../../com/ext/index.html"><strong aria-hidden="true">7.2.</strong> Externe</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../com/ext/site.html"><strong aria-hidden="true">7.2.1.</strong> Site</a></li><li class="chapter-item expanded "><a href="../../com/ext/fb.html"><strong aria-hidden="true">7.2.2.</strong> Page Facebook</a></li></ol></li><li class="chapter-item expanded "><a href="../../com/res/md.html"><strong aria-hidden="true">7.3.</strong> Ressources &amp; images</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Documentation Club Robot Insa Toulouse</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#cmake" id="cmake">CMake</a></h1>
+<p><code>cmake</code> est un utilitaire open-source et multi-plateformes qui permet indépendemment du compilateur de générer des fichiers utilisables pour la compilation. De plus, l'IDE <a href="https://www.jetbrains.com/clion/">CLion</a> utilise nativement <code>cmake</code>, ce qui veut dire qu'il va te faire gagner énormément de temps à chaque fois que tu travailleras avec un projet configuré avec <code>cmake</code>.</p>
+<p>Son installation est très simple, il te suffit d'exécuter</p>
+<pre><code class="language-bash">sudo apt-get install cmake
+</code></pre>
+<h2><a class="header" href="#explications-du-fonctionnement" id="explications-du-fonctionnement">Explications du fonctionnement</a></h2>
+<p><code>cmake</code> est à utiliser avec le programme <code>make</code> (tu n'as pas à l'installer en plus, il est déjà présent sur ton ordinateur).</p>
+<p>À l'origine, les projets en <code>C</code> étaient compilés avec <code>make</code> grâce à des fichiers de configuration, des <code>Makefile</code>. Pour te donner une idée de ce à quoi ils ressemblent, voici un exemple (qui n'a rien à voir avec le Club Robot) :</p>
+<pre><code class="language-make">CC        := gcc
+LD        := gcc
+
+vpath %.c $(SRC_DIR)
+
+define make-goal
+$1/%.o: %.c
+	$(CC) -std=gnu99 -Wall -m32 -g -I $(INCLUDES) -c $$&lt; -o $$@
+endef
+
+.PHONY: all checkdirs clean
+
+all: checkdirs build/client
+
+build/client: $(OBJ_CLI)
+	$(LD) -m32 $^ -o $@ -lm -lpthread -g
+
+checkdirs: $(BUILD_DIR)
+
+$(BUILD_DIR):
+	@mkdir -p $@
+
+clean:
+	@rm -rf $(BUILD_DIR)
+
+distclean:
+	@rm -rf $(BUILD_DIR)
+	@-rm -f *.tar.gz || true
+
+$(foreach bdir,$(BUILD_DIR),$(eval $(call make-goal,$(bdir))))
+</code></pre>
+<p>Si tu es en train de te dire que c'est illisible, c'est normal et tu n'as pas à apprendre cette syntaxe rassure-toi.</p>
+<p>En effet, l'objectif de <code>cmake</code> et de rajouter une surcouche à l'étape de compilation en permettant au programmeur d'écrire dans un anglais plus lisible (c'est à dire qu'il rajoute un couche d'abstraction).</p>
+<p>Ainsi, tu vas travailler avec des fichiers de configuration nommés <code>CMakeLists.txt</code>. Voici un petit exemple du fichier qui gère tout le code du robot principal :</p>
+<pre><code class="language-cmake">set(ROBOT_PRINC_SOURCE
+        ../Commun/Strategie.cpp
+        librobot/Robot.cpp
+        librobot/MecaManager.cpp
+        librobot/Strategie.cpp
+        #librobot/Ascenseur.cpp
+        petri/Deplacement.cpp
+        petri/Servo.cpp
+        petri/Moteur.cpp
+        petri/Utils.cpp
+        petri/PetriCommon.cpp
+        librobot/StrategyGenerator/MagicStrategy.cpp)
+
+add_library(robotPrincipal STATIC ${ROBOT_PRINC_SOURCE})
+add_library(robotPrincipalInterfaceElec STATIC ${ROBOT_PRINC_SOURCE})
+
+target_link_libraries(robotPrincipal Cartes Robot Strategie)
+target_link_libraries(robotPrincipalInterfaceElec Robot_Interfacer_Elec Cartes Strategie)
+
+add_executable(debug_calibration_depla debug/CalibrationDepla.cpp)
+target_compile_options(debug_calibration_depla PUBLIC -Wno-deprecated)
+target_link_libraries(debug_calibration_depla robotPrincipal)
+
+include_directories(/usr/local/include/wiic/)
+
+set(wiimote_sources IA/IAWiimote.cpp wiimote/Wiimote.cpp)
+add_executable(IAWiimote ${wiimote_sources})
+include_directories(/usr/local/include/wiic/)
+
+add_executable(IAPrincipal IA/IAPrincipal.cpp)
+
+if (RASPI)
+	message(STATUS &quot;Compiling IAPrincipal for the raspi&quot;)
+	link_directories(/usr/arm-linux-gnueabihf/lib)
+	target_link_libraries(IAPrincipal robotPrincipal PetriRuntime dl)
+
+else()
+	target_link_libraries(IAWiimote robotPrincipal wiicpp)
+	target_link_libraries(IAPrincipal robotPrincipal)
+endif()
+
+
+add_executable(IATestDeplacement IA/IATestDeplacement.cpp)
+target_link_libraries(IATestDeplacement robotPrincipal)
+
+add_executable(IATestMeca IA/IATestMeca.cpp)
+target_link_libraries(IATestMeca robotPrincipal)
+</code></pre>
+<p>Ensuite, une fois ces fichiers bien configurés, il te suffit d'aller dans la racine du dossier et de taper les commandes suivantes :</p>
+<pre><code class="language-bash">mkdir -p build
+cd build
+cmake ..
+make all
+</code></pre>
+<p>Tout est automatisé ; dans un premier temps les <code>Makefile</code>s vont être générés puis la commande <code>make</code> va lire ces fichiers pour les compiler grâce à <code>g++</code>. À la fin du processus (la compilation peut prendre jusqu'à une dizaine de minutes en tout), tu auras les fichiers binaires dans le dossier <code>/info/build</code> prêts à être exécutés.</p>
+<h2><a class="header" href="#cheatsheet" id="cheatsheet">Cheatsheet</a></h2>
+<p>Ce paragraphe n'a bien sûr pas pour but d'être exhaustif, si tu as besoin de trouver des commandes spécifiques je te conseille d'aller voir <a href="https://gitlab.kitware.com/cmake/community/wikis/home">vers le wiki</a>.</p>
+<h3><a class="header" href="#cmakeliststxt-principal" id="cmakeliststxt-principal"><code>CMakeLists.txt</code> principal</a></h3>
+<p>Pour une meilleure lisibilité, les configurations sont réparties dans chaque dossier. Il y a un <code>CMakeLists.txt</code> principal qui fait des configurations globales, et qui appelle ensuite les <code>CMakeLists</code> des sous-dossiers pour compartimenter le simulateur du robot par exemple.</p>
+<ul>
+<li><code>cmaks_minimum_required(VERSION 3.0)</code> - certaines fonctionnalités de <code>cmake</code> sont apparues dans les versions les plus récentes donc il faut toujours spécifier ce flag</li>
+<li><code>project(root)</code> - définission du nom global du projet</li>
+<li><code>option(&lt;NAME&gt; &quot;&lt;comments&gt;&quot; [DEFAULT])</code> - permets de donner des options pendant le lancement de <code>cmake</code>. Par exemple, avec l'<code>option(BITS &quot;Build en 32 ou 64 bits&quot; 64)</code>, on peut forcer la compilation en 32 bits avec l'appel <code>cmake .. -DBITS=32</code></li>
+<li><code>add_definitions(&lt;DEFINITION&gt;)</code> - spécifie des définitions pour la compilation</li>
+<li><code>add_subdirectory(&lt;PATH&gt;)</code> - appelle le <code>CMakeLists</code> d'un dossier enfant, par exemple celui du simulateur</li>
+<li><code>link_directories(/usr/local/lib/)</code> - permets d'utiliser des librairies déjà existantes (par exemple, celle de <a href="http://box2d.org/">box2d</a> pour la gestion du moteur physique)</li>
+</ul>
+<h3><a class="header" href="#commandes-les-plus-utilisées" id="commandes-les-plus-utilisées">Commandes les plus utilisées</a></h3>
+<ul>
+<li><strong>conditions</strong> :
+<pre><code>   if(COLOR)
+      set(CMAKE_COLOR_MAKEFILE ON)
+   else()
+      set(CMAKE_COLOR_MAKEFILE OFF)
+   endif()
+</code></pre>
+Tests d'égalité : <code>${BITS} EQUAL 32</code>, <code>${CMAKE_CXX_COMPILER_ID} STREQUAL &quot;^(Apple)?Clang$&quot;</code></li>
+<li><strong>créer des variables</strong> : <strong><code>set(&lt;NAME&gt; &lt;VALUE)</code></strong> ; exemple : <code>set(CMAKE_CXX_FLAGS &quot;${CMAKE_CXX_FLAGS} -std=c++14&quot;)</code> ; <code>set(FILES_SOURCE src/file1.cpp src/file2.cpp)</code></li>
+<li><strong>librairies</strong>
+<ul>
+<li>Créer une librairie : <code>add_library(&lt;NAME&gt; STATIC ${FILES_SOURCE})</code></li>
+<li>Lier une cible vers une librairie : <code>target_link_libraries(&lt;TARGET&gt; &lt;Lib1&gt; [Lib2] [...])</code></li>
+<li>Récupérer les fichiers d'une librairie externe : <code>find_package(&lt;NAME&gt;)</code> (<a href="https://cmake.org/cmake/help/v3.0/command/find_package.html">wiki</a>)</li>
+</ul>
+</li>
+<li>créer un nouvel exécutable : <code>add_executable(&lt;NAME&gt; &lt;file1&gt; [file2] [...])</code></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../info/outils/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../info/outils/petrilab.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../info/outils/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../info/outils/petrilab.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

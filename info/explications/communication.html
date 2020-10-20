@@ -1,0 +1,375 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Communication avec le hardware - Documentation Club Robot Insa Toulouse</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../../favicon.png">
+        
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../../outils_communs/index.html"><strong aria-hidden="true">2.</strong> Outils Communs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../outils_communs/dual_boot.html"><strong aria-hidden="true">2.1.</strong> Dual Boot</a></li><li class="chapter-item expanded "><a href="../../outils_communs/git.html"><strong aria-hidden="true">2.2.</strong> Git</a></li><li class="chapter-item expanded "><a href="../../outils_communs/ide.html"><strong aria-hidden="true">2.3.</strong> CLion</a></li></ol></li><li class="chapter-item expanded "><a href="../../info/index.html"><strong aria-hidden="true">3.</strong> Informatique</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../info/mise_en_place/index.html"><strong aria-hidden="true">3.1.</strong> Mise en place</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../info/mise_en_place/ide.html"><strong aria-hidden="true">3.1.1.</strong> IDE</a></li><li class="chapter-item expanded "><a href="../../info/mise_en_place/repertoire_de_travail.html"><strong aria-hidden="true">3.1.2.</strong> Répertoire de travail</a></li><li class="chapter-item expanded "><a href="../../info/mise_en_place/compilation.html"><strong aria-hidden="true">3.1.3.</strong> Compilation</a></li></ol></li><li class="chapter-item expanded "><a href="../../info/outils/index.html"><strong aria-hidden="true">3.2.</strong> Prise en main des outils</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../info/outils/cmake.html"><strong aria-hidden="true">3.2.1.</strong> CMake</a></li><li class="chapter-item expanded "><a href="../../info/outils/petrilab.html"><strong aria-hidden="true">3.2.2.</strong> PetriLab</a></li></ol></li><li class="chapter-item expanded "><a href="../../info/explications/index.html"><strong aria-hidden="true">3.3.</strong> Explications du code</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../info/explications/racine.html"><strong aria-hidden="true">3.3.1.</strong> Architecture de la racine</a></li><li class="chapter-item expanded "><a href="../../info/explications/architecture.html"><strong aria-hidden="true">3.3.2.</strong> Vue globale du projet</a></li><li class="chapter-item expanded "><a href="../../info/explications/communication.html" class="active"><strong aria-hidden="true">3.3.3.</strong> Communication avec le hardware</a></li><li class="chapter-item expanded "><a href="../../info/explications/lidar.html"><strong aria-hidden="true">3.3.4.</strong> Détection de l'adversaire : LIDAR</a></li><li class="chapter-item expanded "><a href="../../info/explications/robot.html"><strong aria-hidden="true">3.3.5.</strong> Création d'un robot</a></li><li class="chapter-item expanded "><a href="../../info/explications/simu.html"><strong aria-hidden="true">3.3.6.</strong> Architecture du simulateur</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../elec_soft/index.html"><strong aria-hidden="true">4.</strong> Electronique Logicielle</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elec_soft/organisation/index.html"><strong aria-hidden="true">4.1.</strong> Organisation du code</a></li><li class="chapter-item expanded "><a href="../../elec_soft/mise_en_place/index.html"><strong aria-hidden="true">4.2.</strong> Mise en place</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elec_soft/mise_en_place/compile.html"><strong aria-hidden="true">4.2.1.</strong> Compilation</a></li><li class="chapter-item expanded "><a href="../../elec_soft/mise_en_place/repo.html"><strong aria-hidden="true">4.2.2.</strong> Répertoire de travail</a></li><li class="chapter-item expanded "><a href="../../elec_soft/mise_en_place/ide.html"><strong aria-hidden="true">4.2.3.</strong> IDE</a></li><li class="chapter-item expanded "><a href="../../elec_soft/mise_en_place/flash.html"><strong aria-hidden="true">4.2.4.</strong> Flashage</a></li></ol></li><li class="chapter-item expanded "><a href="../../elec_soft/apprendre_rust.html"><strong aria-hidden="true">4.3.</strong> Apprendre Rust</a></li><li class="chapter-item expanded "><a href="../../elec_soft/modules/index.html"><strong aria-hidden="true">4.4.</strong> Communication des modules avec l'info</a></li></ol></li><li class="chapter-item expanded "><a href="../../elec_mat/index.html"><strong aria-hidden="true">5.</strong> Electronique matérielle</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elec_mat/mise_en_place/tools.html"><strong aria-hidden="true">5.1.</strong> Mise en place</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elec_mat/mise_en_place/folders.html"><strong aria-hidden="true">5.1.1.</strong> Organisation</a></li><li class="chapter-item expanded "><a href="../../elec_mat/mise_en_place/install_git.html"><strong aria-hidden="true">5.1.2.</strong> Installation</a></li></ol></li><li class="chapter-item expanded "><a href="../../elec_mat/kicad.html"><strong aria-hidden="true">5.2.</strong> Préparer ta carte</a></li><li class="chapter-item expanded "><a href="../../elec_mat/tips&tricks.html"><strong aria-hidden="true">5.3.</strong> Conseils et outils usuels</a></li><li class="chapter-item expanded "><a href="../../elec_mat/production.html"><strong aria-hidden="true">5.4.</strong> Tirer une carte</a></li><li class="chapter-item expanded "><a href="../../elec_mat/references/index.html"><strong aria-hidden="true">5.5.</strong> Références</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elec_mat/references/ethernet.html"><strong aria-hidden="true">5.5.1.</strong> Utilisation du module ethernet</a></li><li class="chapter-item expanded "><a href="../../elec_mat/references/ref_cartes.html"><strong aria-hidden="true">5.5.2.</strong> Annexe : liste des cartes du Club</a></li><li class="chapter-item expanded "><a href="../../elec_mat/references/ref_composants.html"><strong aria-hidden="true">5.5.3.</strong> Annexe : liste des composants usuels</a></li></ol></li><li class="chapter-item expanded "><a href="../../elec_mat/cablage.html"><strong aria-hidden="true">5.6.</strong> Cablage Robot</a></li></ol></li><li class="chapter-item expanded "><a href="../../reference/index.html"><strong aria-hidden="true">6.</strong> Documents de référence</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../reference/commun.html"><strong aria-hidden="true">6.1.</strong> Communs</a></li><li class="chapter-item expanded "><a href="../../reference/deplacement.html"><strong aria-hidden="true">6.2.</strong> Carte déplacement</a></li><li class="chapter-item expanded "><a href="../../reference/servomoteur.html"><strong aria-hidden="true">6.3.</strong> Carte servomoteur</a></li><li class="chapter-item expanded "><a href="../../reference/evitement.html"><strong aria-hidden="true">6.4.</strong> Carte évitement</a></li><li class="chapter-item expanded "><a href="../../reference/couleur.html"><strong aria-hidden="true">6.5.</strong> Carte capteur couleur</a></li><li class="chapter-item expanded "><a href="../../reference/pompe.html"><strong aria-hidden="true">6.6.</strong> Carte pompe à vide</a></li></ol></li><li class="chapter-item expanded "><a href="../../com/index.html"><strong aria-hidden="true">7.</strong> Communication (test)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../com/int/index.html"><strong aria-hidden="true">7.1.</strong> Interne (entre nous)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../com/int/gitter.html"><strong aria-hidden="true">7.1.1.</strong> Gitter</a></li><li class="chapter-item expanded "><a href="../../com/int/fb.html"><strong aria-hidden="true">7.1.2.</strong> Messenger/Facebook</a></li></ol></li><li class="chapter-item expanded "><a href="../../com/ext/index.html"><strong aria-hidden="true">7.2.</strong> Externe</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../com/ext/site.html"><strong aria-hidden="true">7.2.1.</strong> Site</a></li><li class="chapter-item expanded "><a href="../../com/ext/fb.html"><strong aria-hidden="true">7.2.2.</strong> Page Facebook</a></li></ol></li><li class="chapter-item expanded "><a href="../../com/res/md.html"><strong aria-hidden="true">7.3.</strong> Ressources &amp; images</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Documentation Club Robot Insa Toulouse</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#communication-avec-le-hardware" id="communication-avec-le-hardware">Communication avec le hardware</a></h1>
+<p>En robotique, il est crucial de pouvoir communiquer entre l'ordinateur décisionnaire et avec l'ensemble des capteurs / moteurs qui animent le robot.</p>
+<h2><a class="header" href="#histoire-de-la-communication-dans-le-club" id="histoire-de-la-communication-dans-le-club">Histoire de la communication dans le Club</a></h2>
+<p>Historiquement, le robot du Club était composé d'une multitude de cartes décentralisées et chacune avait une fonction spéficique (s'occuper de tous les servos moteurs par exemple). Ces cartes étaient reliées par un <a href="https://fr.wikipedia.org/wiki/Bus_de_donn%C3%A9es_CAN">bus CAN</a> avec l'ordinateur et de nombreuses trames transitaient de manière asynchrone.</p>
+<p>Cependant, le savoir de l'utilisation des technologies utilisées (des microcontrôleurs à PIC) s'est perdue et entre 2017 et 2019, on a décidé de changer l'architecture pour</p>
+<ul>
+<li>maîtriser l'ensemble de la chaîne entre le hard et le soft</li>
+<li>réaliser une documentation et un code propre pour faciliter le maintien et la passation du savoir</li>
+<li>avoir une solution rapide pour remplacer de l'électronique en cas de dysfonctionnement</li>
+<li>augmenter les capacités des cartes électroniques</li>
+</ul>
+<p>Ainsi, on a à présent une architecture décentralisée sur plusieurs cartes industrielles <a href="https://eu.mouser.com/new/stmicroelectronics/stm-nucleo-development-boards/">STM32 Nucleo</a>. La communication avec le soft se fait par ethernet, ce qui augmente la facilité de maintenance, la fiabilité et la puissance de communication.</p>
+<hr />
+<p>Il est maintenant temps de rentrer dans les détails techniques de cette communication décentralisée.</p>
+<h2><a class="header" href="#trames-de-communication" id="trames-de-communication">Trames de communication</a></h2>
+<p>Le but est d'utiliser les bénéfices d'une communication entre deux 'cartes mères', et donc de partager le maximum d'informations entre l'informatique et l'électronique. Ainsi, les trames ne correspondent plus à un ordre sporadique addressé au hardware, mais elles regroupent l'ensemble de l'état du robot.</p>
+<p>L'ordinateur envoie l'état du robot tel qu'il souhaite l'être, et la carte électronique travaille pour atteindre l'état voulu. Cet état général est envoyé par l'info puis renvoyé par l'élec et ce en permanence, avec une fréquence de <strong>FIXER LA FREQUENCE</strong>.</p>
+<p>Le format de l'état se veut modulaire en JSON, afin de pouvoir être utilisé quel que soit le robot. Concrètement, la carte électronique est considérée comme un ensemble de modules indépendants (déplacement, évitement, moteurs, servos, capteurs...) qui possèdent chacun un ID, avec un <strong>maximum de 16</strong> modules connectés.</p>
+<p>La tableau suivant regroupe les IDs des modules 'génériquement', mais il n'est bien sûr pas figé.</p>
+<table><thead><tr><th align="center">ID</th><th align="center">Module</th></tr></thead><tbody>
+<tr><td align="center">0x01</td><td align="center">Déplacement</td></tr>
+<tr><td align="center">0x02</td><td align="center">Servos</td></tr>
+<tr><td align="center">0x03</td><td align="center">IO</td></tr>
+<tr><td align="center">0x04</td><td align="center">Évitement</td></tr>
+<tr><td align="center">0x05</td><td align="center">Moteurs</td></tr>
+<tr><td align="center">0x06</td><td align="center">Capteurs</td></tr>
+</tbody></table>
+<hr />
+<h2><a class="header" href="#format-général-dune-trame" id="format-général-dune-trame">Format général d'une trame</a></h2>
+<p>Lorsque la partie informatique communique avec la carte appropriée à propos d'un module, les informations partagées sont encapsulées suivant plusieurs blocs :</p>
+<ul>
+<li>Chaque module sait parser <em>(ie lire et écrire)</em> un flux d'octets qui correspond à un format texte JSON, qui est très simple à lire. La spécification de la structure de données échangées dépend de chaque module et peut se trouver <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules">dans ce dossier</a>. Elle est également spécifiée plus loin dans ce document.</li>
+<li>Pour savoir à quel module est addressé la trame, on rajoute son <strong><code>ID</code></strong> devant la trame sur un <code>u8</code>.</li>
+<li>Enfin, la trame est envoyée sur le support physique :
+<ul>
+<li>dans le cas d'une liaison UDP, la taille de la trame se retrouve grâce aux informations du protocole de transport, donc il suffit d'envoyer un message contenant les données <code>{ID, trame}</code>. Les addresses IP utilisées sont les suivantes : <code>192.168.&lt;ID robot&gt;.&lt;ID module&gt;</code>, avec <code>&lt;ID robot&gt;</code> valant respectivement <code>0</code> et <code>1</code> pour les robots primaire et secondaire.</li>
+<li>pour toutes les autres communications série, on encapsule <code>{ID, trame}</code> dans un header qui contient :
+<ul>
+<li>4 octets qui permettent de distinguer le début d'une trame intéressante ; c'est nécessaire car on est dans une communication asynchrone. Dans le cas du club, elles commencent par le pattern <code>0xAC DC AB BA</code> pour spécifier leur début</li>
+<li>1 octet pour contenir la taille du message intéressant, c'est à dire la taille de <code>{ID, trame}</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#création-dune-liaison-de-communication" id="création-dune-liaison-de-communication">Création d'une liaison de communication</a></h2>
+<p>La classe <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Communication/Communicator.h"><code>Communicator</code></a> s'occupe se gérer la communication élec-info. Il suffit de faire appel à la méthode <code>connect</code> avec les bons arguments et la bonne liaison série est instanciée puis est capable de lire et écrire des trames.</p>
+<p>Cet objet est capable de parler sur n'importe quel médium de communication, en faisait appel à un <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Communication/Protocol.h"><code>Protocol</code></a>. La première méthode appelable est <code>send_frame</code>, qui envoie une trame ; la seconde doit être lancée dans un thread spécifique et permets de recevoir des données pour les traiter avec un handler à fournir : <code>recv_frame(const atomic_bool&amp; b, function&lt;void(GlobalFrame)&gt;)</code>. Le premier argument permets d'interrompre la fonction, qui est bloquée dans un <code>while(b)</code>.</p>
+<p>Voici les protocoles  possibles avec leurs arguments :</p>
+<ul>
+<li><strong>Liaisons séries</strong>
+<ul>
+<li><code>protocol_null</code> : <code> </code>, toutes les trames sont perdues</li>
+<li><code>protocol_tcpip</code> : <code>string address, uint16_t port</code> connexion TCP client vers le serveur <code>address:port</code></li>
+<li><code>protocol_local</code> : <code> </code>, les trames sont envoyées en TCP vers un le serveur <code>localhost:4321</code></li>
+<li><code>protocol_pipes</code> : <code>string rx, string tx</code>, lecture et écriture sur des pipes nommées ; par défaut : <code>rx: &quot;/tmp/read.pipe&quot;</code>, <code>tx: &quot;/tmp/write.pipe&quot;</code></li>
+<li><code>protocol_udp</code> : <code>string address, uint16_t local_port, uint16_t remote_port</code>, liaison UDP depuis le port local vers le serveur UDP <code>address:remote_port</code>. Ce protocole peut être utilisé dans les deux sens de communication, contrairement à l'implémentation actuelle de <code>protocol_tcpip</code>.</li>
+</ul>
+</li>
+<li><strong>Communications sur plusieurs liaisons séries</strong>
+<ul>
+<li><code>protocol_ethernet</code> : <code>initializer_list&lt;UDPConnection&gt;</code>, permets de centraliser <code>N</code> connections UDP en un unique appel à un thread de réception bloquant. Ce protocole gère aussi l'association <code>id_module &lt;-&gt; UDP communication thread</code>.</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/info/communication.png" alt="UML de la communication" title="Diagramme UML de la communication" /></p>
+<hr />
+<h2><a class="header" href="#modules-spécialisés" id="modules-spécialisés">Modules spécialisés</a></h2>
+<p>Chaque module a un rôle particulier (gérer les servos, se déplacer, détecter l'adversaire, capter des infos dans ce monde de sauvage, ...). Pour faciliter la maintenabilité du code, des parties sont mises en commun entre l'info et l'élec.</p>
+<p>Les deux parties utilisent un langage de programmation différent donc les deux parties doivent utiliser le même protocole pour communiquer. La solution retenue est d'envoyer des messages en format JSON encapsulés dans de l'UDP via une liaison ethernet.</p>
+<p>Les formats de JSON sont appropriés pour le debug car les messages sont lisibles avec <a href="www.wireshark.org">wireshark</a>. De plus, ils sont bien plus maintenables car le code est bien plus simple (on utilise des librairies pour parser le JSON).</p>
+<p>LQ seule prérogative pour la partie en <code>Rust</code> est de déclarer des structures de données qui correspondent aux formats transités en JSON.</p>
+<h3><a class="header" href="#format-du-module-a-hrefhttpsgithubcomclubrobotinsatinfoblobdevelopsrcrobotmodulesservoshservosa" id="format-du-module-a-hrefhttpsgithubcomclubrobotinsatinfoblobdevelopsrcrobotmodulesservoshservosa">Format du module <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/Servos.h"><code>Servos</code></a></a></h3>
+<p><a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/Servos.h">Cette classe</a> permets de gérer un ensemble de <a href="https://www.robotshop.com/media/files/pdf/manual-drs-0101.pdf">servos-moteurs</a> en connaissant l'ensemble des informations qui leur sont propres et dont l'état est partagé avec les élecs.</p>
+<p>Pour avoir une idée technique de son API, je te conseille d'aller voir directement le code source.
+L'interface permets de rajouter des servos (ID &gt; 0) puis de contrôler chaque partie avec des fonctions thread-safe.</p>
+<p>La sûreté par rapport au partage des données se fait grâce à une <a href="http://www.cplusplus.com/reference/mutex/">variable mutex</a> partagée et qui est bloquée à chaque accès sur des variables : si la trame des servos est en cours de génération, l'écriture du nouvel angle doit attendre pour que le mutex soit libéré.</p>
+<p>Actuellement, cette classe gère 8 servos (la valeur est constante dans le code) et la trame associée est définie ainsi :</p>
+<pre><code>&lt;id&gt;
+{
+  &quot;id&quot;: &lt;u8&gt;,
+  &quot;known_position&quot;: &lt;u16&gt;,
+  &quot;control&quot;: &quot;[Position|Speed]&quot;,
+  &quot;data&quot;: &lt;u16&gt;,
+  &quot;rotation&quot;: &quot;[Clockwise|CounterClockwise]&quot;,
+  &quot;blocked&quot;: &lt;bool&gt;,
+  &quot;mode&quot;: &quot;[Unblocking|HoldOnBlock]&quot;,
+  &quot;color&quot;: &quot;[Block|Red|Green|Yellow|Blue|Magenta|Cyan|White]&quot;
+}
+</code></pre>
+<p>Les états de chaque servomoteur est envoyé individuellement par le module pour limiter l'impact d'une perte de paquet ainsi que pour faciliter la lecture des trames.</p>
+<h3><a class="header" href="#format-du-module-a-hrefhttpsgithubcomclubrobotinsatinfoblobdevelopsrcrobotmodulesmotorshmotorsa" id="format-du-module-a-hrefhttpsgithubcomclubrobotinsatinfoblobdevelopsrcrobotmodulesmotorshmotorsa">Format du module <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/Motors.h"><code>Motors</code></a></a></h3>
+<p><a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/Motors.h">Cette classe</a> fournit une interface pour travailler avec 8 moteurs asservis, 8 moteurs non-asservis et 8 brushless, dont les fonctions associées sont spécifiques. Voici la trame qui spéficie les informations de tout ce beau monde :</p>
+<pre><code>&lt;id&gt;
+{
+  ## TODO
+}
+</code></pre>
+<h3><a class="header" href="#format-du-module-a-hrefhttpsgithubcomclubrobotinsatinfoblobdevelopsrcrobotmodulesiohioa" id="format-du-module-a-hrefhttpsgithubcomclubrobotinsatinfoblobdevelopsrcrobotmodulesiohioa">Format du module <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/IO.h"><code>IO</code></a></a></h3>
+<p><a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/IO.h">Cette classe</a> est un vestige d'une ancienne façade avec plein de boutons <em>(pour choisir la couleur, le type de connexion...)</em>. Elle ne sert actuellement qu'à détecter si la tirette est enclenchée ou non et ne relaye donc qu'un Booléen par l'intermédiaire de cette structure de trame :</p>
+<pre><code>&lt;id&gt;
+{
+  &quot;tirette&quot;: &lt;bool&gt;
+}
+</code></pre>
+<h3><a class="header" href="#format-du-module-a-hrefhttpsgithubcomclubrobotinsatinfoblobdevelopsrcrobotmodulesnavigationhnavigationa" id="format-du-module-a-hrefhttpsgithubcomclubrobotinsatinfoblobdevelopsrcrobotmodulesnavigationhnavigationa">Format du module <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/Navigation.h"><code>Navigation</code></a></a></h3>
+<p><em><strong>TODO</strong></em></p>
+<hr />
+<h2><a class="header" href="#interface-de-communication" id="interface-de-communication">Interface de communication</a></h2>
+<p>Comme tu l'as vu dans les parties précédentes, on possède à présent plein de modules qui gèrent des aspects différents du robot, et le <code>ModuleManager</code> offre un interfaçage facile pour connaître l'état du robot.</p>
+<p>On peut générer l'état global du robot dans une trame, et mettre à jour le robot depuis une trame globale ; il ne reste plus qu'à gérer la communication entre l'info et l'élec !</p>
+<p>Pour cela, tu peux aller voir <a href="https://github.com/ClubRobotInsat/info/tree/master/src/robot/Commun/Communication/ElecCommunicator.h">du côté du communicateur</a>. Son but est d'avoir en paramètre une classe qui lit et écrit des <code>GlobalFrame</code>s, ainsi qu'un médium de communication et il gère automagiquement la communication pour se connecter, exécuter le protocole de transmission de trames et arrêter à sa destruction la communication.</p>
+<p>Afin d'être aussi général que possible, le communicateur peut prendre en paramètre n'importe quel objet qui donne accès aux fonctions de parsing :</p>
+<ul>
+<li><code>void read_frame(const GlobalFrame&amp;);</code></li>
+<li><code>std::vector&lt;GlobalFrame&gt; write_frame() const;</code></li>
+</ul>
+<p>Si l'objet fourni ne possède pas ces deux définitions, la méthode <code>communicate_with_elecs</code> <em>(sencée être exécutée dans un thread pour recevoir et envoyer les trames)</em> devient inaccessible ; si la méta-programmation ne te fait pas peur tu peux aller voir <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Communication/ParsingClassChecker.hpp">comment vérifier l'existance des fonctions de parsing</a>.</p>
+<hr />
+<h2><a class="header" href="#conclusion" id="conclusion">Conclusion</a></h2>
+<p>Voici un récapitulatif des couches d'abstraction que l'on vient d'aborder dans ce document :</p>
+<ul>
+<li>
+<p>Wrapping de structures brutes en JSON pour connaître l'état de chaque module : <em><a href="https://github.com/ClubRobotInsat/info/tree/develop/src/robot/Modules/">lien</a></em></p>
+<ul>
+<li>du code <code>C++</code> et <code>Rust</code> (respectivement pour les infos et les élecs) englobe ces C-structs</li>
+<li>nombreux avantages : rajout de sécurité, tests et interface fonctionnelle</li>
+</ul>
+</li>
+<li>
+<p>le <a href="https://github.com/ClubRobotInsat/info/tree/develop/src/robot/Modules/ModuleManager.h"><code>ModuleManager</code></a> regroupe tous ces modules</p>
+<ul>
+<li>manipulation facilitée</li>
+<li>tout l'état du robot est centralisé</li>
+<li>parsing des trames globales</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/ClubRobotInsat/info/tree/master/src/robot/Communication/Communicator.h">communication avec les élecs</a> depuis les fonctions de parsing du <code>ModuleManager</code></p>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../info/explications/architecture.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../info/explications/lidar.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../info/explications/architecture.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../info/explications/lidar.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
