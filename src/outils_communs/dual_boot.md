@@ -86,6 +86,25 @@ La première chose à faire est de mettre à jour ton système.
 * **ArchLinux :** `sudo pacman -Suy`
 * **Debian :** `sudo apt update && sudo apt upgrade`
 
+### Installation basique
+Installons les paquets de base nécéssaire pour faire fonctionner les différents outils du club. Ouvre un terminal, et entres :
+```bash
+sudo apt install git curl wget ntfs-3g python3 gcc gbd vim nano cmake
+```
+Les paquets installés sont les suivants :
+* git	--> un gestinnaire de version et de code
+* curl	--> pour télécharger des objets en ligne de commandes
+* wget	--> en gros, idem que curl
+* python3	--> pour executer les scripts python3
+* gcc	--> pour compiler du C/C++, toujours utile
+* gdb	--> pour debugger du C/C++, toujours très utile
+* vim	--> un éditeur de texte en ligne de commande, un peu compliqué mais complet (pour quitter: ESC > :q! > ENTER)
+* nano	--> un éditeur de texte plus simple
+
+
+## Installation avancée
+*Note : Cette partie est falcultative et non recommandée si c'est votre première installation de linux.*
+
 Ensuite, tu peux installer différents paquets sympatiques :
 * **Archlinux**
 ```bash
