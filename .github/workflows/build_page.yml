@@ -25,9 +25,8 @@ jobs:
       - run: mdbook clean
       - run: mdbook build
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./book
+          branch: gh-pages # The branch the action should deploy to.
+          folder: book # The folder the action should deploy.
