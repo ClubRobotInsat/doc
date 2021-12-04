@@ -1,7 +1,6 @@
 # Summary
 
 - [Introduction](intro.md)
-- [Test](test.md)
 - [Outils Communs](outils_communs/index.md)
     - [Dual Boot](outils_communs/dual_boot.md)
     - [Git](outils_communs/git.md)
