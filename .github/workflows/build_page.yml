@@ -10,14 +10,24 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-    - uses: actions/checkout@v2
-    - name: Install MD book
-      run: cargo install mdbook
-    - name: clean
-      run: mdbook clean
-    - name: build page
-      run: mdbook build
+      - uses: actions/checkout@v2
+
+      - name: Setup mdBook
+        uses: peaceiris/actions-mdbook@v1
+        with:
+          # mdbook-version: '0.4.10'
+          mdbook-version: 'latest'
+      - run: mdbook clean
+      - run: mdbook build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./book
