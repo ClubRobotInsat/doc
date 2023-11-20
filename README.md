@@ -38,7 +38,7 @@ Pour toutes les questions n'hésitez pas !
 Non, maintenant, c'est une action de GH><-->
 
 
-# Comment utiliser le site en locale 
+# Comment utiliser le site en local 
 ### (pas nécessaire)
 
 Pour prévisualiser ses changements il faut commencer par installer `mdbook`.
