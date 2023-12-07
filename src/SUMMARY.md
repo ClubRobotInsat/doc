@@ -14,6 +14,7 @@
 - [📈 Architecture du projet](architecture.md)
 - [💻 Informatique](informatique/index.md)
   - [Mise en place](informatique/mise_en_place/index.md)
+    - [Connexion à la Raspberry](informatique/mise_en_place/connexion_a_la_raspberry.md)
     - [IDE](informatique/mise_en_place/ide.md)
     - [Répertoire de travail](informatique/mise_en_place/repertoire_de_travail.md)
     - [Python](informatique/mise_en_place/python.md)
