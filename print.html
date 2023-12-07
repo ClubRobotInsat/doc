@@ -583,7 +583,25 @@ On peut également réutiliser des modules d'une année sur l'autre.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="guide-dutilisation-kicad"><a class="header" href="#guide-dutilisation-kicad">Guide d'utilisation Kicad</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="tirer-une-carte"><a class="header" href="#tirer-une-carte">Tirer une carte</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="checklist-court-circuit"><a class="header" href="#checklist-court-circuit">Checklist court-circuit</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="test"><a class="header" href="#test">Test.</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="moteur-pas-à-pas-mpp"><a class="header" href="#moteur-pas-à-pas-mpp">Moteur pas à pas (MPP)</a></h1>
+<p><strong>Que-ce que c'est un moteur pas à pas? Et pour quoi est-t-il utile?</strong> </p>
+<ul>
+<li>
+<p>Un MPP est un moteur électrique, sans balais et à courant continu, qui permet un contrôle précis en <a href="https://fr.wikipedia.org/wiki/Circuit_en_boucle_ouverte">boucle ouverte</a>. Au contraire des moteurs à courant continu, les MPP tournent de manière <em>discrète</em> (d'où le nom &quot;pas à pas&quot;), normalement à 200 pas par rotation, donc un rotation de 1.8 degrés par pas. </p>
+</li>
+<li>
+<p>Le principale avantage d'un MPP est la précision</p>
+</li>
+</ul>
+<p>Pour le robot de 2023, on a décidé d'utiliser des moteurs à courant continu pour la base roulante, parce que d'après nos essais, les MPP ne fournissent pas suffisamment de force.<br />
+Néanmoins, les MPP peuvent être utiles dans des futurs applications, d'où le nécessité de ce doc.</p>
+<h2 id="fonctionnement-générale-du-moteur-pas-à-pas"><a class="header" href="#fonctionnement-générale-du-moteur-pas-à-pas">Fonctionnement générale du moteur pas à pas.</a></h2>
+<p><a href="https://www.tme.eu/fr/news/library-articles/page/41861/Moteur-pas-a-pas-types-et-exemples-dapplications-des-moteurs-pas-a-pas/">Vous trouvez ici</a> un explication détaillé de la fonctionnement d'un MPP.</p>
+<h3 id="comment-contrôler-un-mpp"><a class="header" href="#comment-contrôler-un-mpp">Comment contrôler un MPP?</a></h3>
+<p>On utilise des microcontrôleurs (STM32) pour contrôler les MPP. Les STM32 permettent d'envoyer un signal précis, mais pas à la puissance requise. Pour résoudre cette problème, un utilise un STM32 pour &quot;gérer&quot; la connexion entre les moteurs et un alimentation à puissance suffisante. Un manière pour faire cela est avec des transistors montées en <a href="https://www.a-m-c.com/fr/experience/technologies/power-devices/pont-en-h/#">pont H</a>.</p>
+<p>Pour simplifier l'implémentation de la circuit de contrôle, on a acheté des cartes électroniques qui intègrent un montage en pont H, avec des protections et option de &quot;microstepping&quot;.</p>
+<p>Le carte que l'on a acheté est: <a href="https://www.pololu.com/product/2968">Pololu MP6500 Stepper Motor Driver Carrier, Digital Current Control</a>. Sur le site vous trouvez toute l'information dont vous avez besoin pour utiliser le driver, et un schéma électronique pour l'implémenter.</p>
+<p>Au moment que l'on écrit cette doc (7/12/23), on a 5 cartes dans le club.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="robot"><a class="header" href="#robot">Robot</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="carte-de-contrôle-1"><a class="header" href="#carte-de-contrôle-1">Carte de contrôle</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="carte-de-déplacement"><a class="header" href="#carte-de-déplacement">Carte de déplacement</a></h1>
