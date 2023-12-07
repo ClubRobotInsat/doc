@@ -34,6 +34,7 @@
   - [Guide d'utilisation Kicad](elec_hard/kicad.md)
   - [Tirer une carte](elec_hard/tirer_une_carte.md)
   - [Checklist court-circuit](elec_hard/checklist_court_circuit.md)
+  - [Moteur pas à pas](elec_hard/Moteur-Pas_a_pas.md)
   - [Robot](elec_hard/robot/index.md)
     - [Carte de contrôle](elec_hard/robot/carte_de_controle.md)
     - [Carte de déplacement](elec_hard/robot/carte_de_deplacement.md)
