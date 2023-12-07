@@ -1,6 +1,8 @@
 # Communication avec le hardware
 
-## Bus CAN
+Ça marche pas :(
+
+## Bus CAN 
 
 Le bus CAN est un bus de communication série qui permet de communiquer avec les différents modules du robot. On a choisi ce bus car il est très utilisé dans l'industrie et est donc très robuste. Il est aussi très rapide et permet de communiquer avec plusieurs modules en même temps.
 
