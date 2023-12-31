@@ -52,6 +52,11 @@
     - [Bras robotique](mecanique/robot/bras_robotique.md)
     - [Conception modulaire](mecanique/robot/conception_modulaire.md)
 
+- [💡Retour d'expériences](retour_dexperiences/index.md)
+  - [Année 2023-2024](retour_dexperiences/retour_dexperiences/cdf_2024.md)
+  - [Année 2022-2023](retour_dexperiences/retour_dexperiences/cdf_2023.md)
+  - [Année 2021-2022](retour_dexperiences/retour_dexperiences/cdf_2022.md)
+  
 - [📚 Doc pre-2021](pre_2021/doc-pre-2021-index.md)
   - [Introduction](pre_2021/intro.md)
   - [Outils Communs](pre_2021/outils_communs/index.md)
