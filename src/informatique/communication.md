@@ -52,6 +52,63 @@ Connecter les pins du transceiver SI, SO, SCK, INT et CS comme ci dessous.
 
 ![CAN Transreceiver pinout](../images/info/CAN_Transreceiver_Pinout.png)
 
+Fichier ```/boot/config.txt``` à mettre pour activer la connexion SPI avec le MCP au moment de boot dans la rpi:
+```
+# For more options and information see
+# http://rptl.io/configtxt
+# Some settings may impact device functionality. See link above for details
+
+# Uncomment some or all of these to enable the optional hardware interfaces
+#dtparam=i2c_arm=on
+#dtparam=i2s=on
+
+dtparam=spi=on
+
+# Enable audio (loads snd_bcm2835)
+dtparam=audio=on
+
+# Additional overlays and parameters are documented
+# /boot/firmware/overlays/README
+
+# Automatically load overlays for detected cameras
+camera_auto_detect=1
+
+# Automatically load overlays for detected DSI displays
+display_auto_detect=1
+
+# Automatically load initramfs files, if found
+auto_initramfs=1
+
+# Enable DRM VC4 V3D driver
+dtoverlay=vc4-kms-v3d
+max_framebuffers=2
+
+# Don't have the firmware create an initial video= setting in cmdline.txt.
+# Use the kernel's default instead.
+disable_fw_kms_setup=1
+
+# Run in 64-bit mode
+arm_64bit=1
+
+# Disable compensation for displays with overscan
+disable_overscan=1
+
+# Run as fast as firmware / board allows
+arm_boost=1
+
+[cm4]
+# Enable host mode on the 2711 built-in XHCI USB controller.
+# This line should be removed if the legacy DWC2 controller is required
+# (e.g. for USB device mode) or if USB support is not required.
+otg_mode=1
+
+[all]
+dtoverlay=mcp2515-can0,oscillator=16000000,interrupt=25,spimaxfrequency=500000
+dtoverlay=spi0-hw-cs
+
+```
+
+
 ### Exemple de connexion entre deux STM32 
 
 ⚠️
@@ -145,7 +202,7 @@ utilisation : cansend can0 <id>#{data}
 
 id sur 3 nombres
 
-[candump(1) - can-utils - Debian testing - Debian Manpages](https://manpages.debian.org/testing/can-utils/candump.1.en.html)
+[candump(1) - can-utils - Debian testing - Debian Manpages (apt install can-utils)](https://manpages.debian.org/testing/can-utils/candump.1.en.html)
 
 candump any reçoit en boucle 
 
