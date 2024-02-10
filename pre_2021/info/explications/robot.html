@@ -205,15 +205,15 @@ int main() {
 <pre><code class="language-cpp">// Création du module manager qui va héberger les modules
 auto m = std::make_shared&lt;PhysicalRobot::ModuleManager&gt;();
 
-// Ajout d'un module &quot;Servos&quot; avec deux servomoteurs
+// Ajout d'un module "Servos" avec deux servomoteurs
 auto&amp; servos = m-&gt;add_module&lt;PhysicalRobot::Servos&gt;(2);
 servos.add_servo(5, 120_deg);
 servos.add_servo(6, 50_deg, PhysicalRobot::Servos::BlockingMode::HOLD_ON_BLOCKING);
 
 // Création d'un robot à partir du ModuleManager précédemment instancié
 // Le deuxième argument est une liste de paramètres permettant d'initialiser la connexion au robot
-// Ici on aura une connexion de type &quot;PIPES&quot;
-PhysicalRobot::Robot robot(m, {&quot;prog&quot;, &quot;PIPES&quot;});
+// Ici on aura une connexion de type "PIPES"
+PhysicalRobot::Robot robot(m, {"prog", "PIPES"});
 </code></pre>
 <ul>
 <li>Utilisation du fichier <code>src/robot.ini</code> dans lequel on peut définir en-dehors du programme les variables d'initialisation pour n'importe quel robot (<code>primary</code>, <code>secondary</code>, <code>adversary</code>, <code>best_robot_of_the_world</code>...). Un robot initialisé à partir d'un <code>ModuleManager</code> se nomme <code>guest</code>, donc le nom est réservé :smile:</li>

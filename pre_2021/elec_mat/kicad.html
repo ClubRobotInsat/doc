@@ -175,14 +175,14 @@
                     <main>
                         <h1 id="guide-dutilisation-de-kicad"><a class="header" href="#guide-dutilisation-de-kicad">Guide d'utilisation de Kicad</a></h1>
 <h2 id="intro"><a class="header" href="#intro">Intro</a></h2>
-<p>On parlera ici de l'utilisation de KiCAD spécifique au club. Pour l'utilisation générale, consulte la doc inclue dans KiCAD, dans le menu aide/help. Elle est claire, et très bien complétée sur internet par une série de vidéos produites par <a href="https://www.youtube.com/watch?v=vaCVh2SAZY4&amp;index=9&amp;list=PLEBQazB0HUyR24ckSZ5u05TZHV9khgA1O&amp;t=0s">DigiKey</a>. </p>
-<p>La réalisation d'une carte suit le <img src="../images/kicad/kicad_flowchart.png" alt="workflow" /> indiqué dans la doc de kicad. </p>
+<p>On parlera ici de l'utilisation de KiCAD spécifique au club. Pour l'utilisation générale, consulte la doc inclue dans KiCAD, dans le menu aide/help. Elle est claire, et très bien complétée sur internet par une série de vidéos produites par <a href="https://www.youtube.com/watch?v=vaCVh2SAZY4&amp;index=9&amp;list=PLEBQazB0HUyR24ckSZ5u05TZHV9khgA1O&amp;t=0s">DigiKey</a>.</p>
+<p>La réalisation d'une carte suit le <img src="../images/kicad/kicad_flowchart.png" alt="workflow" /> indiqué dans la doc de kicad.</p>
 <h2 id="ouverture-dune-carte"><a class="header" href="#ouverture-dune-carte">Ouverture d'une carte</a></h2>
 <p>Quand tu souhaites visualiser ou modifier une carte, ouvre (double clic) son fichier projet (.pro) ou ouvre directement son schematic avec kicad. Il se peut que des symboles soient 'cassés' : ils sont remplacés par les points d'interrogation. Dans ce cas, édite les : clic droit -&gt; properties -&gt; edit properties et choisis 'change' sous le champ 'Library Symbol'. Remplace alors le symbole par sa version à jour. Si tu ne le trouve nulle part, vérifie si tu as bien importé les librairies du club, et celles offertes par DigiKey.</p>
 <h2 id="création-dune-carte"><a class="header" href="#création-dune-carte">Création d'une carte</a></h2>
 <p>Pour créer une carte, il faut suivre <em>méticuleusement</em> le protocole suivant pour être certain de ne pas imprimer de carte inutilisable, ou juste trop difficile à imprimer.</p>
 <p><strong>1) Pose toi la question de quel template utiliser.</strong></p>
-<p>Pour le moment le club n'en a qu'un seul pour une carte classique avec une blackpill et un USR-US1 (le connecteur ethernet) dessus. Copie donc le template <code>libkicad-robot/templates/carte_generique_2019_stm32f103</code> dans ton dossier <code>boards</code>. et renomme le dossier et les fichiers en suivant cette convention : </p>
+<p>Pour le moment le club n'en a qu'un seul pour une carte classique avec une blackpill et un USR-US1 (le connecteur ethernet) dessus. Copie donc le template <code>libkicad-robot/templates/carte_generique_2019_stm32f103</code> dans ton dossier <code>boards</code>. et renomme le dossier et les fichiers en suivant cette convention :</p>
 <pre><code>boards
 ├── {fonction}_{année}_{microcontrôleur}
 │   ├── {fonction}_{année}_{microcontrôleur}.pro
@@ -195,14 +195,14 @@
 Chaque fichier et chaque carte doit être tracable en cas de besoin. Ceux qui reprendront ta carte quand tu auras quitté le club doivent avoir quelqu'un à qui poser les questions !</p>
 <p><strong>3) Préparation du routage</strong></p>
 <p>Ouvre maintenant le pcb de ta nouvelle carte et <strong>VERIFIE LES DESIGN RULES</strong>. Il va falloir bien suivre, la suite est très importante et te fera gagner <em>beaucoup</em> de temps. \n Un peu de contexte : plus une piste est large, plus elle peut conduire du courant sans chauffer. Une piste qui chauffe, ca veut dire des soudures qui fondent ou des composants qui grillent. Mais plus une piste est large, plus le routage sera difficile. Le nouveau jeu est donc de dimensionner chaque piste en fonction de son utilisation : pistes fines pour du signal, pistes larges pour la puissance.</p>
-<p>Pour cela, la solution idéale serait justement de pouvoir indiquer à KiCAD quelles connexions seront utilisées pour de la logique, et quelles connexions feront passer des gros courants. Ca tombe bien ! <em>Setup -&gt; Design rules...</em> à été inventé pour ca. C'est un processus en deux étapes. </p>
+<p>Pour cela, la solution idéale serait justement de pouvoir indiquer à KiCAD quelles connexions seront utilisées pour de la logique, et quelles connexions feront passer des gros courants. Ca tombe bien ! <em>Setup -&gt; Design rules...</em> à été inventé pour ca. C'est un processus en deux étapes.</p>
 <ul>
 <li>
 <p>D'abord on remplit le tableau 'Net classes'. On indique à KiCAD la liste des différents types de connexion.
-La plupart du temps nous n'aurons que des pistes logiques. Tant qu'il n'y a pas de puissance, change la classe <code>default</code>en y entrant 0.381 dans <code>Clearance</code> et 0.381 dans <code>Track Width</code>. </p>
+La plupart du temps nous n'aurons que des pistes logiques. Tant qu'il n'y a pas de puissance, change la classe <code>default</code>en y entrant 0.381 dans <code>Clearance</code> et 0.381 dans <code>Track Width</code>.</p>
 </li>
 <li>
-<p>Ouvre ensuite l'onglet <code>Global Design Rules</code> et remplis le tableau (en bas à droite) : </p>
+<p>Ouvre ensuite l'onglet <code>Global Design Rules</code> et remplis le tableau (en bas à droite) :</p>
 </li>
 </ul>
 <div class="table-wrapper"><table><thead><tr><th></th><th>Width</th></tr></thead><tbody>

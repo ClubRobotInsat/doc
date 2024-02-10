@@ -196,7 +196,7 @@ sudo apt install git gdb-multiarch gdb-arm-none-eabi gcc-arm-none-eabi openocd
 </code></pre>
 </li>
 <li>On autorise le chargement de ce fichier par gdb :
-<pre><code class="language-bash">echo &quot;set auto-load safe-path /&quot; &gt;&gt; ~/.gdbinit
+<pre><code class="language-bash">echo "set auto-load safe-path /" &gt;&gt; ~/.gdbinit
 </code></pre>
 </li>
 </ol>
@@ -230,9 +230,9 @@ On installe gdb-multilib : <code>sudo apt install gcc-multilib</code>.
 Si l'erreur n'est pas résolue, on vérifie que l'on a choisi le bon compilateur : <code>sudo update-alternatives --config gcc</code> et choisir gcc-8.</p>
 <pre><code class="language-bash">expected struct heapless::string::String, found a different struct heapless::string::String
 </code></pre>
-<p>La version de librobot utilisée n'est pas la bonne, il faut choisir la branch &quot;master&quot; (et non &quot;dev-new-pid&quot;) :</p>
+<p>La version de librobot utilisée n'est pas la bonne, il faut choisir la branch "master" (et non "dev-new-pid") :</p>
 <pre><code class="language-bash">nano Cargo.toml
-librobot = {git=&quot;https://github.com/ClubRobotInsat/librobot&quot;, default-features=false}
+librobot = {git="https://github.com/ClubRobotInsat/librobot", default-features=false}
 </code></pre>
 
                     </main>

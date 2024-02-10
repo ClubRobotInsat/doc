@@ -200,7 +200,7 @@ sudo cp &lt;nom du dossier extrait&gt; /opt/clion -R
 </code></pre>
 </li>
 <li>Il faut maintenant ajouter le script de lancement de Clion à ta <a href="https://fr.wikipedia.org/wiki/Variable_d%27environnement">variable d'environnement</a> <code>$PATH</code>:
-<pre><code class="language-bash">echo &quot;export PATH=/opt/clion/bin:$PATH&quot; &gt;&gt; ~/.bashrc
+<pre><code class="language-bash">echo "export PATH=/opt/clion/bin:$PATH" &gt;&gt; ~/.bashrc
 </code></pre>
 Le <code>PATH</code> est une variable d'environnement qui contient une suite de chemins séparés par des deux points <code>:</code>.
 La ligne ci-dessus concatène lors de l'ouverture d'un terminal <strong>bash</strong> à la variable <code>PATH</code> le chemin de lancement de CLion.</li>

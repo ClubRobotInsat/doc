@@ -247,7 +247,7 @@ include_directories(/usr/local/include/wiic/)
 add_executable(IAPrincipal IA/IAPrincipal.cpp)
 
 if (RASPI)
-	message(STATUS &quot;Compiling IAPrincipal for the raspi&quot;)
+	message(STATUS "Compiling IAPrincipal for the raspi")
 	link_directories(/usr/arm-linux-gnueabihf/lib)
 	target_link_libraries(IAPrincipal robotPrincipal PetriRuntime dl)
 
@@ -277,7 +277,7 @@ make all
 <ul>
 <li><code>cmaks_minimum_required(VERSION 3.0)</code> - certaines fonctionnalités de <code>cmake</code> sont apparues dans les versions les plus récentes donc il faut toujours spécifier ce flag</li>
 <li><code>project(root)</code> - définission du nom global du projet</li>
-<li><code>option(&lt;NAME&gt; &quot;&lt;comments&gt;&quot; [DEFAULT])</code> - permets de donner des options pendant le lancement de <code>cmake</code>. Par exemple, avec l'<code>option(BITS &quot;Build en 32 ou 64 bits&quot; 64)</code>, on peut forcer la compilation en 32 bits avec l'appel <code>cmake .. -DBITS=32</code></li>
+<li><code>option(&lt;NAME&gt; "&lt;comments&gt;" [DEFAULT])</code> - permets de donner des options pendant le lancement de <code>cmake</code>. Par exemple, avec l'<code>option(BITS "Build en 32 ou 64 bits" 64)</code>, on peut forcer la compilation en 32 bits avec l'appel <code>cmake .. -DBITS=32</code></li>
 <li><code>add_definitions(&lt;DEFINITION&gt;)</code> - spécifie des définitions pour la compilation</li>
 <li><code>add_subdirectory(&lt;PATH&gt;)</code> - appelle le <code>CMakeLists</code> d'un dossier enfant, par exemple celui du simulateur</li>
 <li><code>link_directories(/usr/local/lib/)</code> - permets d'utiliser des librairies déjà existantes (par exemple, celle de <a href="http://box2d.org/">box2d</a> pour la gestion du moteur physique)</li>
@@ -291,8 +291,8 @@ make all
       set(CMAKE_COLOR_MAKEFILE OFF)
    endif()
 </code></pre>
-Tests d'égalité : <code>${BITS} EQUAL 32</code>, <code>${CMAKE_CXX_COMPILER_ID} STREQUAL &quot;^(Apple)?Clang$&quot;</code></li>
-<li><strong>créer des variables</strong> : <strong><code>set(&lt;NAME&gt; &lt;VALUE)</code></strong> ; exemple : <code>set(CMAKE_CXX_FLAGS &quot;${CMAKE_CXX_FLAGS} -std=c++14&quot;)</code> ; <code>set(FILES_SOURCE src/file1.cpp src/file2.cpp)</code></li>
+Tests d'égalité : <code>${BITS} EQUAL 32</code>, <code>${CMAKE_CXX_COMPILER_ID} STREQUAL "^(Apple)?Clang$"</code></li>
+<li><strong>créer des variables</strong> : <strong><code>set(&lt;NAME&gt; &lt;VALUE)</code></strong> ; exemple : <code>set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")</code> ; <code>set(FILES_SOURCE src/file1.cpp src/file2.cpp)</code></li>
 <li><strong>librairies</strong>
 <ul>
 <li>Créer une librairie : <code>add_library(&lt;NAME&gt; STATIC ${FILES_SOURCE})</code></li>

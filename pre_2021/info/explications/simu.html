@@ -189,7 +189,7 @@ On peut donc utiliser la même stratégie en réel et sur le simulateur qui dema
 </ul>
 <h2 id="coeur"><a class="header" href="#coeur">Coeur</a></h2>
 <p>Le simulateur est entièrement controllé par la classe <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/simulateur/core/Simulateur.h"><code>Simulateur</code></a>.
-Cette classe est instanciée directement dans le <code>main</code> et contrôle les différents modules. Elle contient des méthodes pour initialiser le simulateur, 
+Cette classe est instanciée directement dans le <code>main</code> et contrôle les différents modules. Elle contient des méthodes pour initialiser le simulateur,
 reset la table, ajouter des robots à la simulation, et terminer proprement une session.</p>
 <p>La classe <code>Simulateur</code> contient une instance de <code>World</code>.</p>
 <h2 id="communication"><a class="header" href="#communication">Communication</a></h2>
@@ -213,7 +213,7 @@ particulier.</p>
 <p>Il y a quelques années, le simulateur utilisait un moteur physique en 3D. Même si les simulations étaient plus réalistes, il était difficile de configurer l'environnement
 pour que le robot se comporte comme en vrai. C'est pourquoi nous sommes passés à un moteur en 2D.</p>
 <h2 id="partie-graphique"><a class="header" href="#partie-graphique">Partie graphique</a></h2>
-<p>De même que la partie physique, la partie graphique du simulateur est manipulée via deux interfaces, 
+<p>De même que la partie physique, la partie graphique du simulateur est manipulée via deux interfaces,
 <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/simulateur/graphique/IGraphicalContext.h"><code>IGraphicalContext</code></a> pour créer les objets 3D de l'affichage
 et <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/simulateur/graphique/IGraphicalInstance.h"><code>IGraphicalInstance</code></a> pour modifier les propriétés d'un
 objet en particulier.</p>
@@ -224,7 +224,7 @@ objet en particulier.</p>
 <p>Pour pouvoir interagir avec le simulateur, il faut des boutons, des champs de texte, etc. Ces fonctionnalités sont assez différentes de l'affichage 3D du simulateur.
 De plus, Irrlicht ne nous permet pas de rajouter facilement des éléments d'UI (User Interface) à l'affichage 3D. La GUI est donc un module séparé de l'affichage 3D.
 Le coeur du simulateur interagit avec ce module à travers l'interface <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/simulateur/gui/IGuiContext.h"><code>IGuiContext</code></a>.</p>
-<p>Le module doit aussi transmettre les ordres de l'utilisateur au simulateur. Pour se faire, il reçoit lors de son initialisation un objet de type 
+<p>Le module doit aussi transmettre les ordres de l'utilisateur au simulateur. Pour se faire, il reçoit lors de son initialisation un objet de type
 <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/simulateur/gui/IGuiClient.h"><code>IGuiClient</code></a>, qui possède des méthodes permettant d'éxecuter des actions
 sur le simulateur.</p>
 <h3 id="implémentation-2"><a class="header" href="#implémentation-2">Implémentation</a></h3>

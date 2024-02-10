@@ -191,20 +191,20 @@ sudo apt install kicad
 <h3 id="osx"><a class="header" href="#osx">OSX</a></h3>
 <p>Il existe deux méthodes pour installer Kicad sur un Mac. La classique en allant sur http://kicad-pcb.org/download/osx/, puis en telechargeant la dernière version stable, ou avec Homebrew.</p>
 <p>Homebrew et fonctionne à peu près comme aptitude sur Linux. C'est un très bon outil qui permet d'installer facilement beaucoup d'applications disponibles sur Linux mais pas nativement sur mac (comme wget par exemple). Je profite juste de l'installation de Kicad pour présenter cet outil très utile.
-N'hésite pas à faire un tour sur leur site pour en savoir plus, je ne parlerai ici que du nécéssaire pour installer Kicad. </p>
+N'hésite pas à faire un tour sur leur site pour en savoir plus, je ne parlerai ici que du nécéssaire pour installer Kicad.</p>
 <p>https://brew.sh/index_fr</p>
 <p>Pour installer homebrew, il suffit d'executer cette ligne dans un terminal :</p>
-<pre><code class="language-bash">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+<pre><code class="language-bash">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 </code></pre>
 <p>Cette ligne télécharge et éxécute l'installeur pour Brew. Laisse-toi guider, il décrit ce qu'il fait au fur et a mesure de l'installation.</p>
-<p>Une fois l'install terminée, il faut installer une extension de Brew appellée 'cask'. Elle permet d'installer proprement des applicaitons en passant par le téléchargement et la vérification du .app. </p>
+<p>Une fois l'install terminée, il faut installer une extension de Brew appellée 'cask'. Elle permet d'installer proprement des applicaitons en passant par le téléchargement et la vérification du .app.</p>
 <pre><code class="language-bash">brew install cask
 </code></pre>
 <p>Tout est prêt ! Il ne reste plus qu'à installer la dernière version de Kicad. Attention le téléchargement est lourd (3GB environ).</p>
 <pre><code class="language-bash">brew cask install kicad
 </code></pre>
 <p>Kicad est désormais correctement installé sur ton ordinateur et peut s'utiliser comme n'importe quelle autre application.
-Il est recommandé d'installer ses apps avec Homebrew autant que possible. Pour savoir si une app est disponible sur leurs dépôts, utilise </p>
+Il est recommandé d'installer ses apps avec Homebrew autant que possible. Pour savoir si une app est disponible sur leurs dépôts, utilise</p>
 <pre><code class="language-bash">brew search [nom à rechercher]
 </code></pre>
 <p>Si brew trouve des résultats, un simple  <code>brew install [nom trouvé]</code> se chargera de l'installation.</p>

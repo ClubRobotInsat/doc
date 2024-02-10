@@ -179,7 +179,7 @@
 <p>Cette solution s'est inclinée face à l'utilisation de <a href="">LIDAR</a>s depuis 2019. Il s'agit d'un capteur beaucoup plus précis que notre ancienne tourelle, qui map en 2D son environnement avec des lasers. En sortie, on a une liste de distances qui représentent N points détectés à une certaine distance de notre robot.</p>
 <p>Le code développé en interne au club permets d'utiliser deux LIDARs différents : <strong>[Hokuyo](https://github.com/ClubRobotInsat/info/blob/develop/src/Lidar/Doc/Doc\ Hokuyo.pdf)</strong> et <strong><a href="https://github.com/ClubRobotInsat/info/blob/develop/src/Lidar/Doc/doc_SICK.pdf">SICK TiM55x</a></strong>, le plus précis.</p>
 <p>Dans un premier temps, un <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/Lidar/Driver">code driver</a> est capable de communiquer avec chacun de ces LIDARs. Pour avoir une interface d'acquisition, il suffit d'utiliser ce code :</p>
-<pre><code class="language-cpp">#include &quot;Lidar/Driver/lidar.h&quot;
+<pre><code class="language-cpp">#include "Lidar/Driver/lidar.h"
 std::unique_ptr&lt;Lidar&gt; my_lidar = Lidar::open_lidar(Lidar::Any);
 </code></pre>
 <h3 id="sick-tim55x"><a class="header" href="#sick-tim55x">SICK TiM55x</a></h3>

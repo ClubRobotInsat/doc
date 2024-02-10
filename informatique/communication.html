@@ -204,8 +204,8 @@
 <p><strong>Réglage du slope-rate</strong> :</p>
 <p>Pour changer le slope-rate on change la valeur de R connecter sur RS.</p>
 <h3 id="connexion-du-mcp2515-spican---raspberry-pi"><a class="header" href="#connexion-du-mcp2515-spican---raspberry-pi">Connexion du MCP2515 (SPI+CAN -&gt; Raspberry Pi)</a></h3>
-<p>Connecter les pins du transceiver SI, SO, SCK, INT et CS comme ci dessous. </p>
-<p>:warning: Le VCC doit être sur du <strong>5V</strong> contrairement à ce schéma, ne pas oublier le ground. </p>
+<p>Connecter les pins du transceiver SI, SO, SCK, INT et CS comme ci dessous.</p>
+<p>:warning: Le VCC doit être sur du <strong>5V</strong> contrairement à ce schéma, ne pas oublier le ground.</p>
 <p><img src="../images/info/CAN_Raspberry_Transreceiver_Connexion.png" alt="Connexion entre Raspberry et transreceiver" /></p>
 <p><img src="../images/info/CAN_Transreceiver_Pinout.png" alt="CAN Transreceiver pinout" /></p>
 <p>Fichier <code>/boot/config.txt</code> à mettre pour activer la connexion SPI avec le MCP au moment de boot dans la rpi:</p>
@@ -350,23 +350,23 @@ Vérifier que la Raspberry Pi reçoit bien les messages envoyés par les STM32 e
 <ul>
 <li>Description générale du fonctionnement:  <a href="https://www.ti.com/lit/an/sloa101b/sloa101b.pdf?ts=1633140726383&amp;ref_url=https%253A%252F%252Fwww.google.com%252F">https://www.ti.com/lit/an/sloa101b/sloa101b.pdf?ts=1633140726383&amp;ref_url=https%3A%2F%2Fwww.google.com%2F</a></li>
 </ul>
-<p>si ça marche pas, vérifier qu’il y a bien deux dispositifs sur le bus </p>
+<p>si ça marche pas, vérifier qu’il y a bien deux dispositifs sur le bus</p>
 <p><a href="https://www.csselectronics.com/pages/can-bus-simple-intro-tutorial">CAN Bus Explained - A Simple Intro [2022 | The #1 Tutorial]</a></p>
-<p><a href="https://github.com/TVAROBOT/STM32">GitHub - TVAROBOT/STM32: CAN bus on STM32F103C8T6 &quot;Blue pill&quot; uVision and CubeMX</a></p>
+<p><a href="https://github.com/TVAROBOT/STM32">GitHub - TVAROBOT/STM32: CAN bus on STM32F103C8T6 "Blue pill" uVision and CubeMX</a></p>
 <p><a href="../ToDo%20d9dc46c3b25c4135a14d9b95735317f5/Decide%20communication%20protocol%20d89cb22bfdd24c7198646a51b15ae670/CAN%20Bus%20b5e77c9cfda440c08deaae066f118232.html">CAN Bus</a></p>
 <p>datasheet : <a href="https://ww1.microchip.com/downloads/en/DeviceDoc/MCP2515-Stand-Alone-CAN-Controller-with-SPI-20001801J.pdf">https://ww1.microchip.com/downloads/en/DeviceDoc/MCP2515-Stand-Alone-CAN-Controller-with-SPI-20001801J.pdf</a></p>
 <p><a href="https://forums.raspberrypi.com/viewtopic.php?t=141052">[quick-guide] CAN bus on raspberry pi with MCP2515 - Raspberry Pi Forums</a></p>
 <p><a href="https://www.beyondlogic.org/adding-can-controller-area-network-to-the-raspberry-pi/">Adding CAN to the Raspberry PI</a></p>
 <p><a href="https://projects-raspberry.com/how-to-connect-raspberry-pi-to-can-bus/"></a></p>
-<p>apparemment c’est un problème de fils, j’ai les mêmes erreurs qu’ici : </p>
+<p>apparemment c’est un problème de fils, j’ai les mêmes erreurs qu’ici :</p>
 <p><a href="https://forums.raspberrypi.com/viewtopic.php?t=311606">[SOLVED] Not able to setup can0. - Raspberry Pi Forums</a></p>
 <p><a href="https://github.com/raspberrypi/linux/issues/4183">MCP251x failes setup CAN-bus communication with error=110 · Issue #4183 · raspberrypi/linux</a></p>
 <p>utilisation : cansend can0 <id>#{data}</p>
 <p>id sur 3 nombres</p>
 <p><a href="https://manpages.debian.org/testing/can-utils/candump.1.en.html">candump(1) - can-utils - Debian testing - Debian Manpages (apt install can-utils)</a></p>
-<p>candump any reçoit en boucle </p>
-<p>finalement on va laisser tomber spidev et utiliser bash directement </p>
-<p>librairie python : spidev (jamais utilisé) </p>
+<p>candump any reçoit en boucle</p>
+<p>finalement on va laisser tomber spidev et utiliser bash directement</p>
+<p>librairie python : spidev (jamais utilisé)</p>
 <p><a href="https://pypi.org/project/spidev/">https://pypi.org/project/spidev/</a></p>
 <p><a href="https://www.sigmdel.ca/michel/ha/rpi/dnld/draft_spidev_doc_fr.pdf">https://www.sigmdel.ca/michel/ha/rpi/dnld/draft_spidev_doc_fr.pdf</a></p>
 <p><a href="https://raspberrypi-aa.github.io/session3/spi.html">https://raspberrypi-aa.github.io/session3/spi.html</a></p>

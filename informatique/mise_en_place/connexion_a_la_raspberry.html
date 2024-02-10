@@ -175,23 +175,23 @@
                     <main>
                         <h1 id="connexion-à-la-raspberry"><a class="header" href="#connexion-à-la-raspberry">Connexion à la Raspberry</a></h1>
 <h1 id="raspberry-pi"><a class="header" href="#raspberry-pi">Raspberry Pi</a></h1>
-<p>La Raspberry Pi a maintenant un serveur DHCP fonctionnel </p>
+<p>La Raspberry Pi a maintenant un serveur DHCP fonctionnel</p>
 <h2 id="quoi-que-cest-le-dhcp"><a class="header" href="#quoi-que-cest-le-dhcp">Quoi que c'est le DHCP?</a></h2>
-<p>C'est le truc qui vous permet d'avoir automatiquement une @IP sans jamais aller toucher aux paramètres de votre pc ou de la raspi, et donc d'avoir une connectivité qui marche sans rien faire, donc c'est cool </p>
+<p>C'est le truc qui vous permet d'avoir automatiquement une @IP sans jamais aller toucher aux paramètres de votre pc ou de la raspi, et donc d'avoir une connectivité qui marche sans rien faire, donc c'est cool</p>
 <h2 id="comment-que-je-men-sers"><a class="header" href="#comment-que-je-men-sers">Comment que je m'en sers?</a></h2>
-<p>Il suffit de brancher votre pc au port ethernet de la raspi. Si ladite raspi est allumée (branchée), vous aurez une adresse IP sur votre ordi (mais vous n'avez pas besoin de vous en soucier), et surtout, vous pourrez vous connecter en ssh à la raspi </p>
+<p>Il suffit de brancher votre pc au port ethernet de la raspi. Si ladite raspi est allumée (branchée), vous aurez une adresse IP sur votre ordi (mais vous n'avez pas besoin de vous en soucier), et surtout, vous pourrez vous connecter en ssh à la raspi</p>
 <h2 id="ok-comment-je-me-connecte-en-ssh"><a class="header" href="#ok-comment-je-me-connecte-en-ssh">OK, comment je me connecte en ssh?</a></h2>
-<p><code>ssh pi@192.168.169.1</code> </p>
+<p><code>ssh pi@192.168.169.1</code></p>
 <h2 id="aude-ça-marche-pas"><a class="header" href="#aude-ça-marche-pas">Aude, ça marche pas!</a></h2>
 <ul>
-<li>est-ce que les LEDs du port ethernet de la raspi et du PC sont allumées? </li>
-<li>sinon, rebrancher le câble comme il faut, vérifier l'alim des deux dispositifs </li>
-<li>est-ce que mon PC a bien reçu une adresse IP sur le réseau 192.168.169.0/24? <code>ifconfig</code> </li>
-<li>sinon, sur la raspi, vérifier le statut du serveur DHCP <code>systemctl status isc-dhcp-server</code> </li>
+<li>est-ce que les LEDs du port ethernet de la raspi et du PC sont allumées?</li>
+<li>sinon, rebrancher le câble comme il faut, vérifier l'alim des deux dispositifs</li>
+<li>est-ce que mon PC a bien reçu une adresse IP sur le réseau 192.168.169.0/24? <code>ifconfig</code></li>
+<li>sinon, sur la raspi, vérifier le statut du serveur DHCP <code>systemctl status isc-dhcp-server</code></li>
 </ul>
 <h3 id="jarrive-à-ping-la-raspi-mais-pas-à-ssh"><a class="header" href="#jarrive-à-ping-la-raspi-mais-pas-à-ssh">J'arrive à ping la raspi, mais pas à SSH</a></h3>
 <ul>
-<li>probablement un problème de firewall, bonne chance jeune padawan (cherche comment utiliser le firewall ufw sur internet) </li>
+<li>probablement un problème de firewall, bonne chance jeune padawan (cherche comment utiliser le firewall ufw sur internet)</li>
 </ul>
 <h2 id="je-peux-te-contacter-si-ça-marche-pas"><a class="header" href="#je-peux-te-contacter-si-ça-marche-pas">Je peux te contacter si ça marche pas?</a></h2>
 <p>Oui bien sûr ^^</p>
@@ -199,7 +199,7 @@
 <blockquote>
 <p>user : pi mdp : robotcdf</p>
 </blockquote>
-<p>pour se connecter en ssh à la raspi : </p>
+<p>pour se connecter en ssh à la raspi :</p>
 <ul>
 <li>en wifi : vérifier qu’on est sur le même réseau (ex : partage de connexion, réseau IoT si j’arrive à chopper le mdp)
 <ul>
@@ -208,16 +208,16 @@
 </li>
 <li>en ethernet : connecter le pc et la raspi avec un câble ethernet (si besoin adaptateur usb)</li>
 </ul>
-<p>Si les led des ports ethernet ne s’allument pas, tout reboot </p>
+<p>Si les led des ports ethernet ne s’allument pas, tout reboot</p>
 <ol>
 <li>
-<p>vérifie qu’il y a une ipv6 (commençant pas fe80::) sur l’interface de la raspi et de ton pc (elles ont sûrement des noms bizarres commençant par en) : ça veut dire que la connexion est possible </p>
+<p>vérifie qu’il y a une ipv6 (commençant pas fe80::) sur l’interface de la raspi et de ton pc (elles ont sûrement des noms bizarres commençant par en) : ça veut dire que la connexion est possible</p>
 <ul>
 <li>si pas d’ipv6, débranche et rebranche, vérifie toutes les interfaces</li>
 </ul>
 </li>
 <li>
-<p>essaie de ping la raspi depuis ton pc (facultatif : ping ton pc depuis la raspi, mais les windows ne répondront pas dans tous les cas) </p>
+<p>essaie de ping la raspi depuis ton pc (facultatif : ping ton pc depuis la raspi, mais les windows ne répondront pas dans tous les cas)</p>
 <ul>
 <li>
 <p>si ton pc a une ipv4  en 169.254.X.X (link-local)</p>
@@ -225,7 +225,7 @@
 <li>toutes les fois où j’ai testé la raspi avait la 169.254.217.11/16</li>
 <li>celle avec le scotch a été mise en static à 169.254.0.1/16</li>
 </ul>
-<p>⇒ rentre la commande suivante sur ton pc </p>
+<p>⇒ rentre la commande suivante sur ton pc</p>
 <pre><code class="language-bash">ping ipv4_raspi # si le ping ne passe pas, vérifie la connectivité 
 # et/ou essaie en ipv6 
 # tu peux aussi entrer la commande 
@@ -234,14 +234,14 @@ route # pour vérifier la table de routage si tu es expérimenté
 </li>
 <li>
 <p>si ton pc n’a pas d’ipv4 sur l’interface</p>
-<p>⇒ ping la raspi en ipv6 </p>
+<p>⇒ ping la raspi en ipv6</p>
 <pre><code class="language-bash">ping -6 ipv6_raspi%interface
 </code></pre>
 </li>
 </ul>
 </li>
 <li>
-<p>se connecter en ssh </p>
+<p>se connecter en ssh</p>
 <ul>
 <li>ipv4</li>
 </ul>
@@ -254,7 +254,7 @@ route # pour vérifier la table de routage si tu es expérimenté
 </code></pre>
 </li>
 </ol>
-<p>Tu peux utiliser un connecteur sur ton ide (par exemple sur vscode) une fois que le ssh fonctionne </p>
+<p>Tu peux utiliser un connecteur sur ton ide (par exemple sur vscode) une fois que le ssh fonctionne</p>
 <p>(PC Aude : Adaptador de Ethernet Ethernet: 169.254.239.119)</p>
 <p><img src="../../images/info/Raspberry.png" alt="Image de la Raspberry Pi" /></p>
 <h2 id="install-opencv"><a class="header" href="#install-opencv">Install OpenCV</a></h2>

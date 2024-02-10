@@ -229,7 +229,7 @@
 <li><code>protocol_null</code> : <code> </code>, toutes les trames sont perdues</li>
 <li><code>protocol_tcpip</code> : <code>string address, uint16_t port</code> connexion TCP client vers le serveur <code>address:port</code></li>
 <li><code>protocol_local</code> : <code> </code>, les trames sont envoyées en TCP vers un le serveur <code>localhost:4321</code></li>
-<li><code>protocol_pipes</code> : <code>string rx, string tx</code>, lecture et écriture sur des pipes nommées ; par défaut : <code>rx: &quot;/tmp/read.pipe&quot;</code>, <code>tx: &quot;/tmp/write.pipe&quot;</code></li>
+<li><code>protocol_pipes</code> : <code>string rx, string tx</code>, lecture et écriture sur des pipes nommées ; par défaut : <code>rx: "/tmp/read.pipe"</code>, <code>tx: "/tmp/write.pipe"</code></li>
 <li><code>protocol_udp</code> : <code>string address, uint16_t local_port, uint16_t remote_port</code>, liaison UDP depuis le port local vers le serveur UDP <code>address:remote_port</code>. Ce protocole peut être utilisé dans les deux sens de communication, contrairement à l'implémentation actuelle de <code>protocol_tcpip</code>.</li>
 </ul>
 </li>
@@ -254,14 +254,14 @@ L'interface permets de rajouter des servos (ID &gt; 0) puis de contrôler chaque
 <p>Actuellement, cette classe gère 8 servos (la valeur est constante dans le code) et la trame associée est définie ainsi :</p>
 <pre><code>&lt;id&gt;
 {
-  &quot;id&quot;: &lt;u8&gt;,
-  &quot;known_position&quot;: &lt;u16&gt;,
-  &quot;control&quot;: &quot;[Position|Speed]&quot;,
-  &quot;data&quot;: &lt;u16&gt;,
-  &quot;rotation&quot;: &quot;[Clockwise|CounterClockwise]&quot;,
-  &quot;blocked&quot;: &lt;bool&gt;,
-  &quot;mode&quot;: &quot;[Unblocking|HoldOnBlock]&quot;,
-  &quot;color&quot;: &quot;[Block|Red|Green|Yellow|Blue|Magenta|Cyan|White]&quot;
+  "id": &lt;u8&gt;,
+  "known_position": &lt;u16&gt;,
+  "control": "[Position|Speed]",
+  "data": &lt;u16&gt;,
+  "rotation": "[Clockwise|CounterClockwise]",
+  "blocked": &lt;bool&gt;,
+  "mode": "[Unblocking|HoldOnBlock]",
+  "color": "[Block|Red|Green|Yellow|Blue|Magenta|Cyan|White]"
 }
 </code></pre>
 <p>Les états de chaque servomoteur est envoyé individuellement par le module pour limiter l'impact d'une perte de paquet ainsi que pour faciliter la lecture des trames.</p>
@@ -276,7 +276,7 @@ L'interface permets de rajouter des servos (ID &gt; 0) puis de contrôler chaque
 <p><a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/IO.h">Cette classe</a> est un vestige d'une ancienne façade avec plein de boutons <em>(pour choisir la couleur, le type de connexion...)</em>. Elle ne sert actuellement qu'à détecter si la tirette est enclenchée ou non et ne relaye donc qu'un Booléen par l'intermédiaire de cette structure de trame :</p>
 <pre><code>&lt;id&gt;
 {
-  &quot;tirette&quot;: &lt;bool&gt;
+  "tirette": &lt;bool&gt;
 }
 </code></pre>
 <h3 id="format-du-module-navigation"><a class="header" href="#format-du-module-navigation">Format du module <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/Navigation.h"><code>Navigation</code></a></a></h3>
