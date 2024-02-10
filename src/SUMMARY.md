@@ -18,6 +18,7 @@
     - [IDE](informatique/mise_en_place/ide.md)
     - [Répertoire de travail](informatique/mise_en_place/repertoire_de_travail.md)
     - [Python](informatique/mise_en_place/python.md)
+    - [ROS2 dev environment](informatique/mise_en_place/ros2_dev_container_setup.md)
   - [Architecture du code](informatique/architecture.md)
   - [Communication avec le hardware](informatique/communication.md)
   - [Détection de l'adversaire : LIDAR](informatique/lidar.md)
