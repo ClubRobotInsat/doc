@@ -23,6 +23,7 @@
   - [Communication avec le hardware](informatique/communication.md)
   - [Détection de l'adversaire : LIDAR](informatique/lidar.md)
   - [Création d'un robot](informatique/robot.md)
+  - [ROS2 issues](informatique/ros2-random-issues.md)
 - [👨‍💻 Electronique Logicielle](elec_soft/index.md)
   - [Organisation du code](elec_soft/organisation/index.md)
   - [Guide d'utilisation Rust](elec_soft/rust.md)
