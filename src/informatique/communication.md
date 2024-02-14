@@ -1,4 +1,4 @@
-# Communication avec le hardware
+# Communication avec le hardware: CAN Bus
 
 La communication avec le hardware est essentielle pour assurer le bon fonctionnement du robot. Cette section se concentre sur le bus CAN, un choix stratégique en raison de sa robustesse et de sa rapidité.
 
@@ -158,6 +158,38 @@ dtoverlay=spi0-hw-cs
 
 - `candump any` pour recevoir (en boucle)
 - `cansend can0 000#00.00.00.00.00.00.00.00` pour envoyer (attention, données en hexa).
+
+## Protocole de test de Liam
+
+Le Bus CAN fonctionne, mais comment le tester? 
+
+Tout d'abord, il faut la raspberry pi avec ubuntu ou raspbian installé dessus (soit USB soit carte SD)
+Un module qui fait office d'interface CAN est deja connecté à la raspberry pi 
+
+J'utilise une alim (celle de mon telephone, le chargeur) pour alimenter la raspberry. Ensuite j'utilise un cable micro HDMI pour afficher le terminal qu'il me faut pour mettre en place le bus CAN
+
+Lorsque le terminal est activé, apres avoir renseigné le login et mdp (pi et robotcdf respectivement), il faut mettre en place l'interface CAN avec la commande suivante : 
+sudo ip link set can0 up type can bitrate 125000 
+
+Le bitrate depend de nous, si on le change il faut s'assurer que les STM32 ont le meme bitrate associé à leurs interfaces CAN.
+
+Lorsque l'interface est UP , on peut brancher CANH et CANL de la raspi a un bus CAN composé de plusieurs STM32.
+Nous avons pour l'instant deux cartes , une avec seulement une stm, une autre carte avec une stm et tout ce qu'il faut pour driver les moteurs a courant continu.
+
+Si l'interface n'est pas UP, il faut verifier l'erreur en utilisant la commande dmesg . Dans mon cas, l'erreur etait due aux fils qui étaient de mauvaise qualité et n'interconnectaient pas bien la raspi et le module CAN.
+
+Il est dorenavant possible d'interagir avec le bus CAN en utilisant l'utilitaire can-utils : 
+
+On peut lancer par exemple : candump can0 pour observer le traffic sur le Bus CAN.
+cansend can0 013#01.01.01.01.01.01.01.01 par exemple pour envoyer des donnees sur le bus CAN 
+( Dans le cas du code que j'ai ecrit sur la stm32, ceci permet d'ordonner à la STM32 d'activer les moteurs )
+
+
+Le code sur la STM32 utilise un filtre sur l'ID 013 et verifie le contenu du premier octet de la trame CAN. 
+
+En conclusion : Ne pas faire confiance aux breadboards, ni aux fils (jumper wires) qui ne garantissent pas des connexions fiables.
+Il faut aussi faire attention quant a la configuration du filtre sur la stm32.
+Attention egalement a l'oscillateur utilisé sur la stm32, il faut bien definir l'oscillation sur le bus CAN (Interface FDCAN)
 
 ## Documentation diverse
 
