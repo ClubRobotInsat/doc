@@ -1,1 +1,0 @@
-# Tirer une carte
