@@ -40,7 +40,7 @@
   - [Fabrication](elec_hard/Fabrication.md)
   - [Règles de jeu - checklist](elec_hard/design-rules.md)
   - Autres
-    - [Moteur pas à pas](elec_hard/Moteur-Pas_a_pas.md)
+    - [Moteur pas à pas](elec_hard/autres/Moteur-Pas_a_pas.md)
 - [🦾 Mécanique](mecanique/index.md)
   - [Guide d'utilisation Creo](mecanique/creo.md)
   - [Utilisation de la découpeuse laser](mecanique/decoupeuse_laser.md)
