@@ -36,7 +36,7 @@
   - [Introduction](elec_hard/introduction.md)
   - [Procédé de design](elec_hard/Etapes-design.md)
   - [Qu'est-ce qu'un PCB ?](elec_hard/PCB.md)
-  - [Un introduction au KiCad](elec_hard/KiCad.md)
+  - [Une introduction au KiCad](elec_hard/KiCad.md)
   - [Fabrication](elec_hard/Fabrication.md)
   - [Règles de jeu - checklist](elec_hard/design-rules.md)
   - Autres
