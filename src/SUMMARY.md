@@ -34,7 +34,7 @@
   - [Communication des modules avec l'info](elec_soft/modules/index.md)
 - [⚡ Electronique Matérielle (Elec-hard)](elec_hard/index.md)
   - [Introduction](elec_hard/introduction.md)
-  - [Procédé de design](elec_hard/Etapes-design.md)
+  - [Processus de design](elec_hard/Etapes-design.md)
   - [Qu'est-ce qu'un PCB ?](elec_hard/PCB.md)
   - [Une introduction au KiCad](elec_hard/KiCad.md)
   - [Fabrication](elec_hard/Fabrication.md)
