@@ -58,7 +58,7 @@ La dernière étape est de mettre du texte sur le PCB qui sert à faciliter l'ut
 
 Comme pour le schéma électronique, on peut lancer le DRC (design rules checker) qui vérifie qu'on a respecté les design rules définis en KiCad, et encore un fois, les erreurs électroniques simples.
 
-Avant d'exporter les fichiers de fabrication, et de commander le PCB, un verification du PCB avec un _autre_ membre de l'équipe élec-hard est **obligatoire**.
+Avant d'exporter les fichiers de fabrication, et de commander le PCB, un verification du PCB selon les [regles du club](design-rules.md) avec un _autre_ membre de l'équipe élec-hard est **obligatoire**.
 
 ### 3.3: Exportation des fichiers de fabrication
 
