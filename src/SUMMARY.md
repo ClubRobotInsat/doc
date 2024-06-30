@@ -38,6 +38,7 @@
   - [Qu'est-ce qu'un PCB ?](elec_hard/PCB.md)
   - [Une introduction au KiCad](elec_hard/KiCad.md)
   - [Fabrication](elec_hard/Fabrication.md)
+  - [Soudure](elec/hard/Tips_de_soudure.md)
   - [Règles de jeu - checklist](elec_hard/design-rules.md)
   - [Autres](elec_hard/autres/index.md)
     - [Moteur pas à pas](elec_hard/autres/Moteur-Pas_a_pas.md)
