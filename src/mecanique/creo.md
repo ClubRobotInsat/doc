@@ -5,7 +5,7 @@ Il faut s'inscrire avec **son mel INSA** et suivre les étapes qui sont démontr
 Si le video n'est pas disponible, veuillez vous addresser à votre responsable de pôle Mécanique.
 
 ## Etape 2 : Configuration 
-Il faut télécharger le ficher [config.pro](https://github.com/ClubRobotInsat/doc/blob/master/src/mecanique/config.pro) et remplacer sur votre ordinateur dans la destination suivante : *"C:\Program Files\PTC\Creo 9.0.0.0\Common Files\text\"* (si vous l'avez installé ailleurs, il faut trouver où ils sont vos *Program Files* et le reste suivre comme dans le lien.
-Cette config a pour but de faire 2 choses:
-1) Utilisation d'unités métriques par défaut (sinon c'est en inch et pas cohérente avec la raison parce que les unités imperiales ne servent à rien)
+Il faut télécharger le ficher [config.pro](https://github.com/ClubRobotInsat/doc/blob/master/src/mecanique/config.pro) et remplacer sur votre ordinateur dans la destination suivante : *"C:\Program Files\PTC\Creo 9.0.0.0\Common Files\text\"* (si vous l'avez installé ailleurs, il faut trouver où ils sont vos *Program Files* et le reste suivre comme dans le lien).
+Cette config a pour but de faire 2 choses :
+1) Utilisation d'unités métriques par défaut (sinon c'est en inch et pas cohérente avec la logique parce que les unités imperiales ne servent à rien)
 2) Faire un sort que Creo ne garde pas les anciennes versions de vos fichers pour ne pas créer des erreurs sur github (voire le tutoriel de git pour les mécas)
