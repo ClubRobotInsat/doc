@@ -1,4 +1,4 @@
-![](images/com/logo_2021_Club_Robot.svg "Logo du Club Robot")
+![](images/com/logo_Club_blanc.svg "Logo du Club Robot")
 
 # Introduction
 
