@@ -1,4 +1,4 @@
-# Elec 1o1 😢
+# Elecsoft Checklist 1o1 😢
 
 Liste des choses à vérifier si ton circuit ne fonctionne pas et/ou il fait des choses incompréhensibles:
 
