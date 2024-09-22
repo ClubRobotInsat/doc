@@ -1,0 +1,6 @@
+# Guide d'installation de STM32CubeIDE
+
+Lien de téléchargement : [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)
+
+## Notes
+Vous aurez besoin d'un compte STMicroelectronics pour utiliser le logiciel.
