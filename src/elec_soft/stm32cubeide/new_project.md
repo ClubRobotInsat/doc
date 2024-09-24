@@ -5,7 +5,7 @@ Un project STM32CubeIDE contient le code source, les fichiers de configuration e
 ## Step 1: Créer un nouveau workspace
 D'abord, lance STM32CubeIDE. Vous devriez voir une fenêtre qui ressemble à ceci:
 
-![Workspace Selection](/src/images/elecsoft/stm32cubeide/cubeide_ws.png)
+![Workspace Selection](../../images/elecsoft/stm32cubeide/cubeide_ws.png)
 
 Vous devez choisir un "workspace" pour stocker vos projets. 
 
@@ -17,7 +17,7 @@ Cliquez sur "Browse" pour choisir un dossier pour votre workspace. Une fois que 
 
 Vous arriverez sur la page d'accueil de STM32CubeIDE. Pour créer un nouveau projet, cliquez sur "Start new STM32 Project".
 
-![Home Page](/src/images/elecsoft/stm32cubeide/cubeide_startpage.png)
+![Home Page](../../images/elecsoft/stm32cubeide/cubeide_startpage.png)
 
 ### Choisir le microcontrôleur
 *Microcontrôleur pour 2024 :*
@@ -26,7 +26,7 @@ STM32G431KBT6
 ```
 Une fois cliqué sur "Start new STM32 project", vous devriez voir une fenêtre pour choisir le microcontrôleur que tu veux utiliser:
 
-![Microcontroller Selection](/src/images/elecsoft/stm32cubeide/cubeide_targetselect.png)
+![Microcontroller Selection](../../images/elecsoft/stm32cubeide/cubeide_targetselect.png)
 
 Entrez "STM32G431KBT6" dans la barre de recherche pour trouver le microcontrôleur que vous voulez utiliser. Cliquez sur "Next" pour continuer.
 
@@ -35,6 +35,8 @@ Choissisez un nom pour votre projet. Cliquer sur "Finish" pour créer le projet.
 
 Vous arrivez en suite sur la page de configuration du microcontrôleur. 
 
-![Microcontroller Configuration](/src/images/elecsoft/stm32cubeide/cubeide_configpage.png)
+![Microcontroller Configuration](../../images/elecsoft/stm32cubeide/cubeide_configpage.png)
+
+Voir ensuite dans [guide de configuration](../stm32cubeide/peripheral_config.md) pour configurer votre STM32.
 
 
