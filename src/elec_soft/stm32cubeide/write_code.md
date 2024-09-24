@@ -1,0 +1,1 @@
+# Quelques astuces pour écrire du code dans STM32CubeIDE

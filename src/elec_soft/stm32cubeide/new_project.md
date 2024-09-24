@@ -37,6 +37,9 @@ Vous arrivez en suite sur la page de configuration du microcontrôleur.
 
 ![Microcontroller Configuration](../../images/elecsoft/stm32cubeide/cubeide_configpage.png)
 
-Voir ensuite dans [guide de configuration](../stm32cubeide/peripheral_config.md) pour configurer votre STM32.
+## Ensuite
+Voir ensuite dans [Configuration d'un STM](peripheral_config.md) pour configurer votre STM32.
+
+Ou dans [Configurer ton project](project_config.md) pour configurer ton project STM32CubeIDE.
 
 
