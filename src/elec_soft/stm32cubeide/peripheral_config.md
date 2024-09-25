@@ -4,6 +4,13 @@ Oula, ce sujet est très vaste. On essaie de couvrir le minimale pour avoir une 
 
 D'ailleur, si tu ne comprends pas ce que c'est un périphérique, je te conseille de lire [ce document](../stm32/index.md).
 
+**Notes**:
+L'outil de configuration de périphérique va auto-générer le code pour configurer les périphériques.
+Après avoir configuré, clique sur ce bouton :
+![Generate code](../../images/elecsoft/stm32cubeide/perif_generatecode.png)
+
+**Pour accéder à l'outil de configuration** de périphérique, clique sur le fichier `.ioc`.
+
 ## Table des matières
 - [Pin](#pin)
 - [GPIO](#gpio)
