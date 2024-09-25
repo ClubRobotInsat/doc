@@ -972,7 +972,63 @@ Summary: 1 package finished [1.19s]
 </code></pre>
 <p>Solution: <code>pip install setuptools==58.2.0</code></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="electronique-logicielle"><a class="header" href="#electronique-logicielle">Electronique Logicielle</a></h1>
+<h2 id="how-to-start"><a class="header" href="#how-to-start">How to start</a></h2>
+<ol>
+<li>Read guides in <code>STM32CubeIDE</code> section to :</li>
+</ol>
+<ul>
+<li>Install STM32CubeIDE</li>
+<li>Create a new project</li>
+</ul>
+<ol start="2">
+<li>
+<p>Then clone the <code>stmlib</code> repository from the <a href="https://github.com/ClubRobotInsat/stmlib">Club Robot's GitHub</a>.</p>
+</li>
+<li>
+<p>Read guides in stmlib section to :</p>
+</li>
+</ol>
+<ul>
+<li>Add the library to your project</li>
+<li>Use the library</li>
+</ul>
+<p>Now, start with something simple like blinking the onboard LED then an external LED.</p>
+<p>For that, read the <code>STM32CubeIDE</code> section to know how to configure the peripheral, build the project and more!</p>
+<h2 id="understand-how-it-work"><a class="header" href="#understand-how-it-work">Understand how it work</a></h2>
+<p>Documentation for each module is available in the <code>stm32</code> sections. It will be added progressively (promise!).</p>
+<h2 id="resources"><a class="header" href="#resources">Resources</a></h2>
+<p><a href="https://www.st.com/resource/en/reference_manual/rm0440-stm32g4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf">STM32G4 reference manual</a> : The Bible for ElecSoft's members, contain all you need to know about the STM32G4 peripherals.</p>
+<p><a href="https://www.st.com/resource/en/user_manual/um2397-stm32g4-nucleo32-board-mb1430-stmicroelectronics.pdf">STM32G4 user manual</a> : Contains all information about the board (electrical circuit, solder bridges, pinouts, etc)</p>
+<p><a href="https://deepbluembedded.com">DeepBlueEmbedded</a> : Lesson and examples for STM32 programming, very well explained and covers all basic topics.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="electronique-logicielle-1"><a class="header" href="#electronique-logicielle-1">Electronique Logicielle</a></h1>
+<h2 id="how-to-start-1"><a class="header" href="#how-to-start-1">How to start</a></h2>
+<ol>
+<li>Read guides in <code>STM32CubeIDE</code> section to :</li>
+</ol>
+<ul>
+<li>Install STM32CubeIDE</li>
+<li>Create a new project</li>
+</ul>
+<ol start="2">
+<li>
+<p>Then clone the <code>stmlib</code> repository from the <a href="https://github.com/ClubRobotInsat/stmlib">Club Robot's GitHub</a>.</p>
+</li>
+<li>
+<p>Read guides in stmlib section to :</p>
+</li>
+</ol>
+<ul>
+<li>Add the library to your project</li>
+<li>Use the library</li>
+</ul>
+<p>Now, start with something simple like blinking the onboard LED then an external LED.</p>
+<p>For that, read the <code>STM32CubeIDE</code> section to know how to configure the peripheral, build the project and more!</p>
+<h2 id="understand-how-it-work-1"><a class="header" href="#understand-how-it-work-1">Understand how it work</a></h2>
+<p>Documentation for each module is available in the <code>stm32</code> sections. It will be added progressively (promise!).</p>
+<h2 id="resources-1"><a class="header" href="#resources-1">Resources</a></h2>
+<p><a href="https://www.st.com/resource/en/reference_manual/rm0440-stm32g4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf">STM32G4 reference manual</a> : The Bible for ElecSoft's members, contain all you need to know about the STM32G4 peripherals.</p>
+<p><a href="https://www.st.com/resource/en/user_manual/um2397-stm32g4-nucleo32-board-mb1430-stmicroelectronics.pdf">STM32G4 user manual</a> : Contains all information about the board (electrical circuit, solder bridges, pinouts, etc)</p>
+<p><a href="https://deepbluembedded.com">DeepBlueEmbedded</a> : Lesson and examples for STM32 programming, very well explained and covers all basic topics.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="guide-dutilisation-c"><a class="header" href="#guide-dutilisation-c">Guide d'utilisation C</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="comment-travaille-t-on-avec-un-stm32-"><a class="header" href="#comment-travaille-t-on-avec-un-stm32-">Comment travaille-t-on avec un STM32 ?</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="how-to-use-stm32cubeide"><a class="header" href="#how-to-use-stm32cubeide">How to use STM32CubeIDE</a></h1>
@@ -1020,6 +1076,11 @@ Summary: 1 package finished [1.19s]
 <div style="break-before: page; page-break-before: always;"></div><h1 id="guide-pour-configurer-dun-stm32"><a class="header" href="#guide-pour-configurer-dun-stm32">Guide pour configurer d'un STM32</a></h1>
 <p>Oula, ce sujet est très vaste. On essaie de couvrir le minimale pour avoir une idée, après ça dépend vraiment chaque périphérique.</p>
 <p>D'ailleur, si tu ne comprends pas ce que c'est un périphérique, je te conseille de lire <a href="elec_soft/stm32cubeide/../stm32/index.html">ce document</a>.</p>
+<p><strong>Notes</strong>:
+L'outil de configuration de périphérique va auto-générer le code pour configurer les périphériques.
+Après avoir configuré, clique sur ce bouton :
+<img src="elec_soft/stm32cubeide/../../images/elecsoft/stm32cubeide/perif_generatecode.png" alt="Generate code" /></p>
+<p><strong>Pour accéder à l'outil de configuration</strong> de périphérique, clique sur le fichier <code>.ioc</code>.</p>
 <h2 id="table-des-matières"><a class="header" href="#table-des-matières">Table des matières</a></h2>
 <ul>
 <li><a href="elec_soft/stm32cubeide/peripheral_config.html#pin">Pin</a></li>
