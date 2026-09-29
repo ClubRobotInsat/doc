@@ -12,40 +12,52 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../../../favicon.svg">
-        <link rel="shortcut icon" href="../../../favicon.png">
-        <link rel="stylesheet" href="../../../css/variables.css">
-        <link rel="stylesheet" href="../../../css/general.css">
-        <link rel="stylesheet" href="../../../css/chrome.css">
-        <link rel="stylesheet" href="../../../css/print.css" media="print">
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../css/chrome-d279d366.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../../../fonts/fonts.css">
+        <link rel="stylesheet" href="../../../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../../highlight.css">
-        <link rel="stylesheet" href="../../../tomorrow-night.css">
-        <link rel="stylesheet" href="../../../ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
 
-        <!-- Provide site root to javascript -->
+        <!-- Provide site root and default themes to javascript -->
         <script>
-            var path_to_root = "../../../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../../searchindex-8e767569.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../../toc.js"></script>
+        <script src="../../../toc-c3adfd0a.js"></script>
     </head>
     <body>
-    <div id="body-container">
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
                     localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
@@ -59,7 +71,8 @@
 
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script>
-            var theme;
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             const html = document.documentElement;
@@ -68,55 +81,59 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var sidebar = null;
-            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                            <i class="fa fa-search"></i>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
                         </button>
                     </div>
 
@@ -124,83 +141,94 @@
 
                     <div class="right-buttons">
                         <a href="../../../print.html" title="Print this book" aria-label="Print this book">
-                            <i id="print-button" class="fa fa-print"></i>
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
-                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
                     </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
                         </ul>
                     </div>
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="communication-avec-le-hardware"><a class="header" href="#communication-avec-le-hardware">Communication avec le hardware</a></h1>
-<p>En robotique, il est crucial de pouvoir communiquer entre l'ordinateur décisionnaire et avec l'ensemble des capteurs / moteurs qui animent le robot.</p>
+<p>En robotique, il est crucial de pouvoir communiquer entre l’ordinateur décisionnaire et avec l’ensemble des capteurs / moteurs qui animent le robot.</p>
 <h2 id="histoire-de-la-communication-dans-le-club"><a class="header" href="#histoire-de-la-communication-dans-le-club">Histoire de la communication dans le Club</a></h2>
-<p>Historiquement, le robot du Club était composé d'une multitude de cartes décentralisées et chacune avait une fonction spéficique (s'occuper de tous les servos moteurs par exemple). Ces cartes étaient reliées par un <a href="https://fr.wikipedia.org/wiki/Bus_de_donn%C3%A9es_CAN">bus CAN</a> avec l'ordinateur et de nombreuses trames transitaient de manière asynchrone.</p>
-<p>Cependant, le savoir de l'utilisation des technologies utilisées (des microcontrôleurs à PIC) s'est perdue et entre 2017 et 2019, on a décidé de changer l'architecture pour</p>
+<p>Historiquement, le robot du Club était composé d’une multitude de cartes décentralisées et chacune avait une fonction spéficique (s’occuper de tous les servos moteurs par exemple). Ces cartes étaient reliées par un <a href="https://fr.wikipedia.org/wiki/Bus_de_donn%C3%A9es_CAN">bus CAN</a> avec l’ordinateur et de nombreuses trames transitaient de manière asynchrone.</p>
+<p>Cependant, le savoir de l’utilisation des technologies utilisées (des microcontrôleurs à PIC) s’est perdue et entre 2017 et 2019, on a décidé de changer l’architecture pour</p>
 <ul>
-<li>maîtriser l'ensemble de la chaîne entre le hard et le soft</li>
+<li>maîtriser l’ensemble de la chaîne entre le hard et le soft</li>
 <li>réaliser une documentation et un code propre pour faciliter le maintien et la passation du savoir</li>
-<li>avoir une solution rapide pour remplacer de l'électronique en cas de dysfonctionnement</li>
+<li>avoir une solution rapide pour remplacer de l’électronique en cas de dysfonctionnement</li>
 <li>augmenter les capacités des cartes électroniques</li>
 </ul>
 <p>Ainsi, on a à présent une architecture décentralisée sur plusieurs cartes industrielles <a href="https://eu.mouser.com/new/stmicroelectronics/stm-nucleo-development-boards/">STM32 Nucleo</a>. La communication avec le soft se fait par ethernet, ce qui augmente la facilité de maintenance, la fiabilité et la puissance de communication.</p>
-<hr />
+<hr>
 <p>Il est maintenant temps de rentrer dans les détails techniques de cette communication décentralisée.</p>
 <h2 id="trames-de-communication"><a class="header" href="#trames-de-communication">Trames de communication</a></h2>
-<p>Le but est d'utiliser les bénéfices d'une communication entre deux 'cartes mères', et donc de partager le maximum d'informations entre l'informatique et l'électronique. Ainsi, les trames ne correspondent plus à un ordre sporadique addressé au hardware, mais elles regroupent l'ensemble de l'état du robot.</p>
-<p>L'ordinateur envoie l'état du robot tel qu'il souhaite l'être, et la carte électronique travaille pour atteindre l'état voulu. Cet état général est envoyé par l'info puis renvoyé par l'élec et ce en permanence, avec une fréquence de <strong>FIXER LA FREQUENCE</strong>.</p>
-<p>Le format de l'état se veut modulaire en JSON, afin de pouvoir être utilisé quel que soit le robot. Concrètement, la carte électronique est considérée comme un ensemble de modules indépendants (déplacement, évitement, moteurs, servos, capteurs...) qui possèdent chacun un ID, avec un <strong>maximum de 16</strong> modules connectés.</p>
-<p>La tableau suivant regroupe les IDs des modules 'génériquement', mais il n'est bien sûr pas figé.</p>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: center">ID</th><th style="text-align: center">Module</th></tr></thead><tbody>
+<p>Le but est d’utiliser les bénéfices d’une communication entre deux ‘cartes mères’, et donc de partager le maximum d’informations entre l’informatique et l’électronique. Ainsi, les trames ne correspondent plus à un ordre sporadique addressé au hardware, mais elles regroupent l’ensemble de l’état du robot.</p>
+<p>L’ordinateur envoie l’état du robot tel qu’il souhaite l’être, et la carte électronique travaille pour atteindre l’état voulu. Cet état général est envoyé par l’info puis renvoyé par l’élec et ce en permanence, avec une fréquence de <strong>FIXER LA FREQUENCE</strong>.</p>
+<p>Le format de l’état se veut modulaire en JSON, afin de pouvoir être utilisé quel que soit le robot. Concrètement, la carte électronique est considérée comme un ensemble de modules indépendants (déplacement, évitement, moteurs, servos, capteurs…) qui possèdent chacun un ID, avec un <strong>maximum de 16</strong> modules connectés.</p>
+<p>La tableau suivant regroupe les IDs des modules ‘génériquement’, mais il n’est bien sûr pas figé.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">ID</th><th style="text-align: center">Module</th></tr>
+</thead>
+<tbody>
 <tr><td style="text-align: center">0x01</td><td style="text-align: center">Déplacement</td></tr>
 <tr><td style="text-align: center">0x02</td><td style="text-align: center">Servos</td></tr>
 <tr><td style="text-align: center">0x03</td><td style="text-align: center">IO</td></tr>
 <tr><td style="text-align: center">0x04</td><td style="text-align: center">Évitement</td></tr>
 <tr><td style="text-align: center">0x05</td><td style="text-align: center">Moteurs</td></tr>
 <tr><td style="text-align: center">0x06</td><td style="text-align: center">Capteurs</td></tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
-<hr />
-<h2 id="format-général-dune-trame"><a class="header" href="#format-général-dune-trame">Format général d'une trame</a></h2>
-<p>Lorsque la partie informatique communique avec la carte appropriée à propos d'un module, les informations partagées sont encapsulées suivant plusieurs blocs :</p>
+<hr>
+<h2 id="format-général-dune-trame"><a class="header" href="#format-général-dune-trame">Format général d’une trame</a></h2>
+<p>Lorsque la partie informatique communique avec la carte appropriée à propos d’un module, les informations partagées sont encapsulées suivant plusieurs blocs :</p>
 <ul>
-<li>Chaque module sait parser <em>(ie lire et écrire)</em> un flux d'octets qui correspond à un format texte JSON, qui est très simple à lire. La spécification de la structure de données échangées dépend de chaque module et peut se trouver <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules">dans ce dossier</a>. Elle est également spécifiée plus loin dans ce document.</li>
+<li>Chaque module sait parser <em>(ie lire et écrire)</em> un flux d’octets qui correspond à un format texte JSON, qui est très simple à lire. La spécification de la structure de données échangées dépend de chaque module et peut se trouver <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules">dans ce dossier</a>. Elle est également spécifiée plus loin dans ce document.</li>
 <li>Pour savoir à quel module est addressé la trame, on rajoute son <strong><code>ID</code></strong> devant la trame sur un <code>u8</code>.</li>
 <li>Enfin, la trame est envoyée sur le support physique :
 <ul>
-<li>dans le cas d'une liaison UDP, la taille de la trame se retrouve grâce aux informations du protocole de transport, donc il suffit d'envoyer un message contenant les données <code>{ID, trame}</code>. Les addresses IP utilisées sont les suivantes : <code>192.168.&lt;ID robot&gt;.&lt;ID module&gt;</code>, avec <code>&lt;ID robot&gt;</code> valant respectivement <code>0</code> et <code>1</code> pour les robots primaire et secondaire.</li>
+<li>dans le cas d’une liaison UDP, la taille de la trame se retrouve grâce aux informations du protocole de transport, donc il suffit d’envoyer un message contenant les données <code>{ID, trame}</code>. Les addresses IP utilisées sont les suivantes : <code>192.168.&lt;ID robot&gt;.&lt;ID module&gt;</code>, avec <code>&lt;ID robot&gt;</code> valant respectivement <code>0</code> et <code>1</code> pour les robots primaire et secondaire.</li>
 <li>pour toutes les autres communications série, on encapsule <code>{ID, trame}</code> dans un header qui contient :
 <ul>
-<li>4 octets qui permettent de distinguer le début d'une trame intéressante ; c'est nécessaire car on est dans une communication asynchrone. Dans le cas du club, elles commencent par le pattern <code>0xAC DC AB BA</code> pour spécifier leur début</li>
-<li>1 octet pour contenir la taille du message intéressant, c'est à dire la taille de <code>{ID, trame}</code></li>
+<li>4 octets qui permettent de distinguer le début d’une trame intéressante ; c’est nécessaire car on est dans une communication asynchrone. Dans le cas du club, elles commencent par le pattern <code>0xAC DC AB BA</code> pour spécifier leur début</li>
+<li>1 octet pour contenir la taille du message intéressant, c’est à dire la taille de <code>{ID, trame}</code></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="création-dune-liaison-de-communication"><a class="header" href="#création-dune-liaison-de-communication">Création d'une liaison de communication</a></h2>
-<p>La classe <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Communication/Communicator.h"><code>Communicator</code></a> s'occupe se gérer la communication élec-info. Il suffit de faire appel à la méthode <code>connect</code> avec les bons arguments et la bonne liaison série est instanciée puis est capable de lire et écrire des trames.</p>
-<p>Cet objet est capable de parler sur n'importe quel médium de communication, en faisait appel à un <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Communication/Protocol.h"><code>Protocol</code></a>. La première méthode appelable est <code>send_frame</code>, qui envoie une trame ; la seconde doit être lancée dans un thread spécifique et permets de recevoir des données pour les traiter avec un handler à fournir : <code>recv_frame(const atomic_bool&amp; b, function&lt;void(GlobalFrame)&gt;)</code>. Le premier argument permets d'interrompre la fonction, qui est bloquée dans un <code>while(b)</code>.</p>
+<h2 id="création-dune-liaison-de-communication"><a class="header" href="#création-dune-liaison-de-communication">Création d’une liaison de communication</a></h2>
+<p>La classe <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Communication/Communicator.h"><code>Communicator</code></a> s’occupe se gérer la communication élec-info. Il suffit de faire appel à la méthode <code>connect</code> avec les bons arguments et la bonne liaison série est instanciée puis est capable de lire et écrire des trames.</p>
+<p>Cet objet est capable de parler sur n’importe quel médium de communication, en faisait appel à un <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Communication/Protocol.h"><code>Protocol</code></a>. La première méthode appelable est <code>send_frame</code>, qui envoie une trame ; la seconde doit être lancée dans un thread spécifique et permets de recevoir des données pour les traiter avec un handler à fournir : <code>recv_frame(const atomic_bool&amp; b, function&lt;void(GlobalFrame)&gt;)</code>. Le premier argument permets d’interrompre la fonction, qui est bloquée dans un <code>while(b)</code>.</p>
 <p>Voici les protocoles  possibles avec leurs arguments :</p>
 <ul>
 <li><strong>Liaisons séries</strong>
@@ -209,27 +237,27 @@
 <li><code>protocol_tcpip</code> : <code>string address, uint16_t port</code> connexion TCP client vers le serveur <code>address:port</code></li>
 <li><code>protocol_local</code> : <code> </code>, les trames sont envoyées en TCP vers un le serveur <code>localhost:4321</code></li>
 <li><code>protocol_pipes</code> : <code>string rx, string tx</code>, lecture et écriture sur des pipes nommées ; par défaut : <code>rx: "/tmp/read.pipe"</code>, <code>tx: "/tmp/write.pipe"</code></li>
-<li><code>protocol_udp</code> : <code>string address, uint16_t local_port, uint16_t remote_port</code>, liaison UDP depuis le port local vers le serveur UDP <code>address:remote_port</code>. Ce protocole peut être utilisé dans les deux sens de communication, contrairement à l'implémentation actuelle de <code>protocol_tcpip</code>.</li>
+<li><code>protocol_udp</code> : <code>string address, uint16_t local_port, uint16_t remote_port</code>, liaison UDP depuis le port local vers le serveur UDP <code>address:remote_port</code>. Ce protocole peut être utilisé dans les deux sens de communication, contrairement à l’implémentation actuelle de <code>protocol_tcpip</code>.</li>
 </ul>
 </li>
 <li><strong>Communications sur plusieurs liaisons séries</strong>
 <ul>
-<li><code>protocol_ethernet</code> : <code>initializer_list&lt;UDPConnection&gt;</code>, permets de centraliser <code>N</code> connections UDP en un unique appel à un thread de réception bloquant. Ce protocole gère aussi l'association <code>id_module &lt;-&gt; UDP communication thread</code>.</li>
+<li><code>protocol_ethernet</code> : <code>initializer_list&lt;UDPConnection&gt;</code>, permets de centraliser <code>N</code> connections UDP en un unique appel à un thread de réception bloquant. Ce protocole gère aussi l’association <code>id_module &lt;-&gt; UDP communication thread</code>.</li>
 </ul>
 </li>
 </ul>
-<p><img src="/images/info/communication.png" alt="UML de la communication" title="Diagramme UML de la communication" /></p>
-<hr />
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="/images/info/communication.png" title="Diagramme UML de la communication" alt="UML de la communication"><span class="img-wrapper"><img src="/images/info/communication.png" title="Diagramme UML de la communication" alt="UML de la communication"></span></label></p>
+<hr>
 <h2 id="modules-spécialisés"><a class="header" href="#modules-spécialisés">Modules spécialisés</a></h2>
-<p>Chaque module a un rôle particulier (gérer les servos, se déplacer, détecter l'adversaire, capter des infos dans ce monde de sauvage, ...). Pour faciliter la maintenabilité du code, des parties sont mises en commun entre l'info et l'élec.</p>
-<p>Les deux parties utilisent un langage de programmation différent donc les deux parties doivent utiliser le même protocole pour communiquer. La solution retenue est d'envoyer des messages en format JSON encapsulés dans de l'UDP via une liaison ethernet.</p>
+<p>Chaque module a un rôle particulier (gérer les servos, se déplacer, détecter l’adversaire, capter des infos dans ce monde de sauvage, …). Pour faciliter la maintenabilité du code, des parties sont mises en commun entre l’info et l’élec.</p>
+<p>Les deux parties utilisent un langage de programmation différent donc les deux parties doivent utiliser le même protocole pour communiquer. La solution retenue est d’envoyer des messages en format JSON encapsulés dans de l’UDP via une liaison ethernet.</p>
 <p>Les formats de JSON sont appropriés pour le debug car les messages sont lisibles avec <a href="www.wireshark.org">wireshark</a>. De plus, ils sont bien plus maintenables car le code est bien plus simple (on utilise des librairies pour parser le JSON).</p>
 <p>LQ seule prérogative pour la partie en <code>Rust</code> est de déclarer des structures de données qui correspondent aux formats transités en JSON.</p>
 <h3 id="format-du-module-servos"><a class="header" href="#format-du-module-servos">Format du module <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/Servos.h"><code>Servos</code></a></a></h3>
-<p><a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/Servos.h">Cette classe</a> permets de gérer un ensemble de <a href="https://www.robotshop.com/media/files/pdf/manual-drs-0101.pdf">servos-moteurs</a> en connaissant l'ensemble des informations qui leur sont propres et dont l'état est partagé avec les élecs.</p>
-<p>Pour avoir une idée technique de son API, je te conseille d'aller voir directement le code source.
-L'interface permets de rajouter des servos (ID &gt; 0) puis de contrôler chaque partie avec des fonctions thread-safe.</p>
-<p>La sûreté par rapport au partage des données se fait grâce à une <a href="http://www.cplusplus.com/reference/mutex/">variable mutex</a> partagée et qui est bloquée à chaque accès sur des variables : si la trame des servos est en cours de génération, l'écriture du nouvel angle doit attendre pour que le mutex soit libéré.</p>
+<p><a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/Servos.h">Cette classe</a> permets de gérer un ensemble de <a href="https://www.robotshop.com/media/files/pdf/manual-drs-0101.pdf">servos-moteurs</a> en connaissant l’ensemble des informations qui leur sont propres et dont l’état est partagé avec les élecs.</p>
+<p>Pour avoir une idée technique de son API, je te conseille d’aller voir directement le code source.
+L’interface permets de rajouter des servos (ID &gt; 0) puis de contrôler chaque partie avec des fonctions thread-safe.</p>
+<p>La sûreté par rapport au partage des données se fait grâce à une <a href="http://www.cplusplus.com/reference/mutex/">variable mutex</a> partagée et qui est bloquée à chaque accès sur des variables : si la trame des servos est en cours de génération, l’écriture du nouvel angle doit attendre pour que le mutex soit libéré.</p>
 <p>Actuellement, cette classe gère 8 servos (la valeur est constante dans le code) et la trame associée est définie ainsi :</p>
 <pre><code>&lt;id&gt;
 {
@@ -243,7 +271,7 @@ L'interface permets de rajouter des servos (ID &gt; 0) puis de contrôler chaque
   "color": "[Block|Red|Green|Yellow|Blue|Magenta|Cyan|White]"
 }
 </code></pre>
-<p>Les états de chaque servomoteur est envoyé individuellement par le module pour limiter l'impact d'une perte de paquet ainsi que pour faciliter la lecture des trames.</p>
+<p>Les états de chaque servomoteur est envoyé individuellement par le module pour limiter l’impact d’une perte de paquet ainsi que pour faciliter la lecture des trames.</p>
 <h3 id="format-du-module-motors"><a class="header" href="#format-du-module-motors">Format du module <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/Motors.h"><code>Motors</code></a></a></h3>
 <p><a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/Motors.h">Cette classe</a> fournit une interface pour travailler avec 8 moteurs asservis, 8 moteurs non-asservis et 8 brushless, dont les fonctions associées sont spécifiques. Voici la trame qui spéficie les informations de tout ce beau monde :</p>
 <pre><code>&lt;id&gt;
@@ -252,7 +280,7 @@ L'interface permets de rajouter des servos (ID &gt; 0) puis de contrôler chaque
 }
 </code></pre>
 <h3 id="format-du-module-io"><a class="header" href="#format-du-module-io">Format du module <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/IO.h"><code>IO</code></a></a></h3>
-<p><a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/IO.h">Cette classe</a> est un vestige d'une ancienne façade avec plein de boutons <em>(pour choisir la couleur, le type de connexion...)</em>. Elle ne sert actuellement qu'à détecter si la tirette est enclenchée ou non et ne relaye donc qu'un Booléen par l'intermédiaire de cette structure de trame :</p>
+<p><a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/IO.h">Cette classe</a> est un vestige d’une ancienne façade avec plein de boutons <em>(pour choisir la couleur, le type de connexion…)</em>. Elle ne sert actuellement qu’à détecter si la tirette est enclenchée ou non et ne relaye donc qu’un Booléen par l’intermédiaire de cette structure de trame :</p>
 <pre><code>&lt;id&gt;
 {
   "tirette": &lt;bool&gt;
@@ -260,23 +288,23 @@ L'interface permets de rajouter des servos (ID &gt; 0) puis de contrôler chaque
 </code></pre>
 <h3 id="format-du-module-navigation"><a class="header" href="#format-du-module-navigation">Format du module <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Modules/Navigation.h"><code>Navigation</code></a></a></h3>
 <p><em><strong>TODO</strong></em></p>
-<hr />
+<hr>
 <h2 id="interface-de-communication"><a class="header" href="#interface-de-communication">Interface de communication</a></h2>
-<p>Comme tu l'as vu dans les parties précédentes, on possède à présent plein de modules qui gèrent des aspects différents du robot, et le <code>ModuleManager</code> offre un interfaçage facile pour connaître l'état du robot.</p>
-<p>On peut générer l'état global du robot dans une trame, et mettre à jour le robot depuis une trame globale ; il ne reste plus qu'à gérer la communication entre l'info et l'élec !</p>
-<p>Pour cela, tu peux aller voir <a href="https://github.com/ClubRobotInsat/info/tree/master/src/robot/Commun/Communication/ElecCommunicator.h">du côté du communicateur</a>. Son but est d'avoir en paramètre une classe qui lit et écrit des <code>GlobalFrame</code>s, ainsi qu'un médium de communication et il gère automagiquement la communication pour se connecter, exécuter le protocole de transmission de trames et arrêter à sa destruction la communication.</p>
-<p>Afin d'être aussi général que possible, le communicateur peut prendre en paramètre n'importe quel objet qui donne accès aux fonctions de parsing :</p>
+<p>Comme tu l’as vu dans les parties précédentes, on possède à présent plein de modules qui gèrent des aspects différents du robot, et le <code>ModuleManager</code> offre un interfaçage facile pour connaître l’état du robot.</p>
+<p>On peut générer l’état global du robot dans une trame, et mettre à jour le robot depuis une trame globale ; il ne reste plus qu’à gérer la communication entre l’info et l’élec !</p>
+<p>Pour cela, tu peux aller voir <a href="https://github.com/ClubRobotInsat/info/tree/master/src/robot/Commun/Communication/ElecCommunicator.h">du côté du communicateur</a>. Son but est d’avoir en paramètre une classe qui lit et écrit des <code>GlobalFrame</code>s, ainsi qu’un médium de communication et il gère automagiquement la communication pour se connecter, exécuter le protocole de transmission de trames et arrêter à sa destruction la communication.</p>
+<p>Afin d’être aussi général que possible, le communicateur peut prendre en paramètre n’importe quel objet qui donne accès aux fonctions de parsing :</p>
 <ul>
 <li><code>void read_frame(const GlobalFrame&amp;);</code></li>
 <li><code>std::vector&lt;GlobalFrame&gt; write_frame() const;</code></li>
 </ul>
-<p>Si l'objet fourni ne possède pas ces deux définitions, la méthode <code>communicate_with_elecs</code> <em>(sencée être exécutée dans un thread pour recevoir et envoyer les trames)</em> devient inaccessible ; si la méta-programmation ne te fait pas peur tu peux aller voir <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Communication/ParsingClassChecker.hpp">comment vérifier l'existance des fonctions de parsing</a>.</p>
-<hr />
+<p>Si l’objet fourni ne possède pas ces deux définitions, la méthode <code>communicate_with_elecs</code> <em>(sencée être exécutée dans un thread pour recevoir et envoyer les trames)</em> devient inaccessible ; si la méta-programmation ne te fait pas peur tu peux aller voir <a href="https://github.com/ClubRobotInsat/info/blob/develop/src/robot/Communication/ParsingClassChecker.hpp">comment vérifier l’existance des fonctions de parsing</a>.</p>
+<hr>
 <h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
-<p>Voici un récapitulatif des couches d'abstraction que l'on vient d'aborder dans ce document :</p>
+<p>Voici un récapitulatif des couches d’abstraction que l’on vient d’aborder dans ce document :</p>
 <ul>
 <li>
-<p>Wrapping de structures brutes en JSON pour connaître l'état de chaque module : <em><a href="https://github.com/ClubRobotInsat/info/tree/develop/src/robot/Modules/">lien</a></em></p>
+<p>Wrapping de structures brutes en JSON pour connaître l’état de chaque module : <em><a href="https://github.com/ClubRobotInsat/info/tree/develop/src/robot/Modules/">lien</a></em></p>
 <ul>
 <li>du code <code>C++</code> et <code>Rust</code> (respectivement pour les infos et les élecs) englobe ces C-structs</li>
 <li>nombreux avantages : rajout de sécurité, tests et interface fonctionnelle</li>
@@ -286,7 +314,7 @@ L'interface permets de rajouter des servos (ID &gt; 0) puis de contrôler chaque
 <p>le <a href="https://github.com/ClubRobotInsat/info/tree/develop/src/robot/Modules/ModuleManager.h"><code>ModuleManager</code></a> regroupe tous ces modules</p>
 <ul>
 <li>manipulation facilitée</li>
-<li>tout l'état du robot est centralisé</li>
+<li>tout l’état du robot est centralisé</li>
 <li>parsing des trames globales</li>
 </ul>
 </li>
@@ -300,11 +328,11 @@ L'interface permets de rajouter des servos (ID &gt; 0) puis de contrôler chaque
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../../../pre_2021/info/explications/architecture.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
                             <a rel="next prefetch" href="../../../pre_2021/info/explications/lidar.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
                         <div style="clear: both"></div>
@@ -314,16 +342,21 @@ L'interface permets de rajouter des servos (ID &gt; 0) puis de contrôler chaque
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                     <a rel="prev" href="../../../pre_2021/info/explications/architecture.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
                     <a rel="next prefetch" href="../../../pre_2021/info/explications/lidar.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -332,15 +365,16 @@ L'interface permets de rajouter des servos (ID &gt; 0) puis de contrôler chaque
         </script>
 
 
-        <script src="../../../elasticlunr.min.js"></script>
-        <script src="../../../mark.min.js"></script>
-        <script src="../../../searcher.js"></script>
+        <script src="../../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../../mark-09e88c2c.min.js"></script>
+        <script src="../../../searcher-09f2665d.js"></script>
 
-        <script src="../../../clipboard.min.js"></script>
-        <script src="../../../highlight.js"></script>
-        <script src="../../../book.js"></script>
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>
