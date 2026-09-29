@@ -22,7 +22,7 @@
     &nbsp; &nbsp; 8) Le Render Studio<br/>
     &nbsp; &nbsp; 9) L'Assemblage<br/>
   
-## Intorduction
+## Introduction
 Creo Parametric est un logiciel de CAD (Computer-aided design) d'entrée de gamme, c'est-à-dire qu'il est moins intuitif que ses collègues (ex. SolidWorks et Catia), mais la licence de Creo coûte moins cher et, ce qui est important, est fournie par notre école, INSA Toulouse. C'est pourquoi au Club Robot, on utilise Creo. Pour savoir comment installer et configurer Creo 9 avec le compte INSA, voir le document : [Installation de Creo](installation-de-creo.md).  
 
 ## I) La Repertoire de travail
