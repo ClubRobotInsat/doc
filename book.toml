@@ -1,5 +1,4 @@
 [book]
 authors = ["Paul Florence", "Benjamin Bigey"]
-multilingual = false
 src = "src"
 title = "Documentation Club Robot Insa Toulouse"
