@@ -25,7 +25,7 @@
   - [Création d'un robot](informatique/robot.md)
   - [ROS2 issues](informatique/ros2-random-issues.md)
 - [👨‍💻 Electronique Logicielle](elec_soft/index.md)
-  - [Code embarqué](elec_soft/index.md)
+  - [Code embarqué](#)
     - [Langage C](elec_soft/code/c.md)
   - [STM32](elec_soft/stm32/index.md) 
   - [STM32CubeIDE](elec_soft/stm32cubeide/index.md)
